@@ -1,0 +1,37 @@
+/* my/components/my_head.wxss */
+@import "/app.wxss";
+.myhead{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 255rpx;
+  padding: 0 26rpx;
+  box-sizing: border-box;
+}
+.myhead .myhead-imgbox{
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+  background: #ccc;
+}
+.myhead .myhead-middle{
+  display: flex;
+  flex-direction: column;
+  width: 448rpx;
+  padding: 86rpx 0;
+  margin-left: 16rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+}
+.myhead-mid-top{
+  height: 52rpx
+}
+.myhead .myhead-middle .myhead-mid-bottom{
+  font-size: 28rpx;
+}
+.myhead .myhead-talk{
+  width: 120rpx;
+  height: 100%;
+  background: #f0f;
+}

@@ -1,0 +1,8 @@
+<!--find/page/find_index.wxml-->
+<searchHead></searchHead>
+<swiper></swiper>
+<findList></findList>
+<swiperVer></swiperVer>
+<newRecommend></newRecommend>
+<nearbyStore></nearbyStore>
+<hotRecommend></hotRecommend>

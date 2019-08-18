@@ -1,0 +1,28 @@
+<!--my/components/my_card.wxml-->
+<view class="mycard">
+  <view class="mycard-h1">我的卡券</view>
+  <view class="mycard-items">
+    <view class="my-card-item">
+      <view class="my-card-icon">Q</view>
+      <view class="my-card-txt">未使用</view>
+    </view>
+    <view class="my-card-item">
+      <view class="my-card-icon">Q</view>
+      <view class="my-card-txt">已使用</view>
+    </view>
+    <view class="my-card-item">
+      <view class="my-card-icon">Q</view>
+      <view class="my-card-txt">已过期</view>
+    </view>
+  </view>
+  <view class="my-card-pic">
+    <!-- <view class="my-card-pic-imgbox">
+      <image src=""></image>
+    </view> -->
+    <view class="my-pic-left">
+      <view class="my-pic-title">美食黑卡</view>
+      <view class="my-pic-body">到店展示，尊享多重特惠</view>
+    </view>
+    <view class="my-pic-show">点击展示 <i>></i></view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "classifyHidebody": "/classify/components/classify_hidebody"
+  }
+}

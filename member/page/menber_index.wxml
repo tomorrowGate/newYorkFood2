@@ -1,0 +1,62 @@
+<!--member/page/menber_index.wxml-->
+<!--pages/vipmember/vip.wxml-->
+<view class="content">
+    <!--pics文件夹下的background.jpg文件-->
+    <image class='background' src="../../media/image/vip.png" mode="aspectFill"></image>
+    <!--页面其它部分-->
+</view>
+<!-- 图片部分 -->
+<view class="image">
+  <image src="../../media/image/line_border.png" class="img"></image>
+  <image src="../../media/image/logo.png" class="logo"> </image>
+  <view class="content1">
+      <view class="title">会员黑卡</view>
+      <view class="title_name">尊享黑卡特权  享受更多优惠</view>
+      <view class="line"></view>
+      <view class="icon"><i class="iconfont iconfangdajing"></i></view>
+  </view>
+</view>
+    <!-- 底部 -->
+<view class="last-one">
+  <view class="top">
+    <view><i class="iconfont iconfangdajing"></i></view>
+    <view class="title">黑卡特权</view>
+  </view>
+  <view class="bottom">
+    <view class="item">
+      <view>指定店铺</view>
+      <view>享受折上折</view>
+    </view>
+    <view class="item">
+      <view>每周一</view>
+      <view>享五折优惠</view>
+    </view>
+    <view class="item">
+      <view>黑卡会员</view>
+      <view>特定菜品</view>
+    </view>
+  </view>
+</view>
+
+<view class="last-two">
+  <view class="top">
+    <view><i class="iconfont iconfangdajing"></i></view>
+    <view class="title">黑卡特权</view>
+  </view>
+  <view class="bottom">
+    <view class="item">
+      <view>指定店铺</view>
+      <view>享受折上折</view>
+    </view>
+    <view class="item">
+      <view>每周一</view>
+      <view>享五折优惠</view>
+    </view>
+    <view class="item">
+      <view>黑卡会员</view>
+      <view>特定菜品</view>
+    </view>
+  </view>
+</view>
+
+

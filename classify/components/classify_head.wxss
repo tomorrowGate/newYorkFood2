@@ -1,0 +1,49 @@
+/* classify/components/classify_head.wxss */
+@import "/app.wxss";
+.find-search {
+  /* position: absolute; */
+  width: 100%;
+  /* top: 5vh; */
+  background: #fff;
+}
+.find-search .search-neck {
+  display: flex;
+  height: 9.25925926vw;
+  font-size: 3.7037037vw;
+}
+.find-search .search-neck .sear-top-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.find-search .search-neck .sear-top-all .iconfont {
+  font-size: 3.7037037vw;
+  margin-top: 1.11111111vw;
+  margin-left: 1.2962963vw;
+}
+.find-search .search-neck .sear-top-short {
+  flex: 0.8;
+}
+.find-search .search-neck .sear-top-long {
+  flex: 1.1;
+}
+.find-search .search-neck .active {
+  color: #ffac41;
+}
+
+.scroll-view-x{
+  display: flex;
+  width: 100vw;
+  height: 66rpx;
+}
+.scroll-tags{
+  display: flex;
+  /* width: 200% */
+}
+.scroll-tag{
+  padding: 0 3.7037037vw;
+  background: #efefef;
+  margin: 0.92592593vw 2.77777778vw;
+  white-space: nowrap;
+  font-size: 3.7037037vw;
+}

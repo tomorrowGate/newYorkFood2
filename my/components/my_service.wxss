@@ -1,0 +1,25 @@
+/* my/components/my_service.wxss */
+@import "/app.wxss";
+.myser{
+   padding: 0 26rpx;
+   box-sizing: border-box;
+  font-size: 28rpx;
+}
+.myser-title{
+  height: 70rpx;
+  line-height: 70rpx;
+  font-weight: bold;
+  font-size: 35rpx;
+  border-bottom: 1rpx solid #dfdfdf;
+
+}
+.myser-item{
+  display: flex;
+  justify-content: space-between;
+  height: 114rpx;
+  line-height: 114rpx;
+}
+.item-text{
+  width: 604rpx;
+  margin: 0 16rpx;
+}

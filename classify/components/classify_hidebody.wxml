@@ -1,0 +1,66 @@
+<!--classify/components/classify_hidebody.wxml-->
+<view class="classfy-down" wx:if="{{whitchShow!==0}}" bindtap="hideDown" id="classfy-down">
+<scroll-view 
+  scroll-y 
+  class="scroll-view"
+   wx:if="{{activenum==1}}"
+>
+  <view class="all-food">
+    <view class="all-food-item" bindtap="screenAllFood">全部美食{{480}}</view>
+    <view class="all-food-item" wx:for="{{10}}" wx:key="{{index}}" bindtap="screenFood">江浙菜{{68}}</view>
+  </view>
+</scroll-view>
+<scroll-view 
+  scroll-y 
+  class="scroll-view"
+   wx:if="{{activenum==2}}"
+>
+  <view class="sort-shin all-food">
+    <view class="all-food-item all-food-item" bindtap="screenSort">智能排序</view>
+    <view class="all-food-item all-food-item" bindtap="screenSort">离我最近</view>
+    <view class="all-food-item all-food-item" bindtap="screenSort">人气最高</view>
+  </view>
+</scroll-view>
+  <scroll-view 
+  scroll-y 
+  class="scroll-view"
+   wx:if="{{activenum==5}}"
+  >
+  <view class="find-search-class">
+    <view class="search-body">
+      <view class="search-body-mid">
+        <view class="sear-mid-item">
+          <view class="sear-item-text">只看优惠券</view>
+          <view class="imgbox">
+            <switch style='zoom:.6;' color="#ffac41" bindchange="switchOn" checked="{{switchArgu[0]}}" data-argu="0"/>
+          </view>
+        </view>
+        <view class="sear-mid-item">
+          <view class="sear-item-text">只看新店</view>
+          <view class="imgbox">
+            <switch style='zoom:.6;' color="#ffac41" bindchange="switchOn" checked="{{switchArgu[1]}}" data-argu="1"/>
+          </view>
+        </view>
+        <view class="sear-mid-item">
+          <view class="sear-item-text">只看满减</view>
+          <view class="imgbox">
+            <switch style='zoom:.6;' color="#ffac41" bindchange="switchOn" checked="{{switchArgu[2]}}" data-argu="2"/>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="search-leg">
+      <view class="search-leg-top">餐饮类型</view>
+      <view class="search-leg-tags">
+        <view class="search-leg-tag {{selectTags[index].isCheck?'active':''}}" wx:for="{{tag_info}}" wx:key="{{index}}" bindtap="chooseTag" data-index="{{index}}">
+          {{item.tag_name}}
+        </view>
+      </view>
+    </view>
+    <view class="search-foot">
+      <view class="search-foot-btn" bindtap="reset">清空</view>
+      <view class="search-foot-btn active" bindtap="submit">完成</view>
+    </view>
+  </view>
+  </scroll-view>
+</view>

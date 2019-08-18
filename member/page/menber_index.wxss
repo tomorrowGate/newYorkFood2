@@ -1,0 +1,94 @@
+/* member/page/menber_index.wxss */
+@import "/app.wxss";
+page{
+  height:100%;
+}
+.background {
+  width: 100%;
+  height: 100%;
+  position:fixed; 
+  background-size:100% 100%;
+  z-index: -1;
+}
+.image,.img{
+  position: relative;
+  top:68rpx;
+  width:402rpx;
+  height: 470 rpx;
+  left: 50%;
+  margin-left: -201rpx;
+}
+.logo{
+  width:190rpx;
+  height: 190rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -95rpx;
+  top: 120rpx;
+}
+.content1{
+  color: #d8bf96;
+  width:402rpx;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: absolute;
+  top: 320rpx;
+
+}
+.title{
+  font-size:33rpx;
+  font-weight: bold;
+}
+.title_name{
+  font-size: 25rpx;
+  margin-top: 18rpx;
+}
+.line{
+  width:90rpx;
+  height: 5rpx;
+  background-color: #d8bf96;
+  position: relative;
+  left:50%;
+  margin-left: -45rpx; 
+  margin-top:27rpx;
+}
+.icon{
+  margin-top:27rpx;
+  height: 12rpx;
+}
+.last-one{
+  position: relative;
+  margin-top: 155rpx;
+  color:#d8bf96;
+  width:100%;
+  text-align: center;
+  padding:0 40rpx;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.bottom{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10rpx;
+}
+.item{
+  background-color: #121015;
+  text-align: center;
+  width:210rpx;
+  padding: 13rpx 0rpx 0px 13rpx;
+  box-sizing: border-box;
+}
+.last-two{
+  position: relative;
+  margin-top: 70rpx;
+  color:#d8bf96;
+  width:100%;
+  text-align: center;
+  padding:0 40rpx;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}

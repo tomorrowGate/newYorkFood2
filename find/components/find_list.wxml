@@ -1,0 +1,27 @@
+<!--find/components/find_list.wxml-->
+<view class="scroll">
+  <view class="scroll-item">
+    <view class="imgbox">
+      <image src="../../src/img/hotRecomond.png" alt=""/>
+    </view>
+    <view class="scroll-text">热点推荐</view>
+  </view>
+  <view class="scroll-item">
+    <view class="imgbox">
+      <image src="../../src/img/discount.png" alt=""/>
+    </view>
+    <view class="scroll-text">优惠商家</view>
+  </view>
+  <view class="scroll-item">
+    <view class="imgbox">
+      <image src="../../src/img/newstore.png" alt=""/>
+    </view>
+    <view class="scroll-text">新店优惠</view>
+  </view>
+  <view class="scroll-item">
+    <view class="imgbox">
+      <image src="../../src/img/allfood.png" alt=""/>
+    </view>
+    <view class="scroll-text">全部美食</view>
+  </view>
+</view>

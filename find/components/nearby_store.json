@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "classifyHead": "/classify/components/classify_head",
+    "classifyBody": "/classify/components/classify_realbody"
+  }
+}

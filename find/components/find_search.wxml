@@ -1,0 +1,6 @@
+<!--find/components/find_search.wxml-->
+<view class="input">
+    <input type="text" class="main-search"/>
+    <i class="iconfont iconsousuo"></i>
+    <view class="search-input">搜索</view>
+</view>

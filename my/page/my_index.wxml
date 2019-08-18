@@ -1,0 +1,4 @@
+<!--my/page/my_index.wxml-->
+<myHead></myHead>
+<myCard></myCard>
+<mySer></mySer>

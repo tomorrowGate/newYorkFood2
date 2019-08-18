@@ -1,0 +1,68 @@
+/* my/components/my_card.wxss */
+@import "/app.wxss";
+.mycard{
+  padding: 0 26rpx 32rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.mycard .mycard-h1{
+  height: 70rpx;
+  line-height: 70rpx;
+  font-weight: bold;
+  font-size: 35rpx;
+  border-bottom: 1rpx solid #dfdfdf;
+}
+.mycard .mycard-items{
+  display: flex;
+  
+}
+.mycard .mycard-items .my-card-item{
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 194rpx;
+  padding: 42rpx 0;
+  box-sizing: border-box;
+}
+.my-card-icon{
+  color: #ffac41;
+}
+/* 美食黑卡 */
+.my-card-pic{
+  width: 100%;
+  height: 174rpx;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  padding: 34rpx 32rpx 0 46rpx;
+  border-radius: 14rpx;
+  background: #31344d;
+  box-sizing: border-box;
+}
+.my-card-pic-imgbox{
+  position: absolute;
+  z-index:1
+}
+.my-pic-left{
+  color: #fff;
+  z-index:2
+}
+.my-pic-title{
+  height: 54rpx;
+  font-size: 35rpx;
+}
+.my-pic-body{
+  font-size: 28rpx
+}
+.my-pic-show{
+  width: 166rpx;
+  height: 54rpx;
+  background:linear-gradient(to right,#f9ebca, #ceaf67); 
+  color: #4f4d58;
+  text-align: center;
+  line-height: 54rpx;
+  border-radius: 10rpx;
+}

@@ -1,0 +1,3 @@
+<!--classify/page/classify_index.wxml-->
+<classifyHead></classifyHead>
+<classifyBody></classifyBody>

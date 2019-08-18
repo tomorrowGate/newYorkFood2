@@ -1,0 +1,24 @@
+<!--find/components/hotstore_recommend.wxml-->
+<view class="find">
+  <view class="hotrecomend">
+    <view class="hotrec-title">
+      热门推荐
+    </view>
+    <view class="hotrec-con">
+      <view class="hotrec-item" wx:for="{{num2}}" wx:key="{{index}}">
+        <view class="hotrec-item-imgbox">
+          <image src="./src/img/hambaobaos.png" alt="" />
+        </view>
+        <view class="hotrec-item-text">
+          <view class="hotrec-item-foodname">阿婆家常菜</view>
+          <view class="hotrec-item-tags">
+            <view class="hotrec-item-tag">快餐</view>
+            <view class="hotrec-item-tag">汉堡</view>
+            <view class="hotrec-item-tag">烧烤</view>
+          </view>
+          <view class="hotrec-item-add">广东省广州市海珠区李颖广场088号</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

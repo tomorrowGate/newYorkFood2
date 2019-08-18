@@ -1,0 +1,40 @@
+<!--find/components/swiper_ver.wxml-->
+<!-- <div class="ver-swiper">
+    <div class="ver-swiper-h">美食公告</div>
+    <div class="swiper-container ">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                麦当劳第13家分店今日正式开张
+            </div>
+            <div class="swiper-slide">
+                麦当劳第14家分店今日正式开张
+            </div>
+            <div class="swiper-slide">
+                麦当劳第15家分店今日正式开张
+            </div>
+        </div>
+    </div>
+    <div class="ver-right-arr">
+        <i class="iconfont iconyoujiantou"></i>
+    </div>
+</div> -->
+
+<view class="ver-swiper" >
+  <view class="ver-swiper-h">
+    美食公告
+  </view>
+  <swiper 
+    vertical = "{{swiperVerticle.vertical}}"
+    autoplay="{{autoplay}}" 
+    interval="{{interval}}" 
+    duration="{{duration}}"
+    circular="{{circular}}"
+    class="swiper-verticle light-font1">
+    <block wx:for="{{swiperVerticle.datas}}" wx:key="index" >
+      <swiper-item data-article_id="{{item.article_id}}" bindtap="goHotPage">
+        <view class="swiper-out" >{{"麦当劳第13家分店今日正式开张"||item.title}}</view>
+      </swiper-item>
+    </block>
+  </swiper> 
+   <i class="iconfont iconyoujiantou"></i>
+</view>

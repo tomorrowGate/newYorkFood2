@@ -1,0 +1,33 @@
+<!--find/components/newstore_recommend.wxml-->
+<view class="find">
+  <view class="newstores">
+      <view class="newstores-title">
+          新店推荐
+      </view>
+      <view class="newstores-item" wx:for="{{num1}}" wx:key="{{index}}">
+          <view class="newstores-item-head">芝芝舒芙蕾（兆丰弄店）</view>
+          <view class="newstore-item-tags">
+              <view class="newstore-tas-left">
+                  <view class="newstore-item-tag">快餐</view>
+                  <view class="newstore-item-tag">汉堡</view>
+              </view>
+              <view class="newstore-tags-right">
+                  <view class="newstore-item-tag red">50-5</view>
+                  <view class="newstore-item-tag yellow">50元优惠券</view>
+              </view>
+          </view>
+          <view class="newstore-item-add">
+              <view class="newstore-add-text">广东省广州市海珠区李颖广场088号</view>
+              <view class="newstore-add-m">
+                  <i class="iconfont icondingwei"></i>3.6km
+              </view>
+          </view>
+          <view class="newstore-item-imgs">
+              <view class="newstore-item-imgbox"><image src="./src/img/check.png" alt=""/></view>
+              <view class="newstore-item-imgbox"><image src="./src/img/noodles.png" alt=""/></view>
+              <view class="newstore-item-imgbox"><image src="./src/img/freshs.png" alt=""/></view>
+          </view>
+      </view>
+  </view>
+</view>
+

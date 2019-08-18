@@ -1,0 +1,3 @@
+<!--find/components/nearby_store.wxml-->
+<classifyHead></classifyHead>
+<classifyBody foodList="{{foodList}}"></classifyBody>

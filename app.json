@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "my/page/my_index",
+    "classify/page/classify_index",
+    "find/page/find_index",
+    "pages/index/map_index",
+    "pages/index/index",
+    "pages/link/link",
+    "member/page/menber_index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#ffac41",
+    "navigationBarTitleText": "纽约美食",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#ffac41",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/map_index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "classify/page/classify_index",
+        "text": "分类"
+      },
+      {
+        "pagePath": "find/page/find_index",
+        "text": "发现"
+      },
+      {
+        "pagePath": "member/page/menber_index",
+        "text": "会员"
+      },
+      {
+        "pagePath": "my/page/my_index",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

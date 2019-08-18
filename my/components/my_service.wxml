@@ -1,0 +1,31 @@
+<!--my/components/my_service.wxml-->
+<view class="myser">
+  <view class="myser-title">我的服务</view>
+  <view class="myser-items">
+    <view class="myser-item">
+      <i class="iconfont myser-i-left">i</i>
+      <view class="item-text">我的收藏</view>
+      <i  class=" iconfont myser-i-right">></i>
+    </view>
+    <view class="myser-item">
+      <i class="iconfont">i</i>
+      <view class="item-text">联系客服</view>
+      <i>></i>
+    </view>
+    <view class="myser-item">
+      <i class="iconfont">i</i>
+      <view class="item-text">意见反馈</view>
+      <i>></i>
+    </view>
+    <view class="myser-item">
+      <i class="iconfont">i</i>
+      <view class="item-text">我要合作</view>
+      <i>></i>
+    </view>
+    <view class="myser-item">
+      <i class="iconfont">i</i>
+      <view class="item-text">设置</view>
+      <i>></i>
+    </view>
+  </view>
+</view>
