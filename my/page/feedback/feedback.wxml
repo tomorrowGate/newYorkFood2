@@ -1,0 +1,14 @@
+<!--feedback/feedback.wxml-->
+<!-- 意见反馈 -->
+<view class="bg">
+    <view class="guestbook">
+      <textarea class="message" placeholder="请输入您的宝贵意见和建议"></textarea>
+    </view>
+    <view class="phone">
+      <input class="message" placeholder="请留下手机号码,以便我们联系您">
+    </input>
+    </view>
+    
+      <view class="submission">提交</view>
+  
+</view>

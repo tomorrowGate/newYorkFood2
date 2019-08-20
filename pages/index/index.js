@@ -87,16 +87,12 @@ Page({
       responseType: 'text',
       success(res) {
         console.log(res, "---------------------login---success")
-        wx.reLaunch({
-          /* url: "/pages/link/link" */
-          url: "/pages/index/map_index"
-        });
-        return
         if (res.data.done) {
           wx.setStorageSync("user_id", res.data.retval.user_id);//存user_id
-          //app.get_info();
+          app.get_info();
           wx.reLaunch({
-            url: "/pages/link/link"
+            /* url: "/pages/link/link" */
+            url: "/pages/index/map_index"
           });
           return;
         }

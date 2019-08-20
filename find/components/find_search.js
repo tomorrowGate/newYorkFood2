@@ -4,7 +4,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    realSearch:{
+      type:Boolean,
+      value:false
+    }
   },
 
   /**
@@ -18,6 +21,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    goRealSearch(){
+      wx.navigateTo({
+        url: '/classify/page/main_search',
+      })
+    }
   }
 })

@@ -29,6 +29,10 @@
 .my-card-icon{
   color: #ffac41;
 }
+.my-card-icon .iconfont{
+  font-size: 46rpx;
+
+}
 /* 美食黑卡 */
 .my-card-pic{
   width: 100%;
@@ -53,9 +57,11 @@
 .my-pic-title{
   height: 54rpx;
   font-size: 35rpx;
+  letter-spacing: 2rpx;
 }
 .my-pic-body{
-  font-size: 28rpx
+  font-size: 28rpx;
+  letter-spacing: 4rpx;
 }
 .my-pic-show{
   width: 166rpx;
@@ -65,4 +71,7 @@
   text-align: center;
   line-height: 54rpx;
   border-radius: 10rpx;
+}
+.iconyoujiantou{
+  font-size: 24rpx;
 }

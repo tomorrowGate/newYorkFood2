@@ -5,9 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showNum:6
+    realSearch:false
   },
-
+  goGallery(){
+    console.log(123)
+    wx.navigateTo({
+      url: '/find/page/gallery',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

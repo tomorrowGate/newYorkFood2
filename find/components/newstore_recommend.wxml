@@ -1,11 +1,14 @@
 <!--find/components/newstore_recommend.wxml-->
 <view class="find">
   <view class="newstores">
-      <view class="newstores-title">
+      <view class="newstores-title" wx:if="{{false}}">
           新店推荐
       </view>
       <view class="newstores-item" wx:for="{{num1}}" wx:key="{{index}}">
-          <view class="newstores-item-head">芝芝舒芙蕾（兆丰弄店）</view>
+          <view class="newstores-item-head">
+            芝芝舒芙蕾（兆丰弄店）
+            <text class="collection">收藏</text>
+          </view>
           <view class="newstore-item-tags">
               <view class="newstore-tas-left">
                   <view class="newstore-item-tag">快餐</view>

@@ -1,0 +1,8 @@
+<!--my/page/message_detail.wxml-->
+<view  hidden="{{false}}">
+  <view class="pagetitle" >{{title}}</view>
+
+  <view class="pagecontent">
+      <rich-text nodes="{{content}}" class="p"></rich-text>
+  </view>
+</view>

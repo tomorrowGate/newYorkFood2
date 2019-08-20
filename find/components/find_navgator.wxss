@@ -1,0 +1,28 @@
+/* find/components/find_navgator.wxss */
+@import "/app.wxss";
+.nav-items{
+  display: flex;
+  height: 13.7037037vw;
+  line-height: 13.7037037vw;
+  font-size: 4.62962963vw;
+  font-weight: bold;
+  border-bottom: 1px solid #f2f2f2;
+}
+.nav-item{
+  width: 33.33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-items .active{
+  position: relative;
+  color: #ffac41;
+}
+.active::after{
+  display: block;
+  position: absolute;
+  bottom: 0rpx;
+  content: "";
+  width:50%;
+  border:2rpx solid #ffac41
+}

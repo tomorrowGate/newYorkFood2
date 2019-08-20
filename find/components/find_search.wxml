@@ -1,6 +1,11 @@
 <!--find/components/find_search.wxml-->
-<view class="input">
-    <input type="text" class="main-search"/>
+<view class="input" wx:if="{{realSearch}}">
+    <i class="iconfont iconicon-copy" wx:if="{{false}}"></i>
+    <input type="text" class="main-search" placeholder="牛排"/>
     <i class="iconfont iconsousuo"></i>
     <view class="search-input">搜索</view>
+</view>
+<view class="input-onblure" wx:if="{{!realSearch}}" bindtap="goRealSearch">
+    <input type="text" class="main-search" disabled="{{true}}"/>
+    <view class="input-text"><i class="iconfont iconsousuo"></i><text> 牛排</text></view>
 </view>

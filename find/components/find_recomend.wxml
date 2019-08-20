@@ -1,0 +1,19 @@
+<!--find/components/find_recomend.wxml-->
+<view class="recomend">
+  <view class="recomend-title">推荐</view>
+  <view class="recommend-imgbox">
+    <image src="{{src}}"></image>
+  </view>
+  <view class="recommend-article" bindtap="goArticle">
+    <view class="rec-art-left">
+      <view class="rec-art-title">一碗超有料的拉面，100%亲测爆款！爽口劲道的浓汤拉面一碗超有料的拉面，100%亲测爆款！爽口劲道的浓汤拉面</view>
+      <view class="rec-art-bottom">
+        <view class="rec-art-aut">原创：小妮妮</view>
+        <view class="rec-art-time">2019.5.20</view>
+      </view>
+    </view>
+    <view class="rec-art-right">
+      <view class="imgbox"><image src=""></image></view>
+    </view>
+  </view>
+</view>

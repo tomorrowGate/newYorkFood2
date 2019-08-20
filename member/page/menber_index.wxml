@@ -2,24 +2,24 @@
 <!--pages/vipmember/vip.wxml-->
 <view class="content">
     <!--pics文件夹下的background.jpg文件-->
-    <image class='background' src="../../media/image/vip.png" mode="aspectFill"></image>
+    <image class='background' src="/src/img/customBg.jpg" mode="aspectFill"></image>
     <!--页面其它部分-->
 </view>
 <!-- 图片部分 -->
 <view class="image">
-  <image src="../../media/image/line_border.png" class="img"></image>
-  <image src="../../media/image/logo.png" class="logo"> </image>
+  <view class="img imgbox"> <image src="/src/img/cusBlock.png" ></image></view>
+  <image src="/src/img/cusLogo.png" class="logo"> </image>
   <view class="content1">
       <view class="title">会员黑卡</view>
-      <view class="title_name">尊享黑卡特权  享受更多优惠</view>
+      <view class="title_name">尊享黑卡特权  享受更多折扣</view>
       <view class="line"></view>
-      <view class="icon"><i class="iconfont iconfangdajing"></i></view>
+      <view class="icon"><i class="iconfont iconjiantou9"></i></view>
   </view>
 </view>
     <!-- 底部 -->
 <view class="last-one">
   <view class="top">
-    <view><i class="iconfont iconfangdajing"></i></view>
+    <view class="top-imgbox"><image src="/src/img/trangle.png"></image></view>
     <view class="title">黑卡特权</view>
   </view>
   <view class="bottom">
@@ -40,21 +40,21 @@
 
 <view class="last-two">
   <view class="top">
-    <view><i class="iconfont iconfangdajing"></i></view>
-    <view class="title">黑卡特权</view>
+    <view class="top-imgbox"><image src="/src/img/trangle.png"></image></view>
+    <view class="title">如何使用</view>
   </view>
   <view class="bottom">
     <view class="item">
-      <view>指定店铺</view>
-      <view>享受折上折</view>
+      <view>选择黑卡</view>
+      <view>优惠商家</view>
     </view>
     <view class="item">
-      <view>每周一</view>
-      <view>享五折优惠</view>
+      <view>入店消费</view>
+      <view>享受美食</view>
     </view>
     <view class="item">
-      <view>黑卡会员</view>
-      <view>特定菜品</view>
+      <view>展示黑卡</view>
+      <view>特惠买单</view>
     </view>
   </view>
 </view>

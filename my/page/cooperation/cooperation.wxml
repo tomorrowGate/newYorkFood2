@@ -1,0 +1,24 @@
+<!--cooperation/cooperation.wxml-->
+<!-- 我要合作 -->
+<view class="head">
+  <image class="img" src="../image/head.png" ></image>
+    <view class="call">纽约美食地图</view> 
+</view>
+<view class="option">
+    <text>店铺名称</text>
+</view>
+<view class="option">
+    <text>联系电话</text>
+</view>
+<view class="option">
+    <text>详细地址</text>
+</view>
+<view class="introduce">
+    <textarea class="suggest" placeholder="详情介绍"></textarea>
+    <view class="word-number">1/100</view>
+</view>
+<view class="bg">
+    <view class="submission">提交</view>
+</view>
+
+

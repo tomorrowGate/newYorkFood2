@@ -1,0 +1,87 @@
+<!--my/page/blackcard.wxml-->
+<view class="blackcard">
+  <view class="black-bg">
+
+
+  <view class="black-main-card">
+    <view class="black-card-top">
+      <view class="black-card-bg">
+        <image src="/src/img/blackcard.png"></image>
+      </view>
+      <view class="black-top-head">
+        <view class="black-imgbox">
+          <image src=""></image>
+        </view>
+        <view class="black-nick">
+          <view class="black-nick-name">小腻腻</view>
+          <view class="black-nick-id">黑卡尊享会员</view>
+        </view>
+      </view>
+      <view class="black-card-foot">
+        <view class="black-btm-item">
+          <view>指定店铺</view>
+          <view>享受折上折</view>
+        </view>
+        <view class="black-btm-item">
+          <view>每周一</view>
+          <view>享受五折优惠</view>
+        </view>
+        <view class="black-btm-item">
+          <view>黑卡会员</view>
+          <view>特定菜单</view>
+        </view>
+      </view>
+    </view>
+    <view class="black-card-btm">
+      <view>每家店将因店而异为您提供最具特色的店内美食</view>
+      <view>内容详情见每家店商铺的详情页</view> 
+    </view>
+  </view>
+  </view>
+
+
+  <view class="black-card-else">
+
+    <view class="black-card-good">
+      <view class="black-good-title">黑卡权益</view>
+      <view class="black-good-items">
+        <view class="black-good-item">
+          <view class="black-item-txt">
+            <i class="iconfont "></i>
+            自行编辑
+          </view>
+          <view class="black-item-txt">
+            <i class="iconfont "></i>
+            自行编辑
+          </view>
+          <view class="black-item-txt">
+            <i class="iconfont "></i>
+            自行编辑
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="black-card-good">
+      <view class="black-good-title">注意事项</view>
+      <view class="black-good-items">
+        <view class="black-good-item">
+          <view class="black-item-txt">
+            <i class="iconfont "></i>
+            持卡可以享受会员的尊享服务，消费时请主动出示此卡
+          </view>
+          <view class="black-item-txt">
+            <i class="iconfont "></i>
+            此卡在本公司旗下的所有连锁店内可以通用
+          </view>
+          <view class="black-item-txt">
+            此卡为实名制会员卡，仅限本人使用不可转借他人。
+            <i class="iconfont "></i>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  
+</view>

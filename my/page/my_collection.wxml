@@ -1,0 +1,2 @@
+<!--my/page/my_collection.wxml-->
+<collectReal isCollect="{{isCollect}}"></collectReal>

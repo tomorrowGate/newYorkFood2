@@ -1,0 +1,42 @@
+<!--find/components/coupon.wxml-->
+<view class="coupon">
+  <view class="coupon-title">
+    <view class="coupon-title-item">优惠</view>
+    <view class="coupon-title-item">推荐</view>
+  </view>
+  <view class="coupon-view">
+    <view class="coupon-view-text" bindtap="con">优惠券</view>
+    <view class="coupon-view-card">
+      <view class="coupon-card-left">
+        <view class="coupon-left-money">￥50</view>
+        <view class="coupon-left-condition">满100元使用</view>
+        <view class="coupon-left-bottom">周一至周日 | 部分商品可用 |</view>
+      </view>
+      <view class="coupon-card-right">
+        <view class="coupon-right-time">有效期至2019.12.30</view>
+        <view class="coupon-right-btn" bindtap="showDia">立即领取</view>
+      </view>
+    </view>
+  </view>
+</view>
+<dialog isShowDia="{{isShowDia}}">
+  <view class="coup-dia">
+    <view class="coup-dia-title">领券成功！</view>
+    <view class="coupon-view">
+      <view class="coupon-view-card">
+        <view class="coupon-card-left">
+          <view class="coupon-left-money">￥50</view>
+          <view class="coupon-left-condition">满100元使用</view>
+          <view class="coupon-left-bottom">周一至周日 | 部分商品可用 |</view>
+        </view>
+        <view class="coupon-card-right">
+          <view class="coupon-right-time">有效期至2019.12.30</view>
+          <!-- <view class="coupon-right-btn">立即领取</view> -->
+        </view>
+      </view>
+    </view>
+    <view class="coup-dia-use">使用期限：2019.12.30</view>
+    <view class="coup-dia-text">不可与满减、折扣商品、第二封搬家活动优惠同时享受、支持在线专享</view>
+    <view class="coup-sure" bindtap="sureDia">确定</view>
+  </view>
+</dialog>

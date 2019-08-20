@@ -10,6 +10,7 @@ Page({
   },
   getLocation() {
     var that = this
+    let openid = wx.getStorageSync("openid")
     wx.getLocation({
       //type: 'wgs84',
       type: 'gcj02',
@@ -19,7 +20,7 @@ Page({
         that.setData({
           "globalData.latitude": res.latitude,
           "globalData.longitude": res.longitude,
-          url: `https://nyms.wjtxmobile.com/index.php?app=nyms_homepage&act=toMapIndex&lat=${res.latitude}&lng=${res.longitude}`
+          url: `https://nyms.wjtxmobile.com/index.php?app=nyms_homepage&act=toMapIndex&lat=${res.latitude}&lng=${res.longitude}&openid=${openid}`
         })
         //var speed = res.speed
         //var accuracy = res.accuracy

@@ -1,5 +1,10 @@
 // classify/components/classify_realbody.js
 Component({
+  relations: {
+    './classify_hidebody': { //注意！必须双方组件都声明relations属性
+      type: 'parent'
+    }
+  },
   /**
    * 组件的属性列表
    */
@@ -14,6 +19,10 @@ Component({
     foodList: {
       type: Array,
       value: [1,2,3,4,5,6]
+    },
+    isCollect:{
+      type: Boolean,
+      value:false
     }
   },
 
@@ -21,6 +30,7 @@ Component({
    * 组件的初始数据
    */
   data: {
+    a:1
     /* foodList:[] */
   },
 
@@ -28,7 +38,15 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    goStoreDet(e){
+      if(e.target.dataset.id =="navigation") return
+      wx.navigateTo({
+        url: '/find/page/store_real',
+      })
+    },
+    navigation(e){
+      console.log(e)
+    }
   },
   pageLifetimes: {
     show: function () {

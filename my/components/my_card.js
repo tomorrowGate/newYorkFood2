@@ -18,6 +18,16 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    goBlack(){
+      wx.navigateTo({
+        url: '/my/page/blackcard',
+      })
+    },
+    goCardDet(e){
+      console.log(e)
+      wx.navigateTo({
+        url: `/my/page/mycard?cardType=${e.currentTarget.dataset.argu}`,
+      })
+    }
   }
 })

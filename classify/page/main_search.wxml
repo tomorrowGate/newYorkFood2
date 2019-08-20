@@ -1,0 +1,2 @@
+<!--classify/page/main_search.wxml-->
+<searchHead realSearch="{{realSearch}}"></searchHead>

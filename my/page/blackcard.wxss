@@ -1,0 +1,85 @@
+/* my/page/blackcard.wxss */
+.black-bg{
+  width: 100%;
+  height: 306rpx;
+  background: #000;
+  border: 1rpx solid #000;
+  margin-bottom: 250rpx;
+}
+.black-main-card{
+  overflow: hidden;
+  position: relative;
+  width: 702rpx;
+  height: 416rpx;
+  margin:50rpx auto 100rpx;
+  border-radius: 12rpx;
+  font-size: 26rpx;
+  box-shadow: 0rpx 10rpx 30rpx #666;
+}
+.black-card-bg{
+  position: absolute;
+  width:100%;
+  height: 100%;
+  z-index: 3
+}
+.black-card-top{
+  width: 702rpx;
+  height: 304rpx;
+  padding-bottom:52rpx;
+  color: #fff;
+  box-sizing: border-box;
+}
+.black-top-head{
+  display: flex;
+  padding: 40rpx 35rpx;
+  box-sizing: border-box;
+}
+.black-imgbox{
+  width: 104rpx;
+  height: 104rpx;
+  border-radius: 50%;
+  border:1rpx solid #ddd;
+  margin-right: 20rpx;
+}
+.black-card-foot{
+  display: flex;
+  justify-content: space-between;
+}
+.black-btm-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex:1;
+  color:  #f7e9c5;
+}
+.black-btm-item+.black-btm-item{
+  border-left: 1rpx solid #f7e9c5
+}
+.black-card-btm{
+  height: 112rpx;
+  line-height: 40rpx;
+  padding: 20rpx 35rpx;
+  box-sizing: border-box;
+  background: linear-gradient(to right,#f8ebc9,#e0c893)
+}
+
+
+.black-card-else{
+  padding: 0 20rpx;
+}
+.black-card-good{
+  padding-bottom: 20rpx;
+  font-size: 28rpx;
+}
+.black-good-title{
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 35rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  border-bottom: 1rpx solid #dfdfdf;
+}
+.black-item-txt{
+  height: 60rpx;
+  line-height: 60rpx;
+}

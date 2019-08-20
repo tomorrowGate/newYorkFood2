@@ -3,11 +3,14 @@
 .mapFood {
   background: #fff;
 }
-.div {
+.view {
   width: 100%;
-  height: 128px;
+  height: 286rpx;
+  white-space: nowrap;
 }
 .food-list {
+  position: relative;
+  display: inline-block;
   padding: 0 3.7037037vw;
   font-size: 3.7037037vw;
 }
@@ -61,6 +64,7 @@
   /* display: flex; */
   width: 52.77777778vw;
   height: 100%;
+  white-space: normal;
 }
 .food-list .content .con-item .con-center .con-cen-title {
   font-weight: bold;
@@ -116,5 +120,28 @@
 }
 .food-list .content .con-item .con-right .con-rig-meter .icondingwei {
   color: #e8af62;
-  font-size: 2.03703704vw;
+  font-size: 26rpx;
+}
+
+.con-cen-title .collection{
+   font-size: 24rpx;
+   background: #de3e22;
+   color: #fff;
+   padding: 0 16rpx;
+   border-radius: 14rpx;
+}
+
+.clear-collect{
+  position: relative;
+  display: inline-block;
+  width: 200rpx;
+  height: 276rpx;
+  line-height: 300rpx;
+  margin-left:10rpx;
+  background: #de3e22;
+  color: #fff;
+  text-align: center;
+}
+.clear-collect .text{
+  transform: translate(0rpx,-20rpx)
 }

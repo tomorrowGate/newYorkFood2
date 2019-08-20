@@ -1,0 +1,6 @@
+<!--find/page/gallery.wxml-->
+<view class="gallery">
+  <view class="gallery-pic" wx:for="{{10}}" wx:key="213">
+    <image class="gallery-img"></image>
+  </view>
+</view>

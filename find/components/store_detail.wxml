@@ -1,0 +1,23 @@
+<!--find/components/store_detail.wxml-->
+<view class="storedet">
+  <view class="stodet-head">
+    <view class="stodet-h1">芝芝舒芙蕾（兆丰弄店）</view>
+    <view class="stodel-icon">
+      <view class="stodel-icon-item"><i class="iconfont stodel-share iconfenxiang"></i><view>分享</view> </view>
+      <view class="stodel-icon-item"><i class="iconfont stodel-share iconshoucang"></i><view>收藏</view> </view>
+    </view>
+  </view>
+  <view class="stodel-tags">
+    <text class="stodel-tags-tag"> 汉堡</text>
+    <text class="stodel-tags-tag"> 快餐</text>
+  </view>
+  <view class="stodel-intro">
+    <view>随时可退 | 提前预约 | 过期提醒</view>
+    <view>营业时间：9：00-22：00</view>
+  </view>
+  <view class="stodel-rogin">
+    <view class="stodel-rogin-text">广东省广州市海珠区李颖广场088号广东省广州市海珠区李颖广场088号</view>
+    <view class="stodel-rogin-meter"><i class="iconfont icondingwei"></i>3.6km</view>
+    <view class="stodel-rogin-call" bindtap="callPhone"><i class="iconfont icondianhua1"></i></view>
+  </view>
+</view>

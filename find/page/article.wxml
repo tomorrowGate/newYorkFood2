@@ -1,0 +1,8 @@
+<!--find/page/article.wxml-->
+<view>
+  <view class="pagetitle" >{{'title'}}</view>
+  <view class="pagecontent">
+      <rich-text nodes="{{content}}" class="p"></rich-text>
+  </view>
+</view>
+

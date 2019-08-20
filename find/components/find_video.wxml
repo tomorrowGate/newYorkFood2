@@ -1,0 +1,12 @@
+<!--find/components/find_video.wxml-->
+<view class="find-video">
+  <view class="find-video-title">视频</view>
+  <scroll-view scroll-x view class="find-video-items">
+    <view class="find-video-out">
+        <view class="find-video-item" wx:for="{{3}}" wx:key="{{index}}">
+          <video src="{{src}}" controls></video>
+        </view>
+    </view>
+
+  </scroll-view>
+</view>

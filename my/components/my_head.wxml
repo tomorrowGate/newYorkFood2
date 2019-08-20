@@ -1,13 +1,14 @@
 <!--my/components/my_head.wxml-->
 <view class="myhead">
-  <view class="myhead-imgbox">
+  <view class="myhead-imgbox" bindtap="goMyInfo">
     <image src=""></image>
   </view>
   <view class="myhead-middle">
     <view class="myhead-mid-top">恷迡旎</view>
     <view class="myhead-mid-bottom">吃货的世界你不懂</view>
   </view>
-  <view class="myhead-talk">
-    <i class="iconfont talk"></i>
+  <view class="myhead-talk" bindtap="goMessage">
+    <i class="iconfont iconliaotian"><view class="myhead-bodge"></view></i>
+    
   </view>
 </view>

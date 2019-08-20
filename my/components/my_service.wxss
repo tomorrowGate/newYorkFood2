@@ -3,7 +3,8 @@
 .myser{
    padding: 0 26rpx;
    box-sizing: border-box;
-  font-size: 28rpx;
+  font-size: 30rpx;
+  padding-bottom: 80rpx;
 }
 .myser-title{
   height: 70rpx;
@@ -18,8 +19,15 @@
   justify-content: space-between;
   height: 114rpx;
   line-height: 114rpx;
+  color: #626161;
 }
 .item-text{
   width: 604rpx;
   margin: 0 16rpx;
+}
+.myser-i-left{
+  font-size: 35rpx;
+}
+.myser-i-right{
+  font-size: 22rpx;
 }

@@ -1,0 +1,21 @@
+<!--setUp/setUp.wxml-->
+<!-- 设置 -->
+<view class="head">
+  <image class="img" src="../image/head.png" ></image>
+    <view class="call">纽约美食地图</view> </view>
+<view class="option">
+<text>用户协议</text>
+<i></i>
+</view>
+<view class="option">
+<text>隐私政策</text>
+<i></i>
+</view>
+<view class="option">
+<text>关于我们</text>
+<i></i>
+</view>
+<view class="option">
+<text>版本</text>
+<text class="edition">2.13.0</text>
+</view>

@@ -1,0 +1,45 @@
+<!--information/personal.wxml-->
+<!-- 个人信息 -->
+<view class="row">
+    <text class="label">头像</text>
+    <view class="head">
+        <image class="img" src="../image/head.png"></image>
+        <i class="iconfont iconyoujiantou"></i>
+    </view>
+</view>
+<view class="row">
+    <text class="label">昵称</text>
+    <view class="name">
+        <text>时光的假面</text>
+        <i class="iconfont iconyoujiantou"></i>
+    </view>
+</view>
+<view class="row">
+    <text class="label">手机号</text>
+    <view class="phone">
+        <text>未填写</text>
+        <i class="iconfont iconyoujiantou"></i>
+    </view>
+</view>
+<view class="row">
+    <text class="label">性别</text>
+    <view class="sex">
+        <text>男</text>
+        <i class="iconfont iconyoujiantou"></i>
+    </view>
+</view>
+<view class="row">
+    <text class="label">生日</text>
+    <view class="birthday">
+        <text>1990-01-02</text>
+        <i class="iconfont iconyoujiantou"></i>
+    </view>
+</view>
+<view class="row last">
+    <text class="label">个性签名</text>
+    <view>
+        <i class="iconfont iconyoujiantou"></i>
+    </view>
+</view>
+<textarea class="personality" placeholder="编辑你的个性签名"></textarea>
+

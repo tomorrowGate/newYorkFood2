@@ -1,0 +1,20 @@
+/* find/page/store_real.wxss */
+swiper{
+  position: relative;
+}
+.swiper-pic-bodge{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right:50rpx;
+  bottom:30rpx;
+  width: 98rpx;
+  height: 98rpx;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-size: 26rpx;
+  z-index: 10;
+}

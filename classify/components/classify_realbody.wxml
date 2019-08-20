@@ -1,8 +1,8 @@
 <!--classify/components/classify_realbody.wxml-->
 <view class="mapFood" id="mapFood">
-  <view class="view" wx:for="{{foodList}}" wx:key="{{index}}">
-    <view class="food-list">
-      <view class="content">
+  <scroll-view scroll-x class="view" wx:for="{{foodList}}" wx:key="{{index}}">
+    <view class="food-list" >
+      <view class="content" bindtap="goStoreDet" data-id="StoreDet">
         <view class="con-item">
           <view class="con-left">
             <view class="imgbox">
@@ -12,7 +12,9 @@
           </view>
           <view class="out">
             <view class="con-center">
-              <view class="con-cen-title">阿婆家常菜</view>
+              <view class="con-cen-title">
+              阿婆家常菜 <text class="collection">收藏</text>
+              </view>
               <view class="con-cen-tags">
                 <view class="con-cen-tag">快餐</view>
                 <view class="con-cen-tag">汉堡</view>
@@ -25,16 +27,16 @@
               </view>
             </view>
             <view class="con-right">
-              <view class="con-rig-tag yellow" wx:if="{{false}}">自动导航</view>
+              <view class="con-rig-tag yellow" wx:if="{{true}}" bindtap="navigation" data-id="navigation">自动导航</view>
               <view class="con-rig-meter">
                 <i class="iconfont icondingwei"></i>
                 <span>500m</span>
               </view>
             </view>
           </view>
-
         </view>
       </view>
     </view>
-  </view>
+    <view class="clear-collect" wx:if="{{isCollect}}"><view class="text">取消收藏</view> </view>
+  </scroll-view>
 </view>

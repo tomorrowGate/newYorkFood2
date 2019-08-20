@@ -23,9 +23,10 @@
   height: 62.03703704vw;
   font-size: 3.24074074vw;
   background: #fff;
-  margin-bottom: 2.96296296vw;
+  margin-top: 2.96296296vw;
 }
 .find .hotrecomend .hotrec-item .hotrec-item-imgbox {
+  position: relative;
   width: 46.2962963vw;
   height: 262rpx;
   /* height: 384/@r; */
@@ -53,4 +54,15 @@
   background: #ffe1ec;
   color: #e87363;
   margin-right: 1.85185185vw;
+}
+
+.hotrec-item-imgbox .collection{
+  position: absolute;
+  top:10rpx;
+  left:10rpx;
+   font-size: 24rpx;
+   background: #de3e22;
+   color: #fff;
+   padding: 0 16rpx;
+   border-radius: 14rpx;
 }

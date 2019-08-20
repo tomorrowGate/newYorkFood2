@@ -1,0 +1,75 @@
+/* information/personal.wxss */
+/* 个人信息 */
+
+.row{
+height:120rpx;
+border-bottom: 2px solid #f2f2f2;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin: 0 30rpx;
+letter-spacing: 2rpx;
+
+}
+.row:first-child{
+  margin-top: 38rpx;
+  
+}
+.last{
+  border-bottom: none;
+}
+.label{
+  line-height: 120rpx;
+  font-size: 36rpx;
+}
+.img{
+  height: 100rpx;
+  width: 100rpx;
+  border: 1px solid #f2f2f2;
+  border-radius: 50%;
+}
+.head{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+ color: #8c8c8c;
+  width: 180rpx;
+}
+.name{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  width: 250rpx;
+  color: #8c8c8c;
+ }
+.phone{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  width: 180rpx;
+  color: #8c8c8c;
+}
+.sex{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  width: 110rpx;
+  color: #8c8c8c;
+}
+.birthday{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  width: 290rpx;
+  color: #8c8c8c;
+}
+.iconyoujiantou{
+  color: #8c8c8c;
+}
+.personality{
+  padding: 20rpx 40rpx;
+  letter-spacing: 5rpx;
+  font-size: 32rpx;
+}
+
+

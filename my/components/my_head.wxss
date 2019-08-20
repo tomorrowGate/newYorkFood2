@@ -20,7 +20,7 @@
   flex-direction: column;
   width: 448rpx;
   padding: 86rpx 0;
-  margin-left: 16rpx;
+  margin-left: 24rpx;
   box-sizing: border-box;
   font-size: 32rpx;
 }
@@ -33,5 +33,19 @@
 .myhead .myhead-talk{
   width: 120rpx;
   height: 100%;
-  background: #f0f;
+  text-align: center;
+  line-height: 255rpx;
+}
+.iconliaotian{
+  position: relative;
+  font-size: 50rpx;
+}
+.myhead-bodge{
+  position: absolute;
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background: #f00;
+  top:0px;
+  right: 0px;
 }

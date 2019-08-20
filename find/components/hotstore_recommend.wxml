@@ -1,13 +1,14 @@
 <!--find/components/hotstore_recommend.wxml-->
 <view class="find">
   <view class="hotrecomend">
-    <view class="hotrec-title">
+    <view class="hotrec-title" wx:if="{{false}}">
       热门推荐
     </view>
     <view class="hotrec-con">
       <view class="hotrec-item" wx:for="{{num2}}" wx:key="{{index}}">
         <view class="hotrec-item-imgbox">
           <image src="./src/img/hambaobaos.png" alt="" />
+          <text class="collection">收藏</text>
         </view>
         <view class="hotrec-item-text">
           <view class="hotrec-item-foodname">阿婆家常菜</view>

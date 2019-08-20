@@ -1,0 +1,2 @@
+<!--my/page/collect.wxml-->
+<collect isCollect="{{isCollect}}"></collect> 

@@ -88,4 +88,26 @@ page{
   color: #e1a74f;
 }
 
-
+.scroll-view .all-city{
+  display: flex;
+  padding: 0
+}
+.all-city-left{
+  width: 174rpx;
+}
+.all-city-left .all-food-item{
+  text-align: center;
+}
+.acllcity{
+  padding-top: 20rpx;
+}
+.all-city .all-left-item{
+  background: #f3f3f3;
+  color: #e39b37;
+  text-align: center;
+}
+.all-city-right{
+  flex: 1;
+  padding: 20rpx;
+  background: #f3f3f3;
+}

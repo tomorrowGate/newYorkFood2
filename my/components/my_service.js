@@ -18,6 +18,30 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    goCustomer(){
+      /* wx.navigateTo({
+        url: '/my/page/',
+      }) */
+    },
+    goCollect(){
+      wx.navigateTo({
+        url: '/my/page/collect',
+      })
+    },
+    goFeedback(){
+      wx.navigateTo({
+        url: '/my/page/feedback/feedback',
+      })
+    },
+    goCooperation(){
+      wx.navigateTo({
+        url: '/my/page/cooperation/cooperation',
+      })
+    },
+    goSetUp(){
+      wx.navigateTo({
+        url: '/my/page/setup/setUp',
+      })
+    }
   }
 })

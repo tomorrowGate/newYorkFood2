@@ -1,5 +1,5 @@
 <!--classify/components/classify_head.wxml-->
-<view class="classify find-search" v-show="isShowTitle" id="classify"  catchtouchmove="true">
+<view class="classify find-search" v-show="isShowTitle" id="classify" ><!-- catchtouchmove="true" -->
   <view class="search-neck">
     <view class="sear-top-all sear-top-long {{classify.isActive==1?'active':''}}" bindtap="changeItem" data-index="{{1}}">
       <text>全部美食</text>
@@ -9,12 +9,13 @@
       <text> 智能排序</text>
       <i class="iconfont iconjiantou9"></i>
     </view>
-    <view class="sear-top-all sear-top-short {{classify.isActive==3?'active':''}}" bindtap="fullCut" data-index="{{3}}">
-      <text> 满减 </text>
+    <view class="sear-top-all sear-top-short {{classify.isActive==3?'active':''}}" bindtap="changeItem" data-index="{{3}}">
+      <text> 全城 </text>
+      <i class="iconfont iconjiantou9"></i>
     </view>
-    <view class="sear-top-all sear-top-long {{classify.isActive==4?'active':''}}" bindtap="haveCus" data-index="{{4}}">
+    <!-- <view class="sear-top-all sear-top-long {{classify.isActive==4?'active':''}}" bindtap="haveCus" data-index="{{4}}">
       <text> 有优惠券</text>
-    </view>
+    </view> -->
     <view class="sear-top-all sear-top-short {{classify.isActive==5?'active':''}}" bindtap="changeItem" data-index="{{5}}">
       <text> 筛选 </text>
       <i class="iconfont iconshaixuan"></i>

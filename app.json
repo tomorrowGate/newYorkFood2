@@ -1,12 +1,21 @@
 {
   "pages": [
-    "my/page/my_index",
     "classify/page/classify_index",
-    "find/page/find_index",
     "pages/index/map_index",
+    "my/page/my_index",
+    "find/page/store_real",
+    "find/page/find_index",
+    "member/page/menber_index",
     "pages/index/index",
     "pages/link/link",
-    "member/page/menber_index"
+    "classify/page/main_search",
+    "find/page/gallery",
+    "my/page/message_detail",
+    "my/page/blackcard",
+    "my/page/message/Message",
+    "my/page/mycard",
+    "my/page/my_collection",
+    "find/page/article"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -22,22 +31,32 @@
     "list": [
       {
         "pagePath": "pages/index/map_index",
+        "iconPath": "/src/img/shouye.png",
+        "selectedIconPath": "/src/img/Ashouye.png",
         "text": "首页"
       },
       {
         "pagePath": "classify/page/classify_index",
+        "iconPath": "/src/img/fenlei.png",
+        "selectedIconPath": "/src/img/Afenlei.png",
         "text": "分类"
       },
       {
         "pagePath": "find/page/find_index",
+        "iconPath": "/src/img/faxian.png",
+        "selectedIconPath": "/src/img/Afaxian.png",
         "text": "发现"
       },
       {
         "pagePath": "member/page/menber_index",
+        "iconPath": "/src/img/huiyuan.png",
+        "selectedIconPath": "/src/img/Ahuiyuan.png",
         "text": "会员"
       },
       {
         "pagePath": "my/page/my_index",
+        "iconPath": "/src/img/wode.png",
+        "selectedIconPath": "/src/img/Awode.png",
         "text": "我的"
       }
     ]

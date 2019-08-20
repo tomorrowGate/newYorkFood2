@@ -1,0 +1,268 @@
+/* my/page/mycard.wxss */
+page{
+  background: #f2f2f2;
+}
+.mycard{
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.mycard .mycard-h1{
+  height: 70rpx;
+  line-height: 70rpx;
+  font-weight: bold;
+  font-size: 35rpx;
+  padding: 0 20rpx;
+  border-bottom: 1rpx solid #dfdfdf;
+  background: #fff;
+  box-sizing: border-box;
+}
+.mycard .mycard-items{
+  display: flex;
+  background: #fff;
+}
+.mycard .mycard-items .my-card-item{
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 194rpx;
+  padding: 42rpx 0;
+  box-sizing: border-box;
+}
+.my-card-icon{
+  color: #666;
+}
+.mycard .mycard-items .mycard-active{
+  color: #ffac41;
+}
+.my-card-icon .iconfont{
+  font-size: 46rpx;
+}
+
+.card-body{
+  padding: 0 26rpx 32rpx;
+ font-size: 28rpx;
+ margin-top: 30rpx
+}
+.card-body-item{
+ width: 700rpx;
+  height: 270rpx;
+  margin: 0 auto;
+  background: #fff;
+}
+.card-item-up{
+  width: 100%;
+  height: 158rpx;
+  padding: 0 20rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx dashed #666;
+  box-sizing: border-box;
+}
+.card-item-imgbox{
+  width: 102rpx;
+  height: 102rpx;
+  margin-right: 20rpx;
+  background: #ccc;
+}
+.card-item-mid{
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction: column;
+  width: 370rpx;
+  height: 100%;
+  line-height: 55rpx;
+}
+.card-mid-top{
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.card-mid-tag{
+  width: 100rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  text-align: center;
+  border: 1rpx solid #ccc;
+  font-size: 24rpx;
+  padding: 2rpx 6rpx;
+
+}
+.card-item-right{
+  width: 162rpx;
+  height:138rpx; 
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  flex-direction: column;
+}
+.card-item-money{
+  font-size: 60rpx;
+  color: #ff625e;
+}
+.card-item-money text{
+  font-size: 28rpx;
+}
+.card-item-filter{
+  color: #bbb;
+}
+.card-item-down{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  /* height: 97rpx; */
+  padding: 21rpx 42rpx;
+  box-sizing: border-box;
+  color: #666;
+}
+.card-item-text{
+  width: 450rpx;
+}
+.use-rightnow{
+  height: 34rpx;
+  line-height: 34rpx;
+  padding: 10rpx 20rpx;
+  border-radius: 8rpx;
+  color: #fff;
+  text-align: center;
+  background: #e39b37;
+}
+.card-left-ball,.card-right-ball{
+  position: absolute;
+  width:30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  background: #f2f2f2;
+  top:-15rpx;
+}
+.card-left-ball{
+  left: -15rpx;
+}
+.card-right-ball{
+  right:-15rpx;
+}
+
+.dia-card{
+  height: 650rpx;
+  font-size: 24rpx;
+  background: #fff;
+  border-radius: 16rpx;
+}
+.dia-card-top{
+  height: 186rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1rpx dashed #666;
+}
+.dia-top-left{
+  width: 142rpx;
+  height: 120rpx;
+  margin-left: 20rpx;
+  text-align: center;
+}
+.dia-left-money{
+  font-size: 22rpx;
+  color: #ff625e;
+}
+.dia-left-money text{
+  font-size: 50rpx;
+}
+.dia-left-text{
+  color: #999;
+}
+.dia-top-right{
+  padding: 30rpx 0;
+  width: 384rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  box-sizing: border-box
+}
+.dia-right-store{
+  font-weight: bold;
+}
+.dia-right-region{
+  display: flex;
+  color: #999;
+}
+.dia-right-add{
+  width: 282rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dia-right-date{
+  color: #ffac41;
+}
+
+.dia-card-bottom{
+  position: relative;
+  width: 100%;
+}
+.ewm-box{
+  position: relative;
+  width: 280rpx;
+  height: 280rpx;
+  background: #ccc;
+  margin: 20rpx auto;
+}
+.iconyishiyong1,.iconyiguoqi{
+  position: absolute;
+  bottom: -30rpx;
+  right: -90rpx;
+  font-size: 180rpx;
+}
+
+.useit{
+  width: 350rpx;
+  height: 54rpx;
+  line-height: 54rpx;
+  margin: 30rpx auto;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  border-radius: 27rpx;
+  background: #e39b37;
+}
+.dia-ball-l,.dia-ball-r{
+  position: absolute;
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 12rpx;
+  background: rgba(0,0,0,0);
+  top:-30rpx;
+}
+.dia-ball-l{
+  left: -12rpx
+}
+.dia-ball-r{
+  right: -12rpx
+}
+
+.had-used{
+  background: #bdbdbd;
+  color: #fff;
+}
+
+.are-you-sure{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.sure-agin{
+  line-height: 50rpx;
+  color: #e39b37;
+}
+.yeah{
+  font-size: 38rpx;
+  font-weight: bold;
+  line-height: 150rpx;
+}
+
+.gray{
+  filter: grayscale(100%);
+}

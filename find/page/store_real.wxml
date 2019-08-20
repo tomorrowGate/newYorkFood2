@@ -1,0 +1,11 @@
+<!--find/page/store_real.wxml-->
+<swiper>
+  <view class="swiper-pic-bodge" bindtap="goGallery">
+    <i class="iconfont iconxiangce"></i>
+    <text class="swiper-pic-text">24张</text>
+  </view>
+</swiper>
+<storeDet ></storeDet>
+<coupon  bind:myevent="aa"></coupon>
+<findRecom></findRecom>
+<findVideo></findVideo>

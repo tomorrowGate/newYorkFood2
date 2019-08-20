@@ -1,0 +1,18 @@
+<!--Message/Message.wxml-->
+
+    <view class="nav">
+        <view class="notice {{showAct==0?'active':''}}" bindtap="changTab" data-argu="0">通知</view>
+        <view bindtap="changTab" class="notice {{showAct==1?'active':''}}" data-argu="1">优惠</view>
+    </view>
+
+<view class="row" bindtap="goMsgDet">
+  <image class="img" src="../image/head.png"></image>
+  <view class="food-bulletin">
+      <text class="announcement">美食公告</text>
+      <view class="preferential">今日首笔任意消费618可获得精.....</view>
+  </view>
+  <view class="time">
+      <text  class="preferential">两天前</text>
+      <view class="punctuation"></view>
+  </view>
+</view>

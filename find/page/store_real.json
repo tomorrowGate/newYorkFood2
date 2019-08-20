@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "swiper": "/find/components/swiper",
+    "storeDet":"/find/components/store_detail",
+    "coupon":"/find/components/coupon",
+    "findRecom":"/find/components/find_recomend",
+    "findVideo":"/find/components/find_video"
+  }
+}
