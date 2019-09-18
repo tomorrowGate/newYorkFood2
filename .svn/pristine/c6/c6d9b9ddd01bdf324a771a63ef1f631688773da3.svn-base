@@ -1,0 +1,207 @@
+// my/page/my_setinfo.js
+let app = getApp()
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    language: '',
+    hidden: false,
+    date: '',
+    radioChanged:0,//单选框的值（value）
+
+    storeInfo:{
+      tel:"",
+      isErro:false
+    },
+    sign:"",//文本框的值
+
+    submitType:0,
+    subData:{
+      user_id: wx.getStorageSync("user_id"),
+      type:"",
+      phone_mob:"",
+      gender:"",
+      birthday:"",
+      sign:"",
+      cOre: wx.getStorageSync("langIndex"),
+    }
+  },
+  radioChange: function (e) {
+    let checked = e.detail.value
+    console.log(checked)
+    this.setData({
+      radioChanged: e.detail.value
+    })
+    
+  },
+  bindDateChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      date: e.detail.value,
+      
+    })
+  },
+  setPhone(e){
+    this.setData({
+      "storeInfo.tel": e.detail.value
+    })
+    //console.log(this.data.storeInfo.tel, 296)
+  },
+  checkPhone(str) {
+    //检验是否符合手机号
+    return new Promise((resove, rej) => {
+      let telErr = wx.getStorageSync("langIndex") ? "Error phone number" : "手机号码有问题"
+      let reg = /^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])\d{8}$/
+      if (reg.test(str)) {
+        this.setData({
+          "storeInfo.isErro": false,
+          "storeInfo.tel": str
+        })
+        resove(str)
+      } else {
+        wx.showToast({
+          title: telErr,
+          icon: 'none',
+        })
+        this.setData({
+          "storeInfo.isErro": true
+        })
+        rej(str)
+      }
+    })
+  },
+  bindTextArea(e){
+    this.setData({
+      sign: e.detail.value
+    })
+  },
+  formRequ(data){
+    let that = this
+    let user_id = this.data.user_id
+    let title = wx.getStorageSync("langIndex") ? "submiting" : "正在提交"
+    wx.showLoading({
+      title,
+    })
+    wx.request({
+      url: `${app.globalData.url}/index.php?app=nyms_myinfo&act=modifyMyInfo`,
+      data,
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      success(res) {
+        console.log(res, 139)
+        wx.hideLoading()
+        if(res.data.done){
+          wx.navigateBack({
+            delta: 1
+          })
+        }else{
+          wx.showToast({
+            icon:'none',
+            title: res.data.msg,
+          })
+        }
+        
+      },
+      fail(err) {
+        console.log(err)
+      },
+      complete(data) {
+        //console.log(data)
+      }
+    })
+  },
+  submit(){
+    let subData = {...this.data.subData}
+    switch (this.data.submitType){
+      case '1':
+        this.checkPhone(this.data.storeInfo.tel)
+        .then((ret)=>{
+          subData.phone_mob = ret
+          subData.type = "phone"
+          console.log(subData)
+          this.formRequ(subData,"phone")
+        })
+        .catch(err=>{
+          console.log(err)
+        })
+        break;
+      case '2':
+        console.log(this.data.radioChanged,80)
+        subData.gender = this.data.radioChanged
+        subData.type = "gender"
+        this.formRequ(subData)
+        break;
+      case '3':
+        subData.birthday = this.data.date
+        subData.type = "birthday"
+        console.log(subData, "生日")
+        this.formRequ(subData)
+        break;
+      case '4':
+        console.log(this.data.sign)
+        subData.sign = this.data.sign
+        subData.type = "sign"
+        console.log(subData)
+        this.formRequ(subData)
+    }
+  },
+  setLanguage() {
+    this.setData({
+      language: wx.T.getLanguage()
+    });
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.setData({
+      submitType: options.type,
+      'subData.user_id': wx.getStorageSync("user_id"),
+      cOre: wx.getStorageSync("langIndex"),
+    })
+    this.setLanguage();
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    if (wx.getStorageSync('gender') == "男"){
+      this.setData({
+        radioChanged:1
+      })
+    } else if(wx.getStorageSync('gender') == "女"){
+      this.setData({
+        radioChanged: 0
+      })
+    }else{
+      this.setData({
+        radioChanged: 2
+      })
+    }
+    this.setData({
+      'storeInfo.tel': wx.getStorageSync('phone_mob'),
+      gender: wx.getStorageSync('gender'),
+      date: wx.getStorageSync('birthday'),
+      sign: wx.getStorageSync('sign'),
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+})

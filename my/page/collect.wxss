@@ -1,1 +1,8 @@
 /* my/page/collect.wxss */
+.nodata-index {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-90%);
+  text-align: center;
+}

@@ -1,0 +1,7 @@
+<!--find/components/dialog.wxml-->
+<view class="dialog" hidden="{{isShowDia}}">
+  <view class="dialog-mask" bindtap="cencleDia"></view>
+  <view class="dialog-main">
+    <slot></slot>
+  </view>
+</view>

@@ -1,0 +1,31 @@
+/* find/components/find_list.wxss */
+@import "/app.wxss";
+body{
+  background: #f2f2f2;
+}
+.scroll {
+  display: flex;
+  height: 230rpx;
+  font-size: 26rpx;
+  background: #fff;
+  margin-top: 50rpx;
+  /* margin-bottom: 30rpx; */
+}
+.scroll .scroll-item {
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.scroll .scroll-item .imgbox {
+  width: 94rpx;
+  height: 94rpx;
+}
+.scroll .scroll-item .imgbox img {
+  width: 100%;
+  height: 100%;
+}
+.scroll .scroll-item .scroll-text {
+  margin-top: 20rpx;
+}

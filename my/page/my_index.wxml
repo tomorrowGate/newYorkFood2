@@ -1,4 +1,14 @@
 <!--my/page/my_index.wxml-->
-<myHead></myHead>
-<myCard></myCard>
-<mySer></mySer>
+<view class="chang-lang" wx:if="{{false}}">
+  <view class="changeLan-ul {{isLanActive?'langs-active':''}}">
+      <view class="lang-item" bindtap="showLang">{{selectItem}}</view>
+      <view class="lang-item" bindtap="hideLang" data-name="中文" data-value="{{0}}">中文</view>
+      <view class="lang-item" bindtap="hideLang" data-name="English" data-value="{{1}}">English</view>
+  </view>
+</view>
+<myHead language="{{language}}"></myHead>
+<myCard language="{{language}}"></myCard>
+<mySer language="{{language}}"></mySer>
+
+<view class="my-index-mask" wx:if="{{!user_id}}">
+</view>

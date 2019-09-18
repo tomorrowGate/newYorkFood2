@@ -1,0 +1,44 @@
+<!--classify/components/classify_realbody.wxml-->
+<view class="mapFood" id="mapFood" >
+  <scroll-view scroll-x class="view" wx:for="{{foodList}}" wx:key="{{index}}">
+    <view class="food-list" >
+      <view class="content" bindtap="goStoreDet" data-id="StoreDet" data-storeid="{{item.store_id}}">
+        <view class="con-item">
+          <view class="con-left">
+            <view class="imgbox">
+              <image src="{{globelUrl}}{{item.store_logo}}" alt="" class="con-img"/>
+            </view>
+            <view class="con-say" wx:if="{{item.coupon_str.length>0}}">{{language.coupon}}</view>
+          </view>
+          <view class="out">
+            <view class="con-center">
+              <view class="con-cen-title">
+              {{item.store_name}} <text class="collection" wx:if="{{item.has_collect>0}}">{{language.collection}}</text>
+              </view>
+              <view class="con-cen-tags">
+                <view class="con-cen-tag" wx:for="{{item.showTags_str}}" wx:for-item="v" wx:key="{{index}}">{{v}}</view>
+              </view>
+              <view class="con-cen-palce">{{item.address}}</view>
+              <view class="con-cen-foot">
+                <view class="con-cen-foottag red" wx:for="{{item.showCoupon_str}}" wx:for-item="v" wx:key="{{index}}">{{v}}</view>
+                <view class="con-cen-foottag yellow" wx-if="{{false}}">50元优惠券</view>
+              </view>
+            </view>
+            <view class="con-right">
+              <view class="con-rig-tag yellow" wx:if="{{true}}" bindtap="navigation" data-cuslat="{{item.lat}}" data-cuslng="{{item.lng}}" data-id="navigation">{{language.navigation}}</view>
+              <view class="con-rig-meter">
+                <i class="iconfont icondingwei"></i>
+                <span>{{item.showDistance}}</span>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="clear-collect" wx:if="{{isCollect}}" bindtap="cancelThis" data-item_id="{{item.store_id}}"><view class="text">{{language.cancelCollect}}</view> </view>
+
+  </scroll-view>
+  <!-- <view class="search-none" wx:if="{{foodList.length<=0}}">{{getAllArgu.cOre?"Temporarily no data":"暂无数据"}}</view> -->
+  <slot></slot>
+  
+</view>

@@ -1,0 +1,105 @@
+// pica/pages/pica_service/pica_serviceDetail.js
+var app = getApp();
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    index: '0',
+    title: "",
+    time: "",
+    content: "",
+    isBrandOrUni: false,
+    message_result:{}//消息对象
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    console.log(options); 
+    let m_id =options.m_id;
+    this.getMessagebyid(m_id);
+  },
+  getMessagebyid: function (m_id) {
+    var that = this;
+    wx.showLoading({
+      title: '正在加载',
+    })
+    wx.request({
+      url: app.globalData.url + 'index.php?app=nyms_myinfo&act=getMessageById',
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      data: {
+        m_id:m_id,
+        user_id:380
+      },
+      success: function (res) {
+        if (res.data.done) {
+          that.setData({
+            message_result:res.data.retval
+          })
+          if (res.data.retval.is_read>0){
+            
+          }
+        } else {
+
+        }
+        wx.hideLoading();
+
+      },
+      fail: function (err) {
+        console.log(err);
+      },
+      complete: function (res) {
+        console.log(res);
+      }
+    })
+  },
+  
+  
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+})

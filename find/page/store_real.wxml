@@ -1,11 +1,28 @@
 <!--find/page/store_real.wxml-->
-<swiper>
-  <view class="swiper-pic-bodge" bindtap="goGallery">
-    <i class="iconfont iconxiangce"></i>
-    <text class="swiper-pic-text">24张</text>
+
+<!-- <skeleton selector="skeleton" loading="spin" bgcolor="#FFF" wx:if="{{showSkeleton}}"></skeleton> -->
+<scroll-view 
+scroll-into-view="{{toView}}" 
+scroll-y="true" class="scr " 
+style="height:100vh;" 
+bindscroll="scrollTopFun"
+scroll-with-animation="true">
+  <swiper lunbo_info="{{lunbo_info}}" class="real-banner skeleton">
+    <view class="swiper-pic-bodge" bindtap="goGallery">
+      <i class="iconfont iconxiangce"></i>
+      <text class="swiper-pic-text">{{lunbo_count}}</text>
+    </view>
+  </swiper>
+  <storeDet store_info="{{store_info}}" tag_info="{{tag_info}}" class=" skeleton"></storeDet>
+
+  <view class=" coupon-title {{scrollTop? 'topnavFixed' : ''}}" id="couponTitle">
+    <view class="coupon-title-item" bindtap='jumpTo' data-opt="storeCoupon">{{language.storeDetail[0]}}</view>
+    <view class="coupon-title-item" bindtap='jumpTo' data-opt="storeRecom">{{language.storeDetail[1]}}</view>
+    <view class="coupon-title-item" bindtap='jumpTo' data-opt="storeVideo">{{language.storeDetail[2]}}</view>
   </view>
-</swiper>
-<storeDet ></storeDet>
-<coupon  bind:myevent="aa"></coupon>
-<findRecom></findRecom>
-<findVideo></findVideo>
+
+  <coupon id="storeCoupon" bind:myevent="aa" coupon_info="{{coupon_info}}"></coupon>
+  <findRecom id="storeRecom" article_info="{{article_info}}" tuijian_info="{{tuijian_info}}"></findRecom>
+  <findVideo id="storeVideo" video_info="{{video_info}}"></findVideo>
+
+</scroll-view>

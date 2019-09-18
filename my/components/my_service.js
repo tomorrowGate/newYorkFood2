@@ -4,14 +4,17 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    language: {
+      type: Object,
+      value: wx.T.getLanguage(),
+    }
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-
+    language: '',
   },
 
   /**
@@ -42,6 +45,29 @@ Component({
       wx.navigateTo({
         url: '/my/page/setup/setUp',
       })
-    }
-  }
+    },
+    setLanguage() {
+      this.setData({
+        language: wx.T.getLanguage()
+      });
+    },
+  },
+
+  pageLifetimes: {
+    show: function () {
+      this.setLanguage();
+
+    },
+  },
+  lifetimes: {
+    attached: function () {
+      // 在组件实例进入页面节点树时执行
+      this.setData({
+        langIndex: wx.getStorageSync('langIndex')
+      });
+    },
+    detached: function () {
+      // 在组件实例被从页面节点树移除时执行
+    },
+  },
 })

@@ -1,0 +1,207 @@
+// classify/components/classify_head.js
+let app=getApp()
+import event from '../../utils/event'
+
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+    selectTags:{
+      type:Array,
+      value:[],
+      observer:function(){
+
+      }
+    },
+    scategory:{
+      type: Array,
+      value: [],
+      observer: function () {
+
+      }
+    },
+    tag_info:{
+      type: Array,
+      value: [],
+      observer: function () {
+
+      }
+    },
+  },
+
+  /**
+   * 组件的初始数据
+   */
+  data: {
+    classify:{
+      isActive:0,
+      e:null
+    },
+    tagname:"",
+    sortName:"",
+    filterName:false,
+    preSid:false,
+
+    scateid:0,
+    startScategory:0,
+
+    language: '',
+
+    getAllArgu: {
+      is_search: 1,
+      lat: wx.getStorageSync('lat'),
+      lng: wx.getStorageSync('lng'),
+
+      tag_id: 0,
+      sort: 0,
+      city: 0,
+      onlyhascoupon: 0,
+      onlynew: 0,
+      onlyFullReduce: 0,
+      scategory: 0,
+      search_str: 0,
+      start: 0,
+    },
+  },
+
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    doNothing(){
+
+    },
+    fromHideBody(e){
+      let realData = e.detail
+      this.triggerEvent('renderRealData', realData, true)//第三个参数为事件是否可以穿过边界
+    },
+    changeItem(e){
+      this.setData({
+        "classify.isActive": e.currentTarget.dataset.index,
+        "classify.e":e
+      })
+    },
+
+    //获取标签和菜系
+    getHomepageInfo() {
+      let that = this
+      console.log(wx.getStorageSync("langIndex"),'标签菜系')
+      wx.request({
+        url: `${app.globalData.url}index.php?app=nyms_homepage&act=getHomepageInfo`,
+        data: {
+          cOre: wx.getStorageSync("langIndex")
+        },
+        header: { 'content-type': 'application/x-www-form-urlencoded', },
+        method: 'POST',
+        dataType: 'json',
+        success(res) {
+          //console.log(res)
+          if (res.data.done) {
+            let { tag_info, scategory } = res.data.retval
+            //console.log(scategory,75)
+            that.setData({
+              'tag_info': tag_info,
+              'scategory':scategory
+            })
+            //that.triggerEvent('getTags', { tag_info, scategory })
+            //app.globalData.scategory = scategory
+          }
+
+        },
+        fail(err) {
+          console.log(err)
+        },
+        complete(data) {
+          //console.log(data)
+        }
+      })
+    },
+
+    //按菜系搜索 app.globalData.renderRealData = [...realData]
+    searchScategory(e){
+      let scateid = e.currentTarget.dataset.scateid
+
+      if (!this.data.preSid) {
+        this.setData({
+          "getAllArgu.is_search": 1,
+          preSid: scateid,
+          "getAllArgu.scategory": scateid
+        })
+      } else {
+        if (this.data.preSid == scateid) {
+          this.setData({
+            "getAllArgu.is_search": 1,
+            preSid: false,
+            "getAllArgu.scategory": 0
+          })
+          console.log('相同')
+        } else {
+          this.setData({
+            "getAllArgu.is_search": 1,
+            preSid: scateid,
+            "getAllArgu.scategory": scateid
+          })
+          console.log('不相同')
+        }
+      }
+      
+      let argus = { ...this.data.getAllArgu }
+      this.triggerEvent("fromChild", { scategory: argus.scategory}, true)
+    },
+    fromChild(e){
+      let argus = e.detail
+      this.triggerEvent("fromChild", argus, true)
+    },
+    changeTag(data){
+      //console.log("收到")
+      let tagname = data.detail
+      this.setData({
+        tagname,
+      })
+    },
+    changeSort(data){
+      //console.log("收到2")
+      let i = data.detail
+      let table = []
+      if (wx.getStorageSync("langIndex")==0){
+         table = ['智能排序', '离我最近', '人气最高']//表驱动
+      }else{
+         table = ['sort', 'Just close to me', 'Just most popular']
+      }
+      
+      this.setData({
+        sortName: table[i]
+      })
+    },
+    chageFilter(e){
+      this.setData({
+        filterName: e.detail
+      })
+    },
+    setLanguage() {
+      this.setData({
+        language: wx.T.getLanguage()
+      });
+    }
+  },
+  
+  pageLifetimes: {
+    show: function () {
+      this.getHomepageInfo()
+    },
+  },
+  lifetimes: {
+    attached: function () {
+      // 在组件实例进入页面节点树时执行
+      this.setData({
+        'getAllArgu.lat': wx.getStorageSync('lat'),
+        'getAllArgu.lng': wx.getStorageSync('lng'),
+        'getAllArgu.cOre': wx.getStorageSync('langIndex'),
+      })
+
+      this.setLanguage();	// (1)
+      event.on("languageChanged", this, this.setLanguage); // (2)
+    },
+  },
+})

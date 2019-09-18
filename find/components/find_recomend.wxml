@@ -1,19 +1,31 @@
 <!--find/components/find_recomend.wxml-->
 <view class="recomend">
-  <view class="recomend-title">推荐</view>
-  <view class="recommend-imgbox">
-    <image src="{{src}}"></image>
+  <view class="recomend-title">{{language.storeDetail[1]}}</view>
+    <view class="nodata-yet" wx:if="{{!tuijian_info&&(article_info.length<=0)}}">{{language.newTips[1]}}</view>
+  <view class="recommend-imgbox" wx:if="{{tuijian_info}}">
+    <image 
+    src="{{appurl+tuijian_info.picture}}" 
+    bindtap="goArticle" 
+    data-article_id="{{tuijian_info.article_id}}" 
+    data-link2="{{tuijian_info.link2}}"></image>
+    <view class="recommend-img-title">{{tuijian_info.title}}</view>
   </view>
-  <view class="recommend-article" bindtap="goArticle">
+  <view 
+  class="recommend-article" 
+  bindtap="goArticle" 
+  wx:for="{{article_info}}" 
+  wx:key="{{index}}" 
+  data-article_id="{{item.article_id}}"
+  data-link2="{{item.link2}}">
     <view class="rec-art-left">
-      <view class="rec-art-title">一碗超有料的拉面，100%亲测爆款！爽口劲道的浓汤拉面一碗超有料的拉面，100%亲测爆款！爽口劲道的浓汤拉面</view>
+      <view class="rec-art-title">{{item.title}}</view>
       <view class="rec-art-bottom">
-        <view class="rec-art-aut">原创：小妮妮</view>
-        <view class="rec-art-time">2019.5.20</view>
+        <view class="rec-art-aut" wx:if="{{false}}">原创：小妮妮</view>
+        <view class="rec-art-time">{{item.add_date}}</view>
       </view>
     </view>
     <view class="rec-art-right">
-      <view class="imgbox"><image src=""></image></view>
+      <view class="imgbox"><image src="{{appurl}}{{item.picture}}"></image></view>
     </view>
   </view>
 </view>

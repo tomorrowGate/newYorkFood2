@@ -1,25 +1,7 @@
 // classify/components/classify_hidebody.js
-const app =getApp()
+let app =getApp()
+import event from '../../utils/event'
 Component({
-  /**
-   * 组件的属性列表
-   */
-  relations: {
-    './classify_realbody': {  //子组件相对路径
-      type: 'child', // 关联的目标节点应为子节点
-      linked: function (target) {
-        // 每次有custom-li被插入时执行，target是该节点实例对象，触发在该节点attached生命周期之后
-        console.log('--linked--');
-        console.log(target);
-      },
-      linkChanged: function (target) {
-        // 每次有custom-li被移动后执行，target是该节点实例对象，触发在该节点moved生命周期之后
-      },
-      unlinked: function (target) {
-        // 每次有custom-li被移除时执行，target是该节点实例对象，触发在该节点detached生命周期之后
-      }
-    }
-  },
   properties: {
     activenum:{
       type:Number,
@@ -32,13 +14,15 @@ Component({
         this.setData({
           "whitchShow": this.properties.activenum
         })
-        console.log(this.properties.activenum, this.data.whitchShow)
-        if (this.data.activenum != 0) {
-          //document.getElementsByTagName("body")[0].style.overflow = "hidden"
-        } else {
-          //document.getElementsByTagName("body")[0].style.overflow = "scroll"
-        }
       }
+    },
+    tag_info:{
+      type:Array,
+      value:[]
+    },
+    allCount:{
+      type: Number,
+      value:0
     }
   },
 
@@ -51,19 +35,98 @@ Component({
     selectTags: [],
     tagIndex:null,//选中的tag下标
     tag_info:null,//标签数据
+    scategory:null,//菜系
     switchArgu:new Array(3),//选中的复选框开关
     allcity:0,//全城的点击参数
     cityWitch: 0,//全城的点击参数
-  },
+
+    rigionArr: [],
+    rigionDetArr: [],
+    r_id: "",
+    changeCity:"",
+
+    language:"",
+
+    citys: [["纽约", "圣弗朗西斯科", "戈丹"], ["杭州", "东京"], ["纽约", "曼哈顿"], ["海湾"], ["纽约第一飞机场"]],//全城的城市参数
+    showCityList: ["纽约", "圣弗朗西斯科", "戈丹"],
+
+    getAllArgu: {
+      is_search: 0,
+      lat: wx.getStorageSync('lat'),
+      lng: wx.getStorageSync('lng'),
+
+      tag_id: 0,
+      sort: 0,
+      city: 0,
+      onlyhascoupon: 0,
+      onlynew: 0,
+      onlyFullReduce: 0,
+      scategory: 0,
+      search_str: 0,
+      user_id: wx.getStorageSync('user_id'),
+
+      start: 0,
+      cOre: wx.getStorageSync("langIndex")
+    },
+    getAllArguCopy: {
+      is_search: 0,
+      lat: wx.getStorageSync('lat'),
+      lng: wx.getStorageSync('lng'),
+
+      tag_id: 0,
+      sort: 0,
+      city: 0,
+      onlyhascoupon: 0,
+      onlynew: 0,
+      onlyFullReduce: 0,
+      scategory: 0,
+      search_str: 0,
+      user_id: wx.getStorageSync('user_id'),
+
+      start: 0,
+      cOre: wx.getStorageSync("langIndex")
+    },
+  }, 
 
   /**
    * 组件的方法列表
    */
   methods: {
+    doNothing(){
+
+    },
+    getAllRegionType() {
+      let that = this
+      wx.request({
+        url: `${app.globalData.url}index.php?app=nyms_homepage&act=getAllRegionType`,
+        data: {
+          cOre: wx.getStorageSync("langIndex")
+        },
+        header: { 'content-type': 'application/x-www-form-urlencoded', },
+        method: 'POST',
+        dataType: 'json',
+        success(res) {
+          //console.log(res)
+          if (res.data.done) {
+            that.setData({
+              rigionArr: res.data.retval
+            })
+          }
+
+        },
+        fail(err) {
+          console.log(err)
+        },
+        complete(data) {
+          //console.log(data)
+        }
+      })
+      
+    },
     hideDown(e){
       //console.log(e)
       if(e){
-        if (e.target.id == "classfy-down") {
+        if (e.target.id == "mask-temp") {
           this.setData({
             whitchShow: 0
           })
@@ -73,15 +136,68 @@ Component({
           whitchShow: 0
         })
       }
-      
     },
+
+    //切换全城的列表
     changFilCity(e){
       let i = e.currentTarget.dataset.argu
+      if (e.currentTarget.dataset.r_id==999){
+        
+        this.triggerEvent("fromChild", { is_search: 0 ,city: 0 }, true)
+        let allcity = wx.getStorageSync("langIndex")==0?"全城":"all city"
+        this.triggerEvent("changeCityShows", allcity, true)
+        this.hideDown()
+      }
       this.setData({
-        cityWitch:i
+        cityWitch:i,
+        showCityList:this.data.citys[i],
+
+        r_id: e.currentTarget.dataset.r_id,
+        changeCity: e.currentTarget.dataset.r_id,
+      })
+
+      this.getRegionInfoByRegionType(e.target.dataset.r_id)
+    },
+    getRegionInfoByRegionType(r_id) {
+      console.log(r_id)
+      let that = this
+      wx.request({
+        url: `${app.globalData.url}index.php?app=nyms_homepage&act=getRegionInfoByRegionType`,
+        data: {
+          r_id: r_id,
+          cOre: wx.getStorageSync("langIndex")
+        },
+        header: { 'content-type': 'application/x-www-form-urlencoded', },
+        method: 'POST',
+        dataType: 'json',
+        success(res) {
+          //console.log(res)
+          if (res.data.done) {
+            that.setData({
+              rigionDetArr: res.data.retval
+            })
+          }
+        },
+        fail(err) {
+          console.log(err)
+        },
+        complete(data) {
+          //console.log(data)
+        }
       })
 
     },
+
+    //筛选全城的筛选
+    requeCity(e){
+      let argus = { ...this.data.getAllArguCopy }
+      console.log(argus, 176)
+      this.triggerEvent("fromChild", { is_search: 1, city: e.currentTarget.dataset.rdetid}, true)
+      this.triggerEvent("changeCityShows", e.currentTarget.dataset.type_name, true)
+      this.hideDown()
+    },
+
+    //切换筛选
     switchOn(e){
       let i = e.currentTarget.dataset.argu
       this.data.switchArgu[i] = !this.data.switchArgu[i]
@@ -89,7 +205,16 @@ Component({
         switchArgu: this.data.switchArgu
       })
       console.log(this.data.switchArgu)
+
+      if (this.data.switchArgu.indexOf(true) > -1) {
+        this.triggerEvent("chageFilter", true, true)
+      } else {
+        this.triggerEvent("chageFilter", false, true)
+      }   
+
     },
+
+    //选中标签，目前该功能已取消
     chooseTag(e){
       let i = e.currentTarget.dataset.index
       console.log(this.data.selectTags[i],57)
@@ -100,44 +225,58 @@ Component({
         selectTags: this.data.selectTags
       })
     },
-    getHomepageInfo(){
-      let that = this
-      wx.request({
-        url: `${app.globalData.url}index.php?app=nyms_homepage&act=getHomepageInfo`,
-        data: {},
-        header: { 'content-type': 'application/json' },
-        method: 'GET',
-        dataType: 'json',
-        success(res){
-          //console.log(res)
-          if(res.data.done){
-            let { tag_info,scategory} = res.data.retval
-            that.setData({
-              tag_info,
-              selectTags: tag_info//用来点击标签用的
-            })
-            //console.log(that.data.selectTags)
-          }
-          
-        },
-        fail(err){
-          console.log(err)
-        },
-        complete(data){
-          //console.log(data)
-        }
+
+    //筛选全部美食的时候
+    screenAllFood(e){
+      /* let scateid = e.currentTarget.dataset.scateid
+      this.setData({
+        "getAllArgu.scategory": scateid
+      }) */
+      let argus = { ...this.data.getAllArguCopy}
+      console.log(argus, 176)
+      this.triggerEvent("fromChild", { is_search:0}, true)
+      this.hideDown()
+      let tagName = e.currentTarget.dataset.tagname
+      this.triggerEvent("changeTag", tagName, true)
+
+    },
+    //筛选美食的标签的时候
+    screenFood(e){
+      let tagid = e.currentTarget.dataset.tagid
+      let argus1 = { ...this.data.getAllArgu }
+      this.setData({
+        "getAllArgu.is_search": 1,
+        "getAllArgu.tag_id": tagid
       })
-    },
-    renderRealBody(data){
-      let nodes = this.getRelationNodes("./classify_realbody")
-      let realBody = nodes[0]//realBody
-      console.log(realBody.data,"134")
-    },
-    screenFood(){
+      let argus = { ...this.data.getAllArgu }
+      this.triggerEvent("fromChild", { tag_id: tagid}, true)
+      /* this.setData({
+        getAllArgu: argus1
+      }) */
       this.hideDown()
+
+      let tagName = e.currentTarget.dataset.tagname
+      this.triggerEvent("changeTag", tagName, true)
+
     },
-    screenSort(){
+
+    //点击排序类型进行筛选
+    screenSort(e){
+      let sorttype = e.currentTarget.dataset.sorttype
+      let argus1 = { ...this.data.getAllArgu }
+      this.setData({
+        "getAllArgu.is_search": 1,
+        "getAllArgu.sort": sorttype
+      })
+      let argus = { ...this.data.getAllArgu }
+      console.log(argus, 176)
+      this.triggerEvent("fromChild", { sort: sorttype}, true)
+      /* this.setData({
+        getAllArgu: argus1
+      }) */
       this.hideDown()
+      
+      this.triggerEvent("changeSort", sorttype, true)
     },
     reset(){
       let resTags = this.data.selectTags.map((v, i) => {
@@ -152,64 +291,74 @@ Component({
         selectTags: resTags,
         switchArgu:resSwit
       })
+      
+      this.triggerEvent("chageFilter", false, true)
+      
     },
+    //点击筛选进行提交
     submit(){
-      console.log(this.data.switchArgu,136)
+      //console.log(this.data.switchArgu,136)
+      console.log(this.data.getAllArguCopy, 189)
       let switchArgu = [...this.data.switchArgu]
+      //this.triggerEvent("showLoad")
+      switchArgu = switchArgu.map((v, i) => {
+        v = v ? 1 : 0
+        return v
+      })
       let subTags = this.data.selectTags.filter((v,i)=>{
         return v.isCheck
       })
-      let that = this
-      wx.request({
-        url: `${app.globalData.url}/index.php?app=nyms_homepage&act=getAllStore`,
-        data: {
-          is_search: 1,
-          /* lat: app.globalData.coordinate.selfLat,
-          lng: app.globalData.coordinate.selfLng, */
-
-          /* tag_id: 0,
-          sort: 0,
-          city: 0,
-          onlyhascoupon: switchArgu[0],
-          onlynew: switchArgu[1],
-          onlyFullReduce: switches[2],
-          scategory: 0,
-          search_str: 0,
-          start: 0, */
-        },
-        method: 'POST',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded',
-        },
-        success(res) {
-          //console.log(res)
-          if (res.data.done) {
-            
-          }
-
-        },
-        fail(err) {
-          console.log(err)
-        },
-        complete(data) {
-          //console.log(data)
-          that.renderRealBody()
-        }
+      let argus1 = { ...this.data.getAllArgu }
+      this.setData({
+        "getAllArgu.is_search": 1,
+        "getAllArgu.onlyhascoupon": switchArgu[0],
+        "getAllArgu.onlynew": switchArgu[1],
+        "getAllArgu.onlyFullReduce": switchArgu[2],
       })
+      let argus = { ...this.data.getAllArgu }
+      let argus2 = {
+        onlyhascoupon: switchArgu[0],
+        onlynew: switchArgu[1],
+        onlyFullReduce: switchArgu[2]
+      }
+      console.log(argus, 176)
+      this.triggerEvent("fromChild", argus2, true)
+     /*  this.setData({
+        getAllArgu: argus1
+      }) */
       this.hideDown()
-      //console.log(subTags)
+      return
+    },
+    setLanguage() {
+      this.setData({
+        language: wx.T.getLanguage()
+      });
     }
   },
   pageLifetimes: {
     show: function () {
-      this.getHomepageInfo()
+      //this.getHomepageInfo()
+      this.setLanguage();	// (1)
     },
   },
   lifetimes: {
     attached: function () {
       // 在组件实例进入页面节点树时执行
       this.data.whitchShow = this.properties.activenum
+      this.setData({
+        'getAllArgu.lat': wx.getStorageSync('lat'),
+        'getAllArgu.lng': wx.getStorageSync('lng'),
+        'getAllArgu.cOre': wx.getStorageSync('langIndex'),
+        'getAllArgu.user_id': wx.getStorageSync('user_id'),
 
+        //getAllArguCopy
+        'getAllArguCopy.lat': wx.getStorageSync('lat'),
+        'getAllArguCopy.lng': wx.getStorageSync('lng'),
+        'getAllArguCopy.cOre': wx.getStorageSync('langIndex'),
+        'getAllArguCopy.user_id': wx.getStorageSync('user_id'),
+      })
+      this.getAllRegionType()
+      //this.setLanguage();	// (1)
     },
     detached: function () {
       // 在组件实例被从页面节点树移除时执行

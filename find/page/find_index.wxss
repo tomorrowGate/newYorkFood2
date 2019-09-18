@@ -17,3 +17,7 @@
   background: rgba(0,0,0,0.4);
   z-index:10;
 }
+.banner{
+ margin-top: 110rpx; 
+ height: auto;
+}

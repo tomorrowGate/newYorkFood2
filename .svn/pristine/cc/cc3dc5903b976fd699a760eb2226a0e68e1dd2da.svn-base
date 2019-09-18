@@ -1,0 +1,14 @@
+<!--find/page/find_index.wxml-->
+<searchHead realSearch="{{realSearch}}">
+</searchHead>
+<swiper>
+  <!-- <view class="look-pic" bindtap="goGallery">
+    <i class="iconfont iconxiangce"></i>
+  </view> -->
+</swiper>
+<findList></findList>
+<swiperVer></swiperVer>
+<findNav bind:fromChild="fromChild" renderdata="{{renderdata}}"></findNav>
+<!-- <newRecommend></newRecommend>
+<nearbyStore></nearbyStore>
+<hotRecommend></hotRecommend> -->

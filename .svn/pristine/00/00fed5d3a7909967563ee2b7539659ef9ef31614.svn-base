@@ -1,0 +1,59 @@
+/* my/components/my_head.wxss */
+@import "/app.wxss";
+
+.myhead{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 255rpx;
+  padding: 0 26rpx;
+  box-sizing: border-box;
+}
+.myhead .myhead-imgbox{
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+  background: #ccc;
+}
+.myhead .myhead-middle{
+  display: flex;
+  flex-direction: column;
+  width: 400rpx;
+  padding: 86rpx 0;
+  /* margin-left: 24rpx; */
+  box-sizing: border-box;
+  font-size: 32rpx;
+}
+.myhead-mid-top{
+  height: 52rpx
+}
+.myhead .myhead-middle .myhead-mid-bottom{
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.myhead .myhead-talk{
+  display: flex;
+  align-items: center;
+ /*  width: 120rpx; */
+ /*  height: 100%; */
+  text-align: center;
+  /* line-height: 255rpx; */
+}
+.iconliaotian{
+  position: relative;
+  font-size: 50rpx;
+}
+.myhead-bodge{
+  position: absolute;
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background: #f00;
+  top:50%;
+  transform: translate(0, -100% );
+  right: 0px;
+}

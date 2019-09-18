@@ -1,0 +1,4 @@
+/* classify/page/classify_searchbody.wxss */
+page{
+  padding-top: 30rpx;
+}

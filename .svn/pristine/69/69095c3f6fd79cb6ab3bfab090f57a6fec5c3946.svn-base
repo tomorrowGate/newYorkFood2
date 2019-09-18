@@ -1,0 +1,35 @@
+<!--find/components/newstore_recommend.wxml-->
+<view class="find">
+  <view class="newstores">
+      <view class="newstores-title" wx:if="{{false}}">
+          新店推荐
+      </view>
+      <view class="newstores-item" wx:for="{{foodList}}" wx:key="{{index}}" bindtap="goStoreDet" data-storeid="{{item.store_id}}">
+          <view class="newstores-item-head">
+            {{item.store_name}}
+            <text class="collection" wx:if="{{item.has_collect>0}}">{{language.collection}}</text>
+          </view>
+          <view class="newstore-item-tags">
+              <view class="newstore-tas-left">
+                  <view class="newstore-item-tag" wx:for="{{item.showTags_str}}" wx:for-item="v" wx:key="{{index}}">{{v}}</view>
+              </view>
+              <view class="newstore-tags-right">
+                  <view class="newstore-item-tag red" wx:for="{{item.showCoupon_str}}" wx:for-item="v" wx:key="{{index}}">{{v}}</view>
+                  <view class="newstore-item-tag yellow" wx:if="{{false}}">50元优惠券</view>
+              </view>
+          </view>
+          <view class="newstore-item-add">
+              <view class="newstore-add-text">{{item.address}}</view>
+              <view class="newstore-add-m">
+                  <i class="iconfont icondingwei"></i>{{item.showDistance}}
+              </view>
+          </view>
+          <view class="newstore-item-imgs">
+              <view class="newstore-item-imgbox"><image src="{{globelUrl+item.store_logo}}" alt=""/></view>
+              <!-- <view class="newstore-item-imgbox"><image src="" alt=""/></view>
+              <view class="newstore-item-imgbox"><image src="" alt=""/></view> -->
+          </view>
+      </view>
+  </view>
+</view>
+

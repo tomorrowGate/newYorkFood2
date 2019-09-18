@@ -1,0 +1,70 @@
+// my/components/my_service.js
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+
+  },
+
+  /**
+   * 组件的初始数据
+   */
+  data: {
+    language: '',
+  },
+
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    goCustomer(){
+      /* wx.navigateTo({
+        url: '/my/page/',
+      }) */
+    },
+    goCollect(){
+      wx.navigateTo({
+        url: '/my/page/collect',
+      })
+    },
+    goFeedback(){
+      wx.navigateTo({
+        url: '/my/page/feedback/feedback',
+      })
+    },
+    goCooperation(){
+      wx.navigateTo({
+        url: '/my/page/cooperation/cooperation',
+      })
+    },
+    goSetUp(){
+      wx.navigateTo({
+        url: '/my/page/setup/setUp',
+      })
+    },
+    setLanguage() {
+      this.setData({
+        language: wx.T.getLanguage()
+      });
+    },
+  },
+
+  pageLifetimes: {
+    show: function () {
+
+    },
+  },
+  lifetimes: {
+    attached: function () {
+      // 在组件实例进入页面节点树时执行
+      this.setData({
+        langIndex: wx.getStorageSync('langIndex')
+      });
+      this.setLanguage();
+    },
+    detached: function () {
+      // 在组件实例被从页面节点树移除时执行
+    },
+  },
+})

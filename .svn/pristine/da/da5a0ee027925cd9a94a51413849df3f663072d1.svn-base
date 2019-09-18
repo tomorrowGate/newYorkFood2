@@ -1,0 +1,2 @@
+<!--my/page/collect.wxml-->
+<collect isCollect="{{isCollect}}" bind:cancelCollect="cancelCollect" renderdata="{{renderdata}}" bind:fromChild="fromChild"></collect> 

@@ -1,5 +1,6 @@
 /**app.wxss**/
 @import "src/font/iconfont.wxss";
+/* @import './weui-miniprogram/weui-wxss/dist/style/weui.wxss'; */
 .container {
   height: 100%;
   display: flex;
@@ -13,3 +14,18 @@ image{
   width: 100%;
   height: 100%;
 }
+::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+.nodata-imgbox{
+  width: 300rpx;
+  height: 300rpx;
+  margin-bottom: 40rpx;
+}
+.nodata-index{
+  font-size: 28rpx;
+}
+
+

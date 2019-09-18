@@ -1,0 +1,109 @@
+// find/components/store_detail.js
+let app = getApp()
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+    store_info: {
+      type: Object,
+      value: {},
+      observer: function () {
+        console.log(this.properties.store_info,"店铺详细信息对象")
+        if (this.properties.store_info.has_collect>0){
+          this.setData({
+            isCollectIt: true
+          })
+        }else{
+          this.setData({
+            isCollectIt: false
+          })
+        }
+      }
+    },
+    tag_info: {
+      type: Array,
+      value: [],
+      observer: function () {
+        console.log(this.properties.tag_info, "店铺标签详细信息对象")
+      }
+    },
+  },
+
+  /**
+   * 组件的初始数据
+   */
+  data: {
+    isCollectIt:false//是否收藏
+  },
+
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    callPhone(){
+      var that = this;
+      wx.makePhoneCall({
+        phoneNumber: that.properties.store_info.tel
+      })
+    },
+    /*点击收藏*/
+    collectIt(){
+      var that=this;
+      if (that.properties.store_info.store_id){
+        wx.request({
+          url: app.globalData.url + 'index.php?app=nyms_homepage&act=setCollectStore',
+          method: 'POST',
+          header: {
+            'content-type': 'application/x-www-form-urlencoded',
+          },
+          data: {
+            store_id: that.properties.store_info.store_id,
+            user_id:wx.getStorageSync("user_id"),
+
+            cOre: wx.getStorageSync("langIndex")
+          },
+          success: function (res) {
+            if (res.data.done) {
+              that.setData({
+                isCollectIt: res.data.retval
+              })
+            } else {
+
+            }
+          },
+          fail: function (err) {
+
+          },
+          complete: function (res) {
+            //console.log(res);
+          }
+        })
+      }
+    },
+    setLanguage() {
+      this.setData({
+        language: wx.T.getLanguage()
+      });
+    },
+
+  },
+
+  pageLifetimes: {
+    show: function () {
+
+    },
+  },
+  lifetimes: {
+    attached: function () {
+      // 在组件实例进入页面节点树时执行
+      this.setData({
+        langIndex: wx.getStorageSync('langIndex')
+      });
+      this.setLanguage();
+    },
+    detached: function () {
+      // 在组件实例被从页面节点树移除时执行
+    },
+  },
+})

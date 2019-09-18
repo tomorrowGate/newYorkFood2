@@ -1,0 +1,171 @@
+// find/page/store_real.js
+let app = getApp()
+import event from '../../utils/event'
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    article_info:[],
+    coupon_info: [],
+    lunbo_info: [],
+    store_info: {},
+    tag_info: [],
+    video_info: [],
+    tuijian_info:{},
+    lunbo_count:0,
+    store_id:0,
+    scrollTop: 0,
+    language: '',
+
+    prevData:{
+      user_id:wx.getStorageSync("user_id"),
+      store_id:0,
+      lat:0,
+      lng:0,
+      cOre: wx.getStorageSync("langIndex")
+    },
+
+    toView:""
+  },
+  scrollTopFun: function (e) {//监听页面滚动
+    /* console.log(e.detail.scrollTop); */
+    this.setData({
+      scrollTop: e.detail.scrollTop
+    })
+  },
+  goGallery(){
+    var that=this;
+    wx.navigateTo({
+      url: '/find/page/gallery?store_id=' + that.data.store_id,
+    })
+  },
+  jumpTo(e){
+    let target = e.currentTarget.dataset.opt;
+  
+    this.setData({
+      toView: target
+    })
+    console.log(this.data.toView,34)
+  },
+  setLanguage() {
+    this.setData({
+      language: wx.T.getLanguage()
+    });
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    //'/find/page/store_real'
+    console.log(options,41)
+    this.setData({
+      prevData: options
+    })
+    this.getStoreDetailedInformation();
+
+    this.setData({
+      langIndex: wx.getStorageSync('langIndex')
+    });
+    this.setLanguage();
+  },
+  /*店铺详细信息*/
+  getStoreDetailedInformation:function (){
+    var that=this;
+    var reqData = {...this.data.prevData}
+    reqData.user_id=wx.getStorageSync('user_id');
+    reqData.lng = wx.getStorageSync('lng');
+    reqData.lat = wx.getStorageSync('lat');
+
+    console.log(reqData,57)
+    wx.request({
+      url: app.globalData.url + 'index.php?app=nyms_homepage&act=getStoreDetailedInformation',
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      data: reqData,
+      success: function (res) {
+        if (res.data.done) {
+          var data = res.data.retval;
+          that.setData({
+            'article_info': data.article_info,
+            'coupon_info': data.coupon_info,
+            'lunbo_info': data.lunbo_info,
+            'store_info': data.store_info,
+            'tag_info': data.tag_info,
+            'video_info': data.video_info,
+            'lunbo_count':data.lunbo_info.length,
+            'tuijian_info': data.tuijian_info,
+            store_id: data.store_info.store_id
+          })
+          console.log(res.data.retval,"店铺详细信息")
+        } else {
+
+        }
+      },
+      fail: function (err) {
+
+      },
+      complete: function (res) {
+        console.log(res);
+      }
+    })
+  },
+
+  setLanguage() {
+    this.setData({
+      language: wx.T.getLanguage()
+    });
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    this.setLanguage();	// (1)
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+})

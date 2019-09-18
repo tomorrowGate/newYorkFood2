@@ -1,0 +1,34 @@
+<!--my/components/my_service.wxml-->
+<view class="myser">
+  <view class="myser-title">{{language.myService}}</view>
+  <view class="myser-items">
+    <view class="myser-item" bindtap="goCollect">
+      <i class="iconfont iconrenmai myser-i-left"></i>
+      <view class="item-text">{{language.serviceLists[0]}}</view>
+      <i class="iconfont iconyoujiantou myser-i-right"></i>
+    </view>
+    <view class="myser-item" bindtap="goCustomer">
+      <view class="contact-wx" wx:for="{{3}}" wx:key="{{index}}">
+      <contact-button size="27" wx:for="{{15}}" wx:key="{{index}}"></contact-button>
+      </view>
+      <i class="iconfont icondianhua  myser-i-left"></i>
+      <view class="item-text">{{language.serviceLists[1]}}</view>
+      <i class="iconfont iconyoujiantou myser-i-right"></i>
+    </view>
+    <view class="myser-item" bindtap="goFeedback">
+      <i class="iconfont iconyijian myser-i-left"></i>
+      <view class="item-text">{{language.serviceLists[2]}}</view>
+      <i class="iconfont iconyoujiantou myser-i-right"></i>
+    </view>
+    <view class="myser-item" bindtap="goCooperation">
+      <i class="iconfont iconrenmai myser-i-left"></i>
+      <view class="item-text">{{language.serviceLists[3]}}</view>
+      <i class="iconfont iconyoujiantou myser-i-right"></i>
+    </view>
+    <view class="myser-item" bindtap="goSetUp">
+      <i class="iconfont icona576 myser-i-left"></i>
+      <view class="item-text">{{language.serviceLists[4]}}</view>
+      <i class="iconfont iconyoujiantou myser-i-right"></i>
+    </view>
+  </view>
+</view>

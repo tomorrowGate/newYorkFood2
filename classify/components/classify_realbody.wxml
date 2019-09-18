@@ -1,42 +1,57 @@
 <!--classify/components/classify_realbody.wxml-->
-<view class="mapFood" id="mapFood">
-  <scroll-view scroll-x class="view" wx:for="{{foodList}}" wx:key="{{index}}">
+<view class="mapFood" id="mapFood" >
+  <scroll-view scroll-x class="view" wx:for="{{foodList}}" wx:key="{{index}}" class="real-scroll">
     <view class="food-list" >
-      <view class="content" bindtap="goStoreDet" data-id="StoreDet">
+      <view class="content" 
+      bindtap="goStoreDet" 
+      data-id="StoreDet" 
+      data-storeid="{{item.store_id}}"
+      data-itemall="{{item}}">
         <view class="con-item">
           <view class="con-left">
             <view class="imgbox">
-              <image src="" alt="" class="con-img"/>
+              <image src="{{globelUrl}}{{item.store_logo}}" alt="" class="con-img"/>
             </view>
-            <view class="con-say">有优惠券</view>
+            <view class="con-say" wx:if="{{item.coupon_str.length>0}}">{{language.coupon}}</view>
           </view>
           <view class="out">
             <view class="con-center">
               <view class="con-cen-title">
-              阿婆家常菜 <text class="collection">收藏</text>
+              {{item.store_name}} <text class="collection" wx:if="{{item.has_collect>0}}">{{language.collection}}</text>
               </view>
               <view class="con-cen-tags">
-                <view class="con-cen-tag">快餐</view>
-                <view class="con-cen-tag">汉堡</view>
-                <view class="con-cen-tag">烧烤</view>
+                <view class="con-cen-tag" wx:for="{{item.showTags_str}}" wx:for-item="v" wx:key="{{index}}">{{v}}</view>
               </view>
-              <view class="con-cen-palce">浙江省湖州市德清县武康镇中心北路1088号</view>
+               <view class="con-cen-palce">{{item.address}}</view>
               <view class="con-cen-foot">
-                <view class="con-cen-foottag red">50减5</view>
-                <view class="con-cen-foottag yellow">50元优惠券</view>
+                <view class="con-cen-foottag red" wx:for="{{item.showCoupon_str}}" wx:for-item="v" wx:key="{{index}}">{{v}}</view>
+                <view class="con-cen-foottag yellow" wx-if="{{false}}">50元优惠券</view>
               </view>
             </view>
             <view class="con-right">
-              <view class="con-rig-tag yellow" wx:if="{{true}}" bindtap="navigation" data-id="navigation">自动导航</view>
+              <view 
+              class="con-rig-tag yellow" 
+              wx:if="{{true}}" 
+              bindtap="navigation" 
+              data-cuslat="{{item.lat}}" 
+              data-cuslng="{{item.lng}}" 
+              data-store_id="{{item.store_id}}" 
+              data-id="navigation"
+              data-addr="{{item.address}}">{{language.navigation}}</view>
               <view class="con-rig-meter">
                 <i class="iconfont icondingwei"></i>
-                <span>500m</span>
+                <span>{{item.showDistance}}</span>
               </view>
             </view>
           </view>
         </view>
       </view>
     </view>
-    <view class="clear-collect" wx:if="{{isCollect}}"><view class="text">取消收藏</view> </view>
+    <view class="clear-collect" wx:if="{{isCollect}}" bindtap="cancelThis" data-item_id="{{item.store_id}}">
+      <view class="text">{{language.cancelCollect}}</view> 
+    </view>
   </scroll-view>
+  <!-- <view class="search-none" wx:if="{{foodList.length<=0}}">{{getAllArgu.cOre?"Temporarily no data":"暂无数据"}}</view> -->
+  <slot></slot>
+  
 </view>

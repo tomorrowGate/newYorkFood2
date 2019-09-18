@@ -1,4 +1,5 @@
 // pages/index/map_index.js
+let app = getApp()
 Page({
 
   /**
@@ -9,8 +10,12 @@ Page({
     url:""
   },
   getLocation() {
+    app.checkGeo()
     var that = this
     let openid = wx.getStorageSync("openid")
+    let isZH = wx.getStorageSync("langIndex")
+    //let backStoreId = app.globalData.toClassifyStoreId
+    console.log(wx.getStorageSync("openid"))
     wx.getLocation({
       //type: 'wgs84',
       type: 'gcj02',
@@ -20,23 +25,26 @@ Page({
         that.setData({
           "globalData.latitude": res.latitude,
           "globalData.longitude": res.longitude,
-          url: `https://nyms.wjtxmobile.com/index.php?app=nyms_homepage&act=toMapIndex&lat=${res.latitude}&lng=${res.longitude}&openid=${openid}`
+          url: `https://nyms.wjtxmobile.com/index.php?app=nyms_homepage&act=toMapIndex&lat=${res.latitude}&lng=${res.longitude}&openid=${openid}&isZH=${isZH}`
         })
-        //var speed = res.speed
-        //var accuracy = res.accuracy
-      }
+        wx.setStorageSync("lat", res.latitude);
+        wx.setStorageSync("lng", res.longitude);
+      },
+      fail(err) {
+        that.setData({
+          url: `https://nyms.wjtxmobile.com/index.php?app=nyms_homepage&act=toMapIndex&isZH=${isZH}`
+        })
+      },
     })
+  },
+
+  getH5Message: function (e) {
+    console.log(e)
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
     this.getLocation()
   },
 
@@ -44,16 +52,24 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    //this.getLocation()
+    if (wx.getStorageSync("lat") && wx.getStorageSync("lng") && !wx.getStorageSync('freshBtn')){
+      this.getLocation()
+      wx.setStorageSync('freshBtn',true)
+      console.log(wx.getStorageSync("lat"),59)
+    }
+    
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    app.globalData.toClassifyStoreId = -2
   },
-
+  onPageScroll: function (ev) {
+    
+  },
   /**
    * 生命周期函数--监听页面卸载
    */

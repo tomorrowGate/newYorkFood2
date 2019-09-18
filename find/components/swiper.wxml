@@ -1,6 +1,6 @@
 <!--find/components/swiper.wxml-->
 <view class="banner-view">
-  <!-- <swiper 
+ <swiper 
     indicator-dots="{{swiperStatic.indicatorDots}}"
     indicator-color = "{{swiperStatic.indicatorColor}}"
     indicator-active-color = "{{swiperStatic.indicatorActiveColor}}"
@@ -9,13 +9,18 @@
     duration="{{swiperStatic.duration}}"
     circular="{{swiperStatic.circular}}"
     class="swiper">
-    <block wx:for="{{swiper.imgdata}}" wx:key="index" >
+    <block wx:for="{{lunbo_info}}" wx:key="{{index}}" >
       <swiper-item class="swiper-item">
-        <image src="{{item.file_path}}" class="slide-image" mode="aspectFit	" data-url="{{item.url}}" bindtap="goVr" wx:if="{{false}}"/>
-        <image src="../../src/img/swiper.png" class="slide-image" mode="aspectFit	" data-url="{{item.url}}" bindtap="goVr"/>
+        <image 
+        src="{{appurl+item.file_path}}" 
+        class="slide-image"
+        mode="aspectFill" 
+        data-url="{{item.url}}" 
+        bindtap="goVr" 
+        data-link2="{{item.url}}"/>
       </swiper-item>
     </block>
-  </swiper> -->
-  <view class="shadow-box"></view>
+  </swiper>
+  <!-- <view class="shadow-box"></view> -->
 </view>
 <slot></slot>

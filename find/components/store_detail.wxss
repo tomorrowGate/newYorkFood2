@@ -1,9 +1,10 @@
 /* find/components/store_detail.wxss */
 @import "/app.wxss";
 .storedet{
-  margin: 70rpx 0;
+  margin-bottom:20rpx ;
   padding: 0 18rpx;
   font-size: 26rpx;
+  background: #fff;
 }
 .stodet-head{
   display: flex;
@@ -12,7 +13,7 @@
 }
 .stodet-h1{
   font-weight: bold;
-  font-size: 35rpx;
+  font-size: 38rpx;
 
 }
 .stodel-icon{
@@ -22,32 +23,57 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 70rpx;
+ /*  width: 70rpx; */
   height: 70rpx;
   font-size: 24rpx;
+  margin-left: 10rpx;
   color: #666;
+  background: #fff;
+  border:none;
+}
+.share-out{
+  position: relative;
+  margin-right: 16rpx;
+}
+.share-out-btn{
+ position: absolute;
+ background: rgba(255,255,255,0);
+ width: 100%;
+ height: 100%;
+}
+button::after{
+  border:none;
+}
+.stodel-icon-item-avtive{
+  color: #ffac41;
 }
 .stodel-tags{
-  height: 40rpx;
+  /* height: 40rpx; */
   display: flex;
-
+  flex-wrap: wrap;
+  margin: 10rpx 0;
 }
 .stodel-tags-tag{
   height: 32rpx;
+  line-height: 32rpx;
   background: #ffe1ec;
   padding:0 10rpx;
   margin-right:20rpx;
   color:#e0472d;
   border-radius: 6rpx;
+  margin-top: 10rpx;
 }
 .stodel-intro{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 128rpx;
+  /* height: 128rpx; */
   padding: 20rpx 0;
   box-sizing: border-box;
   color: #666;
+}
+.stodel-business{
+  display: flex;
 }
 .stodel-rogin{
   display: flex;
@@ -71,10 +97,16 @@
   color: #ffac41
 }
 .stodel-rogin-call{
-  width: 128rpx;
+  width: 84rpx;
   text-align: center;
 }
 .icondianhua1{
   color: #11cc8f;
   font-size: 40rpx;
+}
+.iconfenxiang{
+  font-size: 30rpx;
+}
+.show-share{
+ /*  font-size: 22rpx; */
 }

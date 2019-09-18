@@ -1,0 +1,46 @@
+<!--find/components/coupon.wxml-->
+<view class="coupon"  >
+  <!-- <view class="coupon-title">
+    <view class="coupon-title-item">优惠</view>
+    <view class="coupon-title-item">推荐</view>
+  </view> -->
+  <view class="coupon-view">
+    <view class="coupon-view-text" bindtap="con">{{language.deQuan[5]}}</view>
+    <view class="coupon-view-card {{item.is_have==1||item.coupon_num<1?'coupon-down':''}}" wx:for="{{coupon_info}}" wx:key="{{index}}">
+      <view class="coupon-card-left">
+        <view class="coupon-left-money">￥{{item.coupon_value}}</view>
+        <view class="coupon-left-condition">{{language.others[0]}} {{item.min_amount}} {{language.others[1]}}</view>
+        <view class="coupon-left-bottom">{{item.coupon_name}}</view>
+      </view>
+      <view class="coupon-card-right">
+        <view class="coupon-right-time">{{language.deQuan[2]}}{{item.end_date}}</view>
+        <view class="coupon-right-btn" bindtap="getCouponQRcode" data-coupon_id="{{item.coupon_id}}">{{language.deQuan[1]}}</view>
+      </view>
+    </view>
+    
+    <view class="coupon-view-card coupon-down" wx:if="{{coupon_info.length<=0}}">
+     {{language.newTips[0]}}
+    </view>
+  </view>
+</view>
+<dialog isShowDia="{{isShowDia}}" isAcCenCle="{{isAcCenCle}}">
+  <view class="coup-dia">
+    <view class="coup-dia-title">{{language.deQuan[0]}}！</view>
+    <view class="coupon-view">
+      <view class="coupon-view-card">
+        <view class="coupon-card-left">
+          <view class="coupon-left-money">￥{{couponOne.coupon_value}}</view>
+          <view class="coupon-left-condition">{{language.others[0]}} {{couponOne.min_amount}} {{language.others[1]}}</view>
+          <view class="coupon-left-bottom">{{couponOne.coupon_content}}</view>
+        </view>
+        <view class="coupon-card-right">
+          <view class="coupon-right-time">{{language.deQuan[2]}}{{couponOne.end_date}}</view>
+          <!-- <view class="coupon-right-btn">立即领取</view> -->
+        </view>
+      </view>
+    </view>
+    <view class="coup-dia-use">{{language.deQuan[3]}}：{{couponOne.end_date}}</view>
+    <view class="coup-dia-text">{{language.deQuan[6]}}</view>
+    <view class="coup-sure" bindtap="sureDia">{{language.deQuan[4]}}</view>
+  </view>
+</dialog>

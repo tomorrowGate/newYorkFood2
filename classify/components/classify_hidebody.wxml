@@ -1,47 +1,79 @@
 <!--classify/components/classify_hidebody.wxml-->
-<view class="classfy-down" wx:if="{{whitchShow!==0}}" bindtap="hideDown" id="classfy-down">
+<view 
+class="classfy-down" 
+wx:if="{{whitchShow!==0}}" 
+bindtap="hideDown" 
+id="classfy-down"
+>
+<scroll-view scroll-y  class="mask-temp" id="mask-temp" catchtouchmove="doNothing"></scroll-view >
 <scroll-view 
   scroll-y 
   class="scroll-view"
    wx:if="{{activenum==1}}"
 >
   <view class="all-food">
-    <view class="all-food-item" bindtap="screenAllFood">全部美食{{480}}</view>
-    <view class="all-food-item" wx:for="{{10}}" wx:key="{{index}}" bindtap="screenFood">江浙菜{{68}}</view>
+    <view 
+    class="all-food-item" 
+    bindtap="screenAllFood" 
+    data-tagname = "{{language.foods[0]}}"
+    >{{language.foods[0]}}{{(allCount)}}</view>
+
+    <view 
+    class="all-food-item" 
+    wx:for="{{tag_info}}" 
+    wx:key="{{index}}" 
+    bindtap="screenFood" 
+    data-tagid="{{item.id}}"
+    data-tagname = "{{item.tag_name}}"
+    >{{item.tag_name}}{{(item.cou)}}</view>
   </view>
 </scroll-view>
 
 <scroll-view 
   scroll-y 
   class="scroll-view"
+   catchtouchmove="doNothing"
    wx:if="{{activenum==2}}"
 >
   <view class="sort-shin all-food">
-    <view class="all-food-item " bindtap="screenSort">智能排序</view>
-    <view class="all-food-item " bindtap="screenSort">离我最近</view>
-    <view class="all-food-item " bindtap="screenSort">人气最高</view>
+    <view class="all-food-item " bindtap="screenSort" data-sorttype="0">{{language.sort}}</view>
+    <view class="all-food-item " bindtap="screenSort" data-sorttype="1">{{language.sorts[1]}}</view>
+    <view class="all-food-item " bindtap="screenSort" data-sorttype="2">{{language.sorts[2]}}</view>
   </view>
 </scroll-view>
 
 <scroll-view 
   scroll-y 
   class="scroll-view"
+   catchtouchmove="doNothing"
    wx:if="{{activenum==3}}"
 >
   <view class="all-city all-food">
     <view class="all-city-left">
-      <view class=" {{cityWitch==0?'all-left-item':''}} all-food-item acllcity" bindtap="changFilCity" data-argu="0">全城</view>
-      <view class=" all-food-item {{cityWitch==1?'all-left-item':''}}" bindtap="changFilCity" data-argu="1">其他商区</view>
-      <view class=" all-food-item {{cityWitch==2?'all-left-item':''}}" bindtap="changFilCity" data-argu="2">曼哈顿商区</view>
-      <view class=" all-food-item {{cityWitch==3?'all-left-item':''}}" bindtap="changFilCity" data-argu="3">景点列表</view>
-      <view class=" all-food-item {{cityWitch==4?'all-left-item':''}}" bindtap="changFilCity" data-argu="4">机场车站</view>
+      <view 
+      class="{{changeCity==999?'all-left-item':''}} all-food-item acllcity" 
+      bindtap="changFilCity" 
+      data-r_id="{{999}}"
+      data-argu="0">{{language.citys[0]}}</view>
+      <view 
+      class=" all-food-item {{changeCity==item.id?'all-left-item':''}}" 
+      bindtap="changFilCity" 
+      data-argu="1"
+      wx:for="{{rigionArr}}"
+      wx:key="{{index}}"
+      data-r_id="{{item.id}}"
+      >{{item.type_name}}</view>
     </view>
     <view class="all-city-right">
-      <view class="all-right-item"> 全城</view>
-      <view class="all-right-item"> 全城</view>
-      <view class="all-right-item"> 全城</view>
-      <view class="all-right-item"> 全城</view>
-      <view class="all-right-item"> 全城</view>
+      <view 
+      class="all-right-item" 
+      wx:for="{{rigionDetArr}}" 
+      wx:key="{{index}}" 
+      bindtap="requeCity" 
+      data-cityargu="{{item}}"
+      data-type_name = "{{item.type_name}}"
+      data-rdetid="{{item.id}}"
+      >{{item.type_name}}</view>
     </view>
   </view>
 </scroll-view>
@@ -49,25 +81,26 @@
   <scroll-view 
   scroll-y 
   class="scroll-view"
+   catchtouchmove="doNothing"
    wx:if="{{activenum==5}}"
   >
   <view class="find-search-class">
     <view class="search-body">
       <view class="search-body-mid">
         <view class="sear-mid-item">
-          <view class="sear-item-text">只看优惠券</view>
+          <view class="sear-item-text">{{language.seecoupon}}</view>
           <view class="imgbox">
             <switch style='zoom:.6;' color="#ffac41" bindchange="switchOn" checked="{{switchArgu[0]}}" data-argu="0"/>
           </view>
         </view>
         <view class="sear-mid-item">
-          <view class="sear-item-text">只看新店</view>
+          <view class="sear-item-text">{{language.seenewShop}}</view>
           <view class="imgbox">
             <switch style='zoom:.6;' color="#ffac41" bindchange="switchOn" checked="{{switchArgu[1]}}" data-argu="1"/>
           </view>
         </view>
         <view class="sear-mid-item">
-          <view class="sear-item-text">只看满减</view>
+          <view class="sear-item-text">{{language.seeFee}}</view>
           <view class="imgbox">
             <switch style='zoom:.6;' color="#ffac41" bindchange="switchOn" checked="{{switchArgu[2]}}" data-argu="2"/>
           </view>
@@ -75,7 +108,7 @@
       </view>
     </view>
     <view class="search-leg" wx:if="{{false}}">
-      <view class="search-leg-top">餐饮类型</view>
+      <view class="search-leg-top">{{language.eatType}}</view>
       <view class="search-leg-tags">
         <view class="search-leg-tag {{selectTags[index].isCheck?'active':''}}" wx:for="{{tag_info}}" wx:key="{{index}}" bindtap="chooseTag" data-index="{{index}}">
           {{item.tag_name}}
@@ -83,8 +116,8 @@
       </view>
     </view>
     <view class="search-foot">
-      <view class="search-foot-btn" bindtap="reset">清空</view>
-      <view class="search-foot-btn active" bindtap="submit">完成</view>
+      <view class="search-foot-btn" bindtap="reset">{{language.clear}}</view>
+      <view class="search-foot-btn active" bindtap="submit">{{language.finish}}</view>
     </view>
   </view>
   </scroll-view>

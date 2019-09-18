@@ -1,0 +1,11 @@
+<!--find/components/find_search.wxml-->
+<view class="input" wx:if="{{realSearch}}">
+    <i class="iconfont iconicon-copy" wx:if="{{false}}"></i>
+    <input type="text" class="main-search" bindinput="changeInput" placeholder="{{language.inputPlaceholder[0]}}"/>
+    <i class="iconfont iconsousuo"></i>
+    <view class="search-input" bindtap="searchReal">{{language.search}}</view>
+</view>
+<view class="input-onblure" wx:if="{{!realSearch}}" bindtap="goRealSearch">
+    <input type="text" class="main-search" disabled="{{true}}"/>
+    <view class="input-text"><i class="iconfont iconsousuo"></i><text>{{language.inputPlaceholder[0]}}</text></view>
+</view>

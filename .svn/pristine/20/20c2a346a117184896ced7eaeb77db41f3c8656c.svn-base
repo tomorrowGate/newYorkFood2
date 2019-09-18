@@ -1,0 +1,44 @@
+/* my/components/my_service.wxss */
+@import "/app.wxss";
+.myser{
+   padding: 0 26rpx;
+   box-sizing: border-box;
+  font-size: 30rpx;
+  padding-bottom: 80rpx;
+}
+.myser-title{
+  height: 70rpx;
+  line-height: 70rpx;
+  font-weight: bold;
+  font-size: 35rpx;
+  border-bottom: 1rpx solid #dfdfdf;
+
+}
+.myser-item{
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  height: 114rpx;
+  line-height: 114rpx;
+  color: #626161;
+  border-bottom: 1px solid #e8e8e8;
+}
+.item-text{
+  width: 604rpx;
+  margin: 0 16rpx;
+}
+.myser-i-left{
+  font-size: 35rpx;
+}
+.myser-i-right{
+  font-size: 22rpx;
+}
+
+.contact-wx{
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index:3;
+  opacity: 0;
+}

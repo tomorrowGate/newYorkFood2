@@ -1,0 +1,43 @@
+/* find/components/swiper_ver.wxss */
+@import "/app.wxss";
+ .ver-swiper {
+  width: 100%;
+  height: 114rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 18rpx;
+  background: #fff;
+  border-top:18rpx solid #f2f2f2;
+  border-bottom: 18rpx solid #f2f2f2;
+  /* margin: 18rpx 0; */
+  box-sizing: border-box;
+}
+.ver-swiper .ver-swiper-h {
+  width: 138rpx;
+  height: 42rpx;
+  font-size: 30rpx;
+  color: #de3e22;
+  font-weight: bolder;
+}
+.swiper-out{
+  font-size:30rpx; 
+}
+.swiper-verticle{
+  flex:1;
+  height: 60rpx;
+  margin-left: 10px;
+}
+.swiper-verticle swiper-item{
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.light-font1{
+  color: #999;
+}
+.outbox .icon-iconfontjiantou2{
+  margin-right: 10rpx;
+}

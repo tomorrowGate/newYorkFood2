@@ -3,7 +3,7 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
-  z-index: 2
+  z-index: 6
 }
 .dialog-mask{
   position: fixed;
@@ -11,16 +11,17 @@
   width: 100vw;
   height: 100vh;
   background: rgba(0,0,0,0.5);
-  z-index: 3
+  z-index: 7
 }
 .dialog-main{
   position: fixed;
   width: 634rpx;
-  height: 568rpx;
+ /*  height: 568rpx; */
+ padding-bottom: 40rpx;
   background: #fff;
   border-radius: 16rpx;
   top:50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  z-index: 4;
+  z-index: 8;
 }

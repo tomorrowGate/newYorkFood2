@@ -1,41 +1,52 @@
 <!--my/page/mycard.wxml-->
 <view class="mycard">
-  <view class="mycard-h1">我的卡券</view>
+  <view class="mycard-h1">{{language.myCard}}</view>
   <view class="mycard-items" >
     <view class="my-card-item {{showCardT==0?'mycard-active':''}}" bindtap="showCardType" data-argu="0">
       <view class="my-card-icon"><i class="iconfont iconyuanhuan {{showCardT==0?'mycard-active':''}}"/> </view>
-      <view class="my-card-txt">未使用</view>
+      <view class="my-card-txt">{{language.status[0]}}</view>
     </view>
     <view class="my-card-item {{showCardT==1?'mycard-active':''}}" bindtap="showCardType" data-argu="1">
       <view class="my-card-icon"><i class="iconfont iconyishiyong {{showCardT==1?'mycard-active':''}}"/></view>
-      <view class="my-card-txt">已使用</view>
+      <view class="my-card-txt">{{language.status[1]}}</view>
     </view>
     <view class="my-card-item {{showCardT==2?'mycard-active':''}}" bindtap="showCardType" data-argu="2">
       <view class="my-card-icon"><i class="iconfont iconjinzhi {{showCardT==2?'mycard-active':''}}"/></view>
-      <view class="my-card-txt">已过期</view>
+      <view class="my-card-txt">{{language.status[2]}}</view>
     </view>
   </view>
 
-  <view class="card-body">
+  <view class="card-body" wx:if="{{coupon_result.length<=0}}">
+    <view class="nodata-index">
+      <view class="nodata-imgbox">
+        <image src="{{imgsrc}}"></image>
+      </view>
+      <text>{{nodata}}</text>
+    </view>
+  </view>
+  <view class="card-body" wx:for="{{coupon_result}}" wx:key="{{index}}">
     <view class="card-body-item {{showCardT==0?'':'gray'}}">
       <view class="card-item-up">
         <view class="card-item-imgbox">
-          <image src=""></image>
+          <image src="{{appurl}}{{item.store_logo}}"></image>
         </view>
         <view class="card-item-mid">
-          <view class="card-mid-top">芝芝舒芙蕾（兆丰弄店）</view>
-          <view class="card-mid-tag">抵价券</view>
-          <view class="card-mid-time">有效期至2019.12.30</view>
+          <view class="card-mid-top">{{item.store_name}}</view>
+          <view class="card-mid-tag">
+            <text class="card-mid-intag">{{language.myCardInfo[2]}}</text>
+          </view>
+          <view class="card-mid-time">{{language.deQuan[2]}}{{item.end_date}}</view>
         </view>
         <view class="card-item-right">
-          <view class="card-item-money"><text>￥</text> 50</view>
-          <view class="card-item-filter">满100元可用</view>
+          <view class="card-item-money">$<text>{{item.coupon_value}}</text> </view>
+          <view class="card-item-filter">{{language.others[0]}} {{item.min_amount}} {{language.others[1]}}</view>
         </view>
       </view>
       <view class="card-item-down">
-        <view class="card-item-text">不可与满减、折扣、第二份半价活动优惠同时享受。在线支持专享。</view>
-        <view class="use-rightnow" bindtap="showUseDia">立即使用</view>
-        
+        <view class="card-item-text">{{item.coupon_content}}</view>
+        <view class="use-rightnow" wx:if="{{showCardT==0}}" bindtap="showUseDia" data-coupon_result="{{item}}">{{language.myCardInfo[0]}}</view>
+        <view class="use-rightnow" wx:if="{{showCardT==1}}" bindtap="showUseDia" data-coupon_result="{{item}}">{{language.status[1]}}</view>
+        <view class="use-rightnow" wx:if="{{showCardT==2}}" bindtap="showUseDia" data-coupon_result="{{item}}">{{language.status[2]}}</view>
         <view class="card-left-ball"></view>
         <view class="card-right-ball"></view>
       </view>
@@ -47,37 +58,37 @@
     <view class="dia-card">
       <view class="dia-card-top">
         <view class="dia-top-left">
-          <view class="dia-left-money">￥<text>50</text></view>
-          <view class="dia-left-text">满100元可用</view>
+          <view class="dia-left-money">$<text>{{dia_coupon_result.coupon_value}}</text></view>
+          <view class="dia-left-text">{{language.FullsTip[0]}}{{dia_coupon_result.min_amount}}{{language.FullsTip[1]}}</view>
         </view>
         <view class="dia-top-right">
-          <view class="dia-right-store">芝芝舒芙蕾（兆丰弄店）</view>
+          <view class="dia-right-store">{{coupdia_coupon_resulton_result.store_name}}</view>
           <view class="dia-right-region">
-            <view class="dia-right-add">武康街道祥康南路兆丰路</view> 
-            <i class="iconfont " ></i>
-            <text class="dia-right-m">500m</text>
+            <view class="dia-right-add">{{dia_coupon_result.address}}</view> 
+            <i class="iconfont iconlocation" ></i>
+            <text class="dia-right-m">{{dia_coupon_result.distance}}</text>
           </view>
-          <view class="dia-right-date">有效期：2019.11.30~2019.12.31</view>
+          <view class="dia-right-date">{{language.deQuan[2]}}:{{dia_coupon_result.start_date}}-{{dia_coupon_result.end_date}}</view>
         </view>
       </view>
 
       <view class="dia-card-bottom">
         <view  wx:if="{{!sureUseOne}}">
           <view class="ewm-box">
-            <image src=""></image>
+            <image src="{{dia_coupon_result.qrcode}}"></image>
             <i class="iconfont iconyishiyong1" wx:if="{{showCardT==1}}"></i>
             <i class="iconfont iconyiguoqi" wx:if="{{showCardT==2}}"></i>
           </view>
-          <view class="useit {{showCardT==0?'':'had-used'}}" bindtap="useitFirst">立即使用</view>
+          <view class="useit {{showCardT==0?'':'had-used'}}" bindtap="useitFirst" data-coupon_result2="{{dia_coupon_result}}">{{language.myCardInfo[0]}}</view>
         </view>
         
         <view wx:if="{{sureUseOne}}">
           <view class="are-you-sure" >
-            <text class="yeah"> 你确定要使用该优惠券吗?</text>
-            <text class="sure-agin">请与商家确认后再进行本次操作</text>
+            <text class="yeah"> {{language.cancelCared[0]}}</text>
+            <text class="sure-agin">{{language.cancelCared[1]}}</text>
           </view>
-          <view class="useit {{hasUsed?'had-used':''}}" bindtap="useitSure">使用</view>
-          <view class="useit had-used" bindtap="hideDia">不使用</view>
+          <view class="useit {{hasUsed?'had-used':''}}" bindtap="useitSure" data-cu_id="{{dia_coupon_result.id}}">{{language.cancelCared[2]}}</view>
+          <view class="useit had-used" bindtap="hideDia">{{language.cancelCared[3]}}</view>
         </view>
         
 

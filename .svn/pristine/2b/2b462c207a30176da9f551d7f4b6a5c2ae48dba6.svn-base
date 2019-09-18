@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "myHead":"/my/components/my_head",
+    "myCard":"/my/components/my_card",
+    "mySer":"/my/components/my_service"
+  }
+}

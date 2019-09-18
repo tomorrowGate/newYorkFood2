@@ -1,0 +1,8 @@
+<!--classify/page/classify_index.wxml-->
+<switch bindchange="switch1Change" wx:if="{{false}}">{{language.lang[0]+'/'+language.lang[1]}}</switch>
+<searchHead realSearch="{{realSearch}}" bind:renderRealData="renderRealData"></searchHead>
+<classifyHead bind:renderRealData="renderRealData"  bind:fromChild="fromChild"  ></classifyHead>
+<view style="margin-top:220rpx;"></view>
+<classifyBody renderdata="{{renderdata}}" bind:hideLoad="hideLoad" bind:fromChild="fromChild">
+  {{nodata}}
+</classifyBody>

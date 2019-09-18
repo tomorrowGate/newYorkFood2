@@ -1,0 +1,28 @@
+<!--find/components/store_detail.wxml-->
+<view class="storedet">
+  <view class="stodet-head">
+    <view class="stodet-h1">{{store_info.store_name}}</view>
+    <view class="stodel-icon">
+      <view  class="stodel-icon-item share-out">
+          <i class="iconfont stodel-share iconfenxiang"></i>
+          <view class="show-share">{{language.share}}</view> 
+          <button open-type="share" class="share-out-btn">
+            
+          </button>
+      </view>
+      <view class="stodel-icon-item {{isCollectIt?'stodel-icon-item-avtive':''}}"  bindtap="collectIt"><i class="iconfont stodel-share iconshoucang"></i><view>{{language.collection}}</view> </view>
+    </view>
+  </view>
+  <view class="stodel-tags">
+    <text class="stodel-tags-tag" wx:for="{{tag_info}}" wx:key="{{index}}">{{item.tag_name}}</text>
+  </view>
+  <view class="stodel-intro">
+    <view>{{store_info.description}}</view>
+    <view>{{language.store[0]}}：{{store_info.business_hours}}</view>
+  </view>
+  <view class="stodel-rogin">
+    <view class="stodel-rogin-text">{{store_info.address}}</view>
+    <view class="stodel-rogin-meter"><i class="iconfont icondingwei"></i>{{store_info.distance}}m</view>
+    <view class="stodel-rogin-call" bindtap="callPhone"><i class="iconfont icondianhua1"></i></view>
+  </view>
+</view>

@@ -1,0 +1,80 @@
+{
+  "pages": [
+    "pages/index/map_index",
+    "find/page/find_index",
+    "find/page/store_real",
+    "my/page/my_index",
+    "my/page/my_setinfo",
+    "classify/page/classify_index",
+    "member/page/menber_index",
+    "pages/index/index",
+    "pages/link/link",
+    "classify/page/main_search",
+    "find/page/gallery",
+    "my/page/message_detail",
+    "my/page/blackcard",
+    "my/page/message/Message",
+    "my/page/mycard",
+    "my/page/my_collection",
+    "my/page/collect",
+    "find/page/article",
+    "classify/page/classify_link",
+    "classify/page/classify_searchbody",
+    "my/page/information/personal",
+    "my/page/setup/setUp",
+    "my/page/feedback/feedback",
+    "my/page/cooperation/cooperation",
+
+    "classify/page/classify_searchDet"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarTitleText": "纽约美食",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#fff"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#ffac41",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/map_index",
+        "iconPath": "/src/img/shouye.png",
+        "selectedIconPath": "/src/img/Ashouye.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "classify/page/classify_index",
+        "iconPath": "/src/img/fenlei.png",
+        "selectedIconPath": "/src/img/Afenlei.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "find/page/find_index",
+        "iconPath": "/src/img/faxian.png",
+        "selectedIconPath": "/src/img/Afaxian.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "member/page/menber_index",
+        "iconPath": "/src/img/huiyuan.png",
+        "selectedIconPath": "/src/img/Ahuiyuan.png",
+        "text": "会员"
+      },
+      {
+        "pagePath": "my/page/my_index",
+        "iconPath": "/src/img/wode.png",
+        "selectedIconPath": "/src/img/Awode.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

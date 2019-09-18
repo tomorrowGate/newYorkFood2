@@ -1,18 +1,26 @@
 <!--Message/Message.wxml-->
+<view class="nav">
+    <view class="notice {{showAct==0?'active':''}}" bindtap="changTab" data-argu="0">{{language.message[0]}}</view>
+    <view bindtap="changTab" class="notice {{showAct==1?'active':''}}" data-argu="1">{{language.message[1]}}</view>
+</view>
 
-    <view class="nav">
-        <view class="notice {{showAct==0?'active':''}}" bindtap="changTab" data-argu="0">通知</view>
-        <view bindtap="changTab" class="notice {{showAct==1?'active':''}}" data-argu="1">优惠</view>
-    </view>
-
-<view class="row" bindtap="goMsgDet">
-  <image class="img" src="../image/head.png"></image>
+<view class="nodata-index" wx:if="{{message_info.length<=0}}">
+  <view class="nodata-imgbox">
+    <image src="{{imgsrc}}"></image>
+  </view>
+  <text>{{nodata}}</text>
+</view>
+<view class="row" bindtap="goMsgDet" wx:for="{{message_info}}" wx:key="{{index}}" data-m_id="{{item.msg_id}}">
+  <view class="row-imgbox">
+    <image class="img" src="/src/img/msg2.png" wx:if="{{showAct==0}}"></image>
+    <image class="img" src="/src/img/msg3.png" wx:if="{{showAct==1}}"></image>
+    <view class="punctuation" hidden="{{item.is_read!=0}}"></view>
+  </view>
   <view class="food-bulletin">
-      <text class="announcement">美食公告</text>
-      <view class="preferential">今日首笔任意消费618可获得精.....</view>
+      <text class="announcement">{{item.title}}</text>
+      <view class="preferential">{{item.content}}</view>
   </view>
   <view class="time">
-      <text  class="preferential">两天前</text>
-      <view class="punctuation"></view>
+      <text  class="preferential">{{item.add_date}}</text>
   </view>
 </view>

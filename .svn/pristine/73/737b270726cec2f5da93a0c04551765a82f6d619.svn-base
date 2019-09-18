@@ -1,0 +1,2 @@
+<!--classify/page/classify_searchDet.wxml-->
+<classifyBody renderdata="{{renderdata}}" bind:fromChild="fromChild"></classifyBody>

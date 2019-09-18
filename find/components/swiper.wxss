@@ -3,8 +3,9 @@
 /* 第一个轮播图 */
 .banner-view{
   position: relative;
+  padding-top:10rpx;
   width: 750rpx;
-  height:370rpx;
+  height:496rpx;
   background: #fff;
 }
 /* 第一个轮播图 */
@@ -12,7 +13,8 @@
   position: relative;
   overflow: hidden;
   width: 715rpx;
-  height:350rpx;
+  /* height:350rpx; */
+  height:476rpx;
   margin: auto;
   border-radius: 10rpx;
   z-index: 5
@@ -23,8 +25,7 @@
 } */
 .swiper-item image{
   width: 715rpx;
-  height:350rpx;
-  margin: auto;
+  height:476rpx;
   border-radius: 10rpx;
 } 
 .shadow-box{ 
@@ -33,8 +34,8 @@
   top:0;
   left:22rpx;
   width: 708rpx;
-  height:307rpx;
+  height:427rpx;
   border-radius: 10rpx;
-  box-shadow: 4rpx 0 20rpx #aaa;
+  box-shadow: 1rpx 0 2rpx #aaa;
   z-index: 1;
-  }
+}

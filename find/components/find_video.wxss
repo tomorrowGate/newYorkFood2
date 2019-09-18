@@ -1,8 +1,10 @@
 /* find/components/find_video.wxss */
 @import "/app.wxss";
 .find-video{
-  padding: 0 23rpx 30rpx;
+  padding: 0 23rpx 80rpx;
   box-sizing: border-box;
+  margin-top: 20rpx;
+  background: #fff;
 }
 .find-video-title{
   display: flex;
@@ -33,4 +35,7 @@
 .find-video-item video{
   width: 100%;
   height: 100%;
+}
+.nodata-yet{
+  font-size: 28rpx;
 }

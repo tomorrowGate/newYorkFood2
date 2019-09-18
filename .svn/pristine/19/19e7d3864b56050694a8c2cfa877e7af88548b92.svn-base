@@ -1,0 +1,104 @@
+/* find/components/store_detail.wxss */
+@import "/app.wxss";
+.storedet{
+  margin: 70rpx 0 20rpx 0;
+  padding: 0 18rpx;
+  font-size: 26rpx;
+  background: #fff;
+}
+.stodet-head{
+  display: flex;
+  justify-content: space-between;
+
+}
+.stodet-h1{
+  font-weight: bold;
+  font-size: 38rpx;
+
+}
+.stodel-icon{
+  display: flex;
+}
+.stodel-icon-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ /*  width: 70rpx; */
+  height: 70rpx;
+  font-size: 24rpx;
+  margin-left: 10rpx;
+  color: #666;
+  background: #fff;
+  border:none;
+}
+.stodel-icon button{
+  padding: 4rpx 0 0;
+  line-height: 30rpx;
+  font-size: 24rpx;
+}
+button::after{
+  border:none;
+}
+.stodel-icon-item-avtive{
+  color: #ffac41;
+}
+.stodel-tags{
+  /* height: 40rpx; */
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10rpx 0;
+}
+.stodel-tags-tag{
+  height: 32rpx;
+  background: #ffe1ec;
+  padding:0 10rpx;
+  margin-right:20rpx;
+  color:#e0472d;
+  border-radius: 6rpx;
+  margin-top: 10rpx;
+}
+.stodel-intro{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 128rpx;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  color: #666;
+}
+.stodel-rogin{
+  display: flex;
+  height: 108rpx;
+  line-height: 108rpx;
+  justify-content: space-between;
+  align-items: center;
+  border-top:1rpx solid #ddd;
+  color: #666;
+}
+.stodel-rogin-text{
+  width: 454rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.stodel-rogin-meter{
+  margin-left: -30rpx;
+}
+.icondingwei{
+  color: #ffac41
+}
+.stodel-rogin-call{
+  width: 84rpx;
+  text-align: center;
+}
+.icondianhua1{
+  color: #11cc8f;
+  font-size: 40rpx;
+}
+.iconfenxiang{
+  font-size: 26rpx;
+}
+.show-share{
+  /* margin-top: 1rpx; */
+  font-size: 22rpx;
+}

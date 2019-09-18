@@ -1,10 +1,11 @@
 {
   "pages": [
-    "classify/page/classify_index",
     "pages/index/map_index",
-    "my/page/my_index",
-    "find/page/store_real",
     "find/page/find_index",
+    "find/page/store_real",
+    "my/page/my_index",
+    "my/page/my_setinfo",
+    "classify/page/classify_index",
     "member/page/menber_index",
     "pages/index/index",
     "pages/link/link",
@@ -15,13 +16,22 @@
     "my/page/message/Message",
     "my/page/mycard",
     "my/page/my_collection",
-    "find/page/article"
+    "my/page/collect",
+    "find/page/article",
+    "classify/page/classify_link",
+    "classify/page/classify_searchbody",
+    "my/page/information/personal",
+    "my/page/setup/setUp",
+    "my/page/feedback/feedback",
+    "my/page/cooperation/cooperation",
+    "classify/page/classify_searchDet",
+    "find/page/gongzhonghao"
   ],
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#ffac41",
-    "navigationBarTitleText": "纽约美食",
-    "navigationBarTextStyle": "white"
+    "navigationBarTitleText": "纽约美食地图",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#fff"
   },
   "tabBar": {
     "color": "#7A7E83",
@@ -46,12 +56,6 @@
         "iconPath": "/src/img/faxian.png",
         "selectedIconPath": "/src/img/Afaxian.png",
         "text": "发现"
-      },
-      {
-        "pagePath": "member/page/menber_index",
-        "iconPath": "/src/img/huiyuan.png",
-        "selectedIconPath": "/src/img/Ahuiyuan.png",
-        "text": "会员"
       },
       {
         "pagePath": "my/page/my_index",

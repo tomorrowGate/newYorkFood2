@@ -1,0 +1,26 @@
+<!--setUp/setUp.wxml-->
+<!-- 设置 -->
+<view class="head">
+  <view class="head-imgbox"><image class="img" src="/src/img/memberlogo.png" ></image></view> 
+    <view class="call">{{language.inputTitle[2]}}</view> 
+</view>
+<view class="option" bindtap="goArticle" data-article_id="{{1}}">
+<text>{{language.settingsinfo[0]}}</text>
+<i class="iconfont iconyoujiantou myser-i-right"></i>
+</view>
+<view class="option" bindtap="goArticle" data-article_id="{{5}}">
+<text>{{language.settingsinfo[1]}}</text>
+<i class="iconfont iconyoujiantou myser-i-right"></i>
+</view>
+<view class="option" bindtap="goArticle" data-article_id="{{105}}">
+<text>{{language.settingsinfo[2]}}</text>
+<i class="iconfont iconyoujiantou myser-i-right"></i>
+</view>
+<view class="option">
+<text>{{language.settingsinfo[3]}}</text>
+<text class="edition">1.0.1</text>
+</view>
+
+<view class="option backHome" bindtap="backHome">
+<text>退出登录</text>
+</view>

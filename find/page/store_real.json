@@ -4,6 +4,8 @@
     "storeDet":"/find/components/store_detail",
     "coupon":"/find/components/coupon",
     "findRecom":"/find/components/find_recomend",
-    "findVideo":"/find/components/find_video"
+    "findVideo":"/find/components/find_video",
+    "mp-navigation-bar": "/weui-miniprogram/navigation-bar/navigation-bar",
+    "skeleton":"/find/components/skeleton"
   }
 }

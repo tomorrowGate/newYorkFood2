@@ -1,0 +1,122 @@
+/* classify/components/classify_hidebody.wxss */
+@import "/app.wxss";
+page{
+  /* overflow-y: hidden; */
+}
+.scroll-view{
+  position: absolute;
+   max-height: 600rpx;
+   z-index:14;
+}
+.classfy-down {
+  /* position: relative; */
+  width: 100%;
+  /* height: 100vh; */
+  top: 5vh;
+  margin-top:-6vh;
+  
+  box-sizing: border-box;
+  font-size: 3.7037037vw;
+  z-index: 12;
+}
+.classfy-down .mask-temp{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index:13
+}
+.classfy-down .all-food {
+  padding: 7.40740741vw 2.59259259vw;
+  background: #fff;
+}
+.classfy-down .all-food .all-food-item {
+  height: 10.18518519vw;
+}
+.classfy-down .find-search-class {
+  padding: 0 2.40740741vw;
+  font-size: 3.7037037vw;
+  color: #666;
+  background: #fff;
+}
+.classfy-down .find-search-class .search-body {
+  width: 100%;
+  height: 38.7037037vw;
+  padding: 6.2962963vw 0;
+  box-sizing: border-box;
+}
+.classfy-down .find-search-class .search-body .sear-mid-item {
+  height: 8.7037037vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.classfy-down .find-search-class .search-body .sear-mid-item .imgbox {
+  height: 4.62962963vw;
+  width: 70rpx;
+}
+.classfy-down .find-search-class .search-body .sear-mid-item .imgbox img {
+  height: 100%;
+}
+.classfy-down .find-search-class .search-leg {
+  padding-bottom: 17.59259259vw;
+}
+.classfy-down .find-search-class .search-leg .search-leg-top {
+  height: 6.85185185vw;
+}
+.classfy-down .find-search-class .search-leg .search-leg-tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+.classfy-down .find-search-class .search-leg .search-leg-tags .search-leg-tag {
+  padding: 0 3.7037037vw;
+  background: #efefef;
+  margin: 0.92592593vw 2.77777778vw 0.92592593vw 0;
+}
+.classfy-down .find-search-class .search-leg .search-leg-tags .active {
+  background: #e39b37;
+  color: #fff;
+}
+.classfy-down .find-search-class .search-foot {
+  display: flex;
+  height: 13.42592593vw;
+  width: 100%;
+  border-top: 1px solid #f0f0f0;
+}
+.classfy-down .find-search-class .search-foot .search-foot-btn {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4.62962963vw;
+}
+.classfy-down .find-search-class .search-foot .search-foot-btn + .search-foot-btn {
+  border-left: 1px solid #f0f0f0;
+}
+.classfy-down .find-search-class .search-foot .active {
+  color: #e1a74f;
+}
+
+.scroll-view .all-city{
+  display: flex;
+  padding: 0
+}
+.all-city-left{
+  width: 174rpx;
+}
+.all-city-left .all-food-item{
+  text-align: center;
+}
+.acllcity{
+  padding-top: 20rpx;
+}
+.all-city .all-left-item{
+  background: #f3f3f3;
+  color: #e39b37;
+  text-align: center;
+}
+.all-city-right{
+  flex: 1;
+  padding: 20rpx;
+  background: #f3f3f3;
+}

@@ -1,13 +1,28 @@
 <!--find/components/find_navgator.wxml-->
 <view class="navgator">
   <view class="nav-items">
-    <view class="nav-item {{showArgu==1?'active':''}}" bindtap="changeShow" data-argu="1">新店推荐</view>
-    <view class="nav-item {{showArgu==2?'active':''}}" bindtap="changeShow" data-argu="2">附近商家</view>
-    <view class="nav-item {{showArgu==3?'active':''}}" bindtap="changeShow" data-argu="3">热门推荐</view>
+    <view class="nav-item {{showArgu==1?'active':''}}" bindtap="changeShow" data-argu="1">{{language.threeTitle[0]}}</view>
+    <view class="nav-item {{showArgu==2?'active':''}}" bindtap="changeShow" data-argu="2">{{language.threeTitle[1]}}</view>
+    <view class="nav-item {{showArgu==3?'active':''}}" bindtap="changeShow" data-argu="3">{{language.threeTitle[2]}}</view>
   </view>
   <view class="nav-view">
-    <newRecommend wx:if="{{showArgu==1}}"></newRecommend>
-    <nearbyStore wx:if="{{showArgu==2}}"></nearbyStore>
-    <hotRecommend wx:if="{{showArgu==3}}"></hotRecommend>
+    <newRecommend 
+    wx:if="{{showArgu==1}}" 
+    renderdataNew="{{renderdata}}"
+    language="{{language}}"
+    showArgu="{{showArgu}}"></newRecommend>
+
+    <nearbyStore 
+    wx:if="{{showArgu==2}}" 
+    renderdataNear="{{renderdata}}" 
+    language="{{language}}"
+    showArgu="{{showArgu}}"></nearbyStore>
+
+    <hotRecommend 
+    wx:if="{{showArgu==3}}" 
+    renderdataHot="{{renderdata}}" 
+    language="{{language}}"
+    showArgu="{{showArgu}}"></hotRecommend>
+    
   </view>
 </view>

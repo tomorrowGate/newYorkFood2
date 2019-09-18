@@ -1,23 +1,38 @@
 <!--find/components/store_detail.wxml-->
 <view class="storedet">
   <view class="stodet-head">
-    <view class="stodet-h1">芝芝舒芙蕾（兆丰弄店）</view>
+    <view class="stodet-h1">{{store_info.store_name}}</view>
     <view class="stodel-icon">
-      <view class="stodel-icon-item"><i class="iconfont stodel-share iconfenxiang"></i><view>分享</view> </view>
-      <view class="stodel-icon-item"><i class="iconfont stodel-share iconshoucang"></i><view>收藏</view> </view>
+      <view  class="stodel-icon-item share-out">
+          <i class="iconfont stodel-share iconfenxiang"></i>
+          <view class="show-share">{{language.share}}</view> 
+          <button open-type="share" class="share-out-btn">
+            
+          </button>
+      </view>
+      <view class="stodel-icon-item {{isCollectIt?'stodel-icon-item-avtive':''}}"  bindtap="collectIt"><i class="iconfont stodel-share iconshoucang"></i><view>{{language.collection}}</view> </view>
     </view>
   </view>
   <view class="stodel-tags">
-    <text class="stodel-tags-tag"> 汉堡</text>
-    <text class="stodel-tags-tag"> 快餐</text>
+    <text class="stodel-tags-tag" wx:for="{{tag_info}}" wx:key="{{index}}">{{item.tag_name}}</text>
   </view>
   <view class="stodel-intro">
-    <view>随时可退 | 提前预约 | 过期提醒</view>
-    <view>营业时间：9：00-22：00</view>
+    <view>{{store_info.description}}</view>
+     
+    <view class="stodel-business">
+        {{language.store[0]}}：
+        <rich-text nodes="{{store_info.business_hours}}" class="p"></rich-text>
+    </view>
   </view>
   <view class="stodel-rogin">
-    <view class="stodel-rogin-text">广东省广州市海珠区李颖广场088号广东省广州市海珠区李颖广场088号</view>
-    <view class="stodel-rogin-meter"><i class="iconfont icondingwei"></i>3.6km</view>
+    <view class="stodel-rogin-text">{{store_info.address}}</view>
+    <view 
+    class="stodel-rogin-meter" 
+    bindtap="navigation"
+    data-cuslat="{{store_info.lat}}"
+    data-cuslng="{{store_info.lng}}"
+    data-store_id="{{store_info.store_id}}"
+    data-addr="{{store_info.address}}"><i class="iconfont icondingwei"></i>{{store_info.distance=="未知"?"":store_info.distance}}</view>
     <view class="stodel-rogin-call" bindtap="callPhone"><i class="iconfont icondianhua1"></i></view>
   </view>
 </view>

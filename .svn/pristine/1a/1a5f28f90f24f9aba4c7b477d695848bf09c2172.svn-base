@@ -1,0 +1,124 @@
+/* find/components/coupon.wxss */
+@import "/app.wxss";
+.coupon{
+ background: #fff;
+ padding-bottom: 20rpx;
+}
+.coupon-title{
+  display: flex;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom:1rpx solid #efefef;
+}
+.coupon-title-item{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 174rpx;
+  font-weight: bold;
+}
+.coupon-view{
+  padding: 0 23rpx;
+  box-sizing: border-box;
+}
+.coupon-view-text{
+  display: flex;
+  align-items: center;
+  height: 104rpx;
+  line-height: 104rpx;
+  font-weight: bold;
+}
+.coupon-view-text::before{
+  display: block;
+  content: "";
+  height: 30%;
+  border:2rpx solid #ffac41;
+  margin-right: 20rpx;
+}
+.active{
+  color: #ffac41
+}
+.active::after{
+  display: block;
+  content: "";
+  width: 30%;
+  border:1rpx solid #ffac41
+}
+.coupon-view-card{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 178rpx;
+  padding: 20rpx 24rpx;
+  font-size: 26rpx;
+  margin-bottom: 25rpx;
+  border:1rpx solid #ffac41;
+  border-radius: 8rpx;
+  box-sizing: border-box;
+}
+.coupon-left-money{
+  font-size: 48rpx;
+  color:#ffac41;
+
+}
+.coupon-left-condition{
+  color: #ffac41;
+  height: 40rpx;
+}
+.coupon-left-bottom{
+  height: 30rpx;
+
+}
+.coupon-card-right{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.coupon-right-btn{
+  width: 178rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #fff;
+  background: #ffac41;
+  border-radius: 8rpx;
+}
+.coupon-right-time{
+  line-height: 60rpx;
+}
+.coup-dia-title{
+  height: 104rpx;
+  line-height: 104rpx;
+  text-align: center;
+}
+.coup-dia .coupon-view-card{
+  width: 90%;
+  font-size: 22rpx;
+  margin: 0 auto;
+}
+.coup-dia-use{
+  line-height: 60rpx;
+  font-size: 26rpx;
+  text-align: center;
+}
+.coup-dia-text{
+  font-size: 26rpx;
+  height: 100rpx;
+  padding: 0 60rpx;
+  line-height: 30rpx;
+  text-align: center;
+}
+.coup-sure{
+  width: 380rpx;
+  height: 82rpx;
+  line-height: 82rpx;
+  color: #fff;
+  background: #ffac41;
+  border-radius: 10rpx;
+  text-align: center;
+  margin: 0 auto
+}
+
+.coupon-down{
+  filter: grayscale(1)
+}

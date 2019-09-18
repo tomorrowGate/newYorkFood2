@@ -1,0 +1,28 @@
+<!--cooperation/cooperation.wxml-->
+<!-- 我要合作 -->
+<view class="head">
+    <view class="head-imgbox"><image class="img" src="/src/img/memberlogo.png" ></image></view> 
+    <view class="call">{{language.inputTitle[2]}}</view> 
+</view>
+<view class="option">
+    <view class="option-label">{{language.coorpectioninfo[0]}}：</view>
+    <input class="input" name="store_name" id="store_name"  data-str="store_name"  bindinput ="storenameInput"></input>  
+</view>
+<view class="option">
+    <view class="option-label">{{language.coorpectioninfo[1]}}:</view>
+    <input class="input" name="phone_mob" id="phone_mob"   data-str="phone_mob"  bindinput ="phonemobInput"></input>
+</view>
+<view class="option">
+    <view class="option-label">{{language.coorpectioninfo[2]}}:</view>
+    <input class="input" name="address" id="address"   data-str="address"  bindinput ="addressInput"></input>
+</view>
+<view class="introduce">
+    <view class="option-label">{{language.coorpectioninfo[3]}}:</view>
+    <textarea class="suggest" placeholder="{{language.inputPlaceholder[1]}}" name="content" id="content"   data-str="content"  bindinput ="contentInput"></textarea>
+    <!-- <view class="word-number">1/100</view> -->
+</view>
+<view class="bg">
+    <view class="submission" bindtap="addCooperation"  disabled="{{!canClick}}">{{language.submit}}</view>
+</view>
+
+

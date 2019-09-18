@@ -1,0 +1,20 @@
+<!--find/components/find_recomend.wxml-->
+<view class="recomend">
+  <view class="recomend-title">{{language.storeDetail[1]}}</view>
+  <view class="recommend-imgbox">
+    <view wx:if="{{!tuijian_info&&(article_info.length<=0)}}">{{language.newTips[1]}}</view>
+    <image src="{{appurl+tuijian_info.picture}}" bindtap="goArticle" data-article_id="{{tuijian_info.article_id}}" ></image>
+  </view>
+  <view class="recommend-article" bindtap="goArticle" wx:for="{{article_info}}" wx:key="{{index}}" data-article_id="{{item.article_id}}">
+    <view class="rec-art-left">
+      <view class="rec-art-title">{{item.title}}</view>
+      <view class="rec-art-bottom">
+        <view class="rec-art-aut">原创：小妮妮</view>
+        <view class="rec-art-time">{{item.add_date}}</view>
+      </view>
+    </view>
+    <view class="rec-art-right">
+      <view class="imgbox"><image src="{{appurl}}{{item.picture}}"></image></view>
+    </view>
+  </view>
+</view>

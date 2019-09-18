@@ -1,0 +1,72 @@
+<!--classify/components/classify_head.wxml-->
+<view class="classify find-search" v-show="isShowTitle" id="classify" ><!-- catchtouchmove="true" -->
+  <view class="search-neck">
+    <view class="sear-top-all sear-top-long {{classify.isActive==1?'active':''}}" bindtap="changeItem" data-index="{{1}}">
+      <text>{{tagname||language.foods[0]}}</text>
+      <i class="iconfont iconjiantou9"></i>
+    </view>
+    <view class="sear-top-all sear-top-long {{classify.isActive==2?'active':''}}" bindtap="changeItem" data-index="{{2}}">
+      <text> {{sortName||language.sort}}</text>
+      <i class="iconfont iconjiantou9"></i>
+    </view>
+    <view class="sear-top-all sear-top-short {{classify.isActive==3?'active':''}}" bindtap="changeItem" data-index="{{3}}">
+      <text> {{language.allcity}} </text>
+      <i class="iconfont iconjiantou9"></i>
+    </view>
+    <!-- <view class="sear-top-all sear-top-long {{classify.isActive==4?'active':''}}" bindtap="haveCus" data-index="{{4}}">
+      <text> 有优惠券</text>
+    </view> -->
+    <view 
+    class="sear-top-all sear-top-short {{classify.isActive==5?'active':''}} {{filterName?'active':''}}" 
+    bindtap="changeItem" 
+    data-index="{{5}}">
+      <text> {{language.screen}} </text>
+      <i class="iconfont iconshaixuan"></i>
+    </view>
+  </view>
+
+<!-- <div class="search-tags" id="search-tags" v-show="isShowTitle">
+    <div class="clear-scroll">
+        <div class="search-tags-out" v-for="(v,i) in 3" :key="i">
+            <div class="sear-tags-tag"  >快餐 </div>
+            <div class="sear-tags-tag"> 烧烤 </div>
+            <div class="sear-tags-tag" v-for="(v,i) in 2" :key="i"> 西餐 </div>
+        </div>
+    </div>
+</div> -->
+<scroll-view
+class="scroll-view-x" 
+scroll-x
+>
+  <view class="scroll-tags">
+  <view 
+  class="scroll-tag {{getAllArgu.scategory==item.cate_id?'tags-active':''}}" 
+  wx:for="{{scategory}}" 
+  wx:key="{{index}}" 
+  bindtap="searchScategory" 
+  data-scateid="{{item.cate_id}}">{{item.cate_name}}</view>
+ </view> 
+  
+</scroll-view>
+
+  <!-- <scroll-view 
+  scroll-y 
+  class="classify-scroll-out"
+  catchtouchmove="doNothing"> -->
+    <classifyHidebody 
+      tag_info="{{tag_info}}" 
+      scategory="{{scategory}}" 
+      allCount="{{allCount}}"
+      activenum="{{classify.isActive}}" 
+      e="{{classify.e}}"
+      bind:fromChild="fromChild"
+      bind:renderRealData="fromHideBody"
+      bind:showLoad="showLoad"
+      bind:changeTag="changeTag"
+      bind:changeSort = "changeSort"
+      bind:chageFilter = "chageFilter"
+    >
+    </classifyHidebody>
+
+  <!-- </scroll-view> -->
+</view>

@@ -2,7 +2,9 @@
 @import "/app.wxss";
 .recomend{
   padding: 0 23rpx 30rpx;
+  margin-top:16rpx; 
   box-sizing: border-box;
+  background: #fff;
 }
 .recomend-title{
   display: flex;
@@ -19,8 +21,9 @@
   margin-right: 20rpx;
 }
 .recommend-imgbox{
+  position: relative;
   height:330rpx;
-  background: #00f;
+ /*  background: #00f; */
   margin-bottom: 20rpx;
   /* border-bottom: 1rpx solid #000; */
 }
@@ -52,8 +55,25 @@ overflow: hidden;
   height: 166rpx;
   background: #f99;
 }
+.rec-art-right .imgbox{
+  width: 100%;
+  height: 100%;
+}
 .rec-art-bottom{
   display: flex;
   justify-content: space-between;
   font-size: 26rpx;
+}
+.nodata-yet{
+  font-size: 28rpx;
+}
+.recommend-img-title{
+  position: absolute;
+  width: 100%;
+  bottom: 0rpx;
+  padding: 10rpx;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-size: 28rpx;
+  box-sizing: border-box;
 }

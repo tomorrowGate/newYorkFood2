@@ -1,7 +1,8 @@
 /* find/components/coupon.wxss */
 @import "/app.wxss";
 .coupon{
- 
+ background: #fff;
+ padding-bottom: 20rpx;
 }
 .coupon-title{
   display: flex;
@@ -47,10 +48,10 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 178rpx;
+ /*  height: 178rpx; */
   padding: 20rpx 24rpx;
   font-size: 26rpx;
-  margin-bottom: 35rpx;
+  margin-bottom: 25rpx;
   border:1rpx solid #ffac41;
   border-radius: 8rpx;
   box-sizing: border-box;
@@ -65,7 +66,7 @@
   height: 40rpx;
 }
 .coupon-left-bottom{
-  height: 30rpx;
+ /*  height: 30rpx; */
 
 }
 .coupon-card-right{
@@ -74,16 +75,18 @@
   align-items: center;
 }
 .coupon-right-btn{
-  width: 178rpx;
+  /* width: 178rpx; */
+  padding:0 20rpx;
   height: 60rpx;
   line-height: 60rpx;
+  margin-top: 10rpx;
   text-align: center;
   color: #fff;
   background: #ffac41;
   border-radius: 8rpx;
 }
 .coupon-right-time{
-  line-height: 60rpx;
+  /* line-height: 60rpx; */
 }
 .coup-dia-title{
   height: 104rpx;
@@ -102,7 +105,7 @@
 }
 .coup-dia-text{
   font-size: 26rpx;
-  height: 100rpx;
+  /* height: 100rpx; */
   padding: 0 60rpx;
   line-height: 30rpx;
   text-align: center;
@@ -115,5 +118,9 @@
   background: #ffac41;
   border-radius: 10rpx;
   text-align: center;
-  margin: 0 auto
+  margin: 20rpx auto
+}
+
+.coupon-down{
+  filter: grayscale(1)
 }

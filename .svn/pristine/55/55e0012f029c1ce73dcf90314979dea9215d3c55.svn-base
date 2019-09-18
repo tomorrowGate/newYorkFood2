@@ -1,0 +1,15 @@
+/* find/page/gallery.wxss */
+.gallery{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.gallery-pic{
+
+  width: 338rpx;
+  height: 260rpx;
+  background: #ccc;
+  margin-bottom:20rpx; 
+}

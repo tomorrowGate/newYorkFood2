@@ -1,0 +1,213 @@
+export default {
+	'zh-Hans': {
+		lang:['中文','English'],
+		//主页
+		//底部导航栏
+		home: '首页',
+		classify: '分类',
+		discovery: '发现',
+		//members: '会员',
+		me: '我的',
+		//首页
+		showMapFoods: '展示地图上的美食',
+		navigation: '自动导航',
+		coupon: '有优惠券',
+		collection: '收藏',
+
+		//搜索
+		alldecious: '全部',
+		sort: '智能排序',
+		reduction: '满减',
+		screen: '筛选',
+		fastFood: '快餐',
+		hamburg: '汉堡',
+		barbecue: '烧烤',
+		westernFood: '西餐',
+		chineseFood: '中餐',
+		search:'搜索',
+		//全部美食
+		foods: ['全部美食', '浙江菜', '小吃快餐', '其他美食', '面包甜点', '火锅', '饮品', '日韩料理', '西餐', '自助餐', '法国菜'],
+		zhejiangFood: '浙江菜',
+		snackFood: '小吃快餐',
+		otherfood: '其他美食',
+		bread: '面包甜点',
+		hotPot: '火锅',
+		drink: '饮品',
+		japanFood: '日韩料理',
+		westFood: '西餐',
+		buffet: '自助餐',
+		frenchFood: '法国菜',
+		//全城
+		allcity: '全城',
+		citys: ['全城', '其他商区', '曼哈顿商区', '景点地表', '机场车站'],
+		otherCitys: ['全城', '法拉盛/皇后区', '布鲁克林', '布朗克斯', '史泰登岛'],
+		//删选
+		seecoupon: '只看有优惠券',
+		seenewShop: '只看新店',
+		seeFee: '只看满减',
+		//餐饮类型
+		eatType: '餐饮类型',
+		eatTypes: ['快餐', '烧烤', '西餐', '汉堡', '中餐', '法国菜', '巴西菜', '泰国菜', '牛排', '早点'],
+		clear: '清空',
+		finish: '完成',
+		//排序
+		sorts: ['智能排序', '离我最近', '人气最高'],
+		//发现
+		fourBanner: ['热点推荐', '优惠商家', '新店特惠', '全部美食'],
+		notice: '美食公告',
+		threeTitle: ['新店推荐', '附近商家', '热门推荐'],
+		smalltitle: ['全部美食', '距离', '满减', '有优惠券'],
+		storeDetail:['优惠','推荐','视频'],
+		//会员
+		vipcards: ['会员黑卡', '尊享黑卡特权  享受更多折扣', '黑卡特权', '指定店铺', '享受折上折', '每周一', '享五折优惠', '黑卡会员', '特定菜品', '如何使用', '选择黑卡', '优惠商家', '入店消费', '享受美食', '展示黑卡', '特惠买单'],
+		//我的
+		myCard: '我的卡券',
+		status: ['未使用', '已使用', '已过期'],
+		myService: '我的服务',
+		serviceLists: ['我的收藏', '联系客服', '意见反馈', '我要合作', '设置'],
+		foodcard: '美食黑卡',
+		foodCardTitle: '到店展示，尊享多重特惠',
+		clickshow: '点击展示',
+
+		//个人中心子页面
+		personinfo: ['头像', '昵称', '手机号', '性别', '生日', '个性签名', '用户协议', '隐私政策', '关于我们', '版本'],
+		settingsinfo: ['用户协议', '隐私政策', '关于我们', '版本'],
+		inputTitle: ['未填写', '编辑你的个性签名', '纽约美食地图', '请输入您的宝贵意见和建议', '请留下手机号码，以便我们联系你们'],
+		cancelCollect: '取消收藏',
+		coorpectioninfo: ['店铺名称', '联系电话', '详细地址', '详情介绍'],
+		submit: '提交',
+		//商家详情
+		deQuan: ['领券成功', '立即领取', '有效期至', '使用期限', '确定', '优惠券', '不可与满减、折扣商品、第二份半价活动优惠同时享受，支持在线专享'],
+		photo: '商家相册',
+		share: '分享',
+		store: ['营业时间', '原创'],
+		//我的卡券
+		myCardInfo: ['立即使用', '有效期', '抵价券', '已过期'],
+		cancelCared: ['您确定要核销这张优惠券吗?', '请与商家确认后在进行本次操作哦~', '使用', '不使用'],
+
+		//消息列表
+		messList: '消息列表',
+		mes: '消息',
+		message: ['通知', '优惠'],
+		tell: ['美食公告', '商家优惠'],
+
+		//黑卡
+		blackcard:["每家店将因店而异为您提供最具特色的店内美食",'内容详情见每家商铺的详情页','黑卡权益','注意事项'],
+
+		//新增的,输入框
+		inputPlaceholder:['搜索','请输入详情介绍'],
+		newTips:['暂无优惠券','暂无推荐文章','暂无视频','暂无消息'],
+		others:['满','使用'],
+		inputLabels:['修改手机号码','男','女','保密','出生日期','个性签名'],
+		defaultSin:['该用户很懒,没有留下签名'],
+		outLogin:"退出登录",
+		FullsTip:["满","使用"],
+		authorizedLocation:["授权地理位置"]
+	},
+	'en': {
+		lang:['Chinese','English'],
+		//主页
+		//底部导航栏
+		home: 'Home',
+		classify: 'Classify',
+		discovery: 'Discovery',
+		//members: 'Members',
+		me: 'Me',
+		//登录界面
+		login:['Hello','Login applet please authorize first','Get WeChat authorization'],
+		//首页
+		showMapFoods: 'Show the food on the map',
+		navigation: 'navigation',
+		coupon: 'Coupon',
+		collection: 'Favorite',
+
+		//搜索
+		search:'search',
+		alldecious: 'All',
+		sort: 'Sort',
+		reduction: 'Full reduction',
+		screen: 'Filter',
+		fastFood: 'Fast food',
+		hamburg: 'Hamburg',
+		barbecue: 'Barbecue',
+		westernFood: 'Western food',
+		chineseFood: 'Chinese food',
+		//全部美食
+		foods: ['all', 'Zhejiang Cuisine', 'Snack food', 'Other delicacies', 'Bread dessert', 'Hot pot', 'Drink', 'Japanese cuisine', 'Western food', 'Buffet', 'French food'],
+		zhejiangFood: 'Zhejiang Cuisine',
+		snackFood: 'Snack food',
+		otherfood: 'Other delicacies',
+		bread: 'Bread dessert',
+		hotPot: 'Hot pot',
+		drink: 'Drink',
+		japanFood: 'Japanese cuisine',
+		westFood: 'Western food',
+		buffet: 'Buffet',
+		frenchFood: 'French food',
+		//全城
+		allcity: 'All Cities',
+		citys: ['all city', 'Other area', 'Manhattan', 'Attractions', 'Airport station'],
+		otherCitys: ['The whole city', 'Flushing/queens', 'Brooklyn', 'Bronx', 'Staten island'],
+		//删选
+		seecoupon: 'Have coupons',
+		seenewShop: 'New openings',
+		seeFee: 'Discount after order certain amount',
+		//餐饮类型
+		eatType: 'Dining type',
+		eatTypes: ['Fast food', 'Barbecue', 'Western food', 'Hamburg', 'Chinese food', 'French food', 'Brazilian food', 'Thai food', 'The steak', 'breakfast'],
+		clear: 'Reset',
+		finish: 'Apply',
+		//排序
+		sorts: ['sort', 'Most close to me', 'Most popular'],
+		//发现
+		fourBanner: ['Recommend', 'Deals', 'New openings', 'All'],
+		notice: 'News',
+		threeTitle: ['New', 'Nearby', 'Hot'],
+		smalltitle: ['ALL', 'Distance', 'Full reduction', 'Screening'],
+		storeDetail:['Preferential','Recommended','Video'],
+		//会员
+		vipcards: ['Member of the black card', 'Enjoy black carter rights for more discounts', 'Black carter right', 'Specify the store', 'Enjoy and fold', 'Every Monday', '50 percent off', 'The black card member', 'A particular food', 'How to use', 'Choose the black card', 'Discount stores', 'In the shop', 'Enjoy the food', 'Show the black card', 'Preferential pay'],
+		//我的
+		myCard: 'My coupons',
+		status: ["Unredeemed", 'Redeemed', 'Expired'],
+		myService: 'Other',
+		serviceLists: ['My Favorites', 'Contact customer service', 'Feedback', "I'd like to join as a venue owner", 'Settings'],
+		foodcard: 'Black card',
+		foodCardTitle: 'More discounts, enjoy your VIP experience',
+		/* clickshow: 'Click on the show', */
+		clickshow: 'Show',
+		//个人中心子页面
+		personinfo: ['Profile photo', 'Nickname', 'Phone no.', 'Gender', 'Birthday', 'Signature'],
+		settingsinfo: ['User agreement', 'Privacy policy', 'About us', 'Version'],
+		inputTitle: ['Did not fill in', 'Edit your signature', 'Food map of New York', 'Please enter your comments and suggestions', 'Please leave your mobile phone '],
+		cancelCollect: 'Deselect',
+		coorpectioninfo: ['Venue name', 'Contact number', 'Detailed address', 'Details'],
+		submit: 'Submit',
+		//商家详情
+		deQuan: ['Coupon redemption is successful', 'Immediately to receive', 'Valid until', 'Use period', 'Determine', 'Coupons', 'Cannot enjoy with full reduction, discount goods, second half price activity discount at the same time, support online exclusive'],
+		photo: 'Merchants album',
+		share: 'Share',
+		store: ['Business hours', 'original'],
+		//我的卡券
+		myCardInfo: ['Immediate use', 'The period of validity', 'Trade-in', 'expired'],
+		cancelCared: ['Are you sure you want to cancel this coupon?', 'Please confirm with the merchant before the operation~', 'use', 'Do not use'],
+		//消息列表
+		messList: 'The message list',
+		mes: 'The message',
+		message: ['notice', 'Deals'],
+		tell: ['Food notice', 'Merchants preferential'],
+
+		//黑卡
+		blackcard:['Each store will provide you with the most distinctive in-store','cuisine,See the details page for each store','Equity','Announcements'],
+
+		//新增的,输入框 
+		inputPlaceholder:['Search','Please leave your contact number'],
+		newTips:['No coupons yet','No recommended articles yet','No videos','No news at all'],
+		others:['Full','for use'],
+		inputLabels:['Modify phone number','male','female','A secret','Date of birth','Signature'],
+		defaultSin:['The user was lazy and did not leave a signature'],
+		outLogin:'Log out',
+		FullsTip:["Full","for use"],
+		authorizedLocation:["Authorized Location"]
+	}
+};

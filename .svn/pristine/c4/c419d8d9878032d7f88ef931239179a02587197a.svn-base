@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <block>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{language.login[0]}} <text class="blue">{{userInfo.nickName}}</text> ，{{language.login[1]}}</text>
+    </block>
+     <button class="getUserInfo" open-type="getUserInfo" bindgetuserinfo="getUserInfo">{{language.login[2]}}</button>
+  </view>
+</view>

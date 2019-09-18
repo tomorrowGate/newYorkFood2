@@ -1,0 +1,75 @@
+<!--my/page/blackcard.wxml-->
+<view class="blackcard">
+  <view class="black-bg">
+
+
+    <view class="black-main-card">
+      <view class="black-card-top">
+        <view class="black-card-bg">
+          <image src="/src/img/blackcard.png"></image>
+        </view>
+        <view class="black-card-over">
+          <view class="black-top-head">
+            <view class="black-imgbox">
+              <image src="{{portrait}}"></image>
+            </view>
+            <view class="black-nick">
+              <view class="black-nick-name">{{real_name}}</view>
+              <view class="black-nick-id">{{language.vipcards[0]}}</view>
+            </view>
+          </view>
+          <view class="black-card-foot">
+            <view class="black-btm-item">
+              <view>{{language.vipcards[4]}}</view>
+              <view>{{language.vipcards[5]}}</view>
+            </view>
+            <view class="black-btm-item">
+              <view>{{language.vipcards[6]}}</view>
+              <view>{{language.vipcards[7]}}</view>
+            </view>
+            <view class="black-btm-item">
+              <view>{{language.vipcards[8]}}</view>
+              <view>{{language.vipcards[9]}}</view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+      <view class="black-card-btm">
+        <view>每家店将因店而异为您提供最具特色的店内美食</view>
+        <view>内容详情见每家店商铺的详情页</view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="black-card-else">
+
+    <view class="black-card-good">
+      <view class="black-good-title">黑卡权益</view>
+      <view class="black-good-items">
+        <view class="black-good-item">
+          <view class="black-item-txt" wx:for="{{CEquity}}" wx:key="{{index}}">
+            <i class="iconfont "></i>
+            {{item}}
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="black-card-good">
+      <view class="black-good-title">注意事项</view>
+      <view class="black-good-items">
+        <view class="black-good-item">
+          <view class="black-item-txt" wx:for="{{Cnote}}" wx:key="{{index}}">
+            <i class="iconfont "></i>
+            {{item}}
+          </view>
+
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</view>

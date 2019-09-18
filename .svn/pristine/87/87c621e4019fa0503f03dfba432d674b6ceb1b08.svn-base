@@ -1,0 +1,23 @@
+/* my/page/message_detail.wxss */
+.pagetitle{
+  /* height: 76rpx; */
+  line-height: 76rpx;
+  padding:16rpx;
+  font-size: 37rpx;
+  font-weight: bold;
+}
+.sendtime{
+  height: 49rpx;
+  line-height: 49rpx;
+  padding:0 16rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.pagecontent{
+  padding:16rpx
+}
+.pagecontent .p{
+  display: block;
+  font-size: 34rpx;
+  text-indent:68rpx;
+}

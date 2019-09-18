@@ -1,6 +1,11 @@
 <!--find/page/gallery.wxml-->
 <view class="gallery">
-  <view class="gallery-pic" wx:for="{{10}}" wx:key="213">
-    <image class="gallery-img"></image>
+  <view class="gallery-pic" wx:for="{{lunbo_info}}" wx:key="{{index}}">
+    <image 
+    class="gallery-img" 
+    src="{{item.file_path}}" 
+    bindtap="previewImage"
+    mode="aspectFill"
+    data-src="{{item.file_path}}"></image>
   </view>
 </view>

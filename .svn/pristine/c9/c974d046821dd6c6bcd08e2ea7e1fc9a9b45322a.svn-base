@@ -1,0 +1,14 @@
+<!--find/components/find_video.wxml-->
+<view class="find-video">
+  <view class="find-video-title">{{language.storeDetail[2]}}</view>
+  <scroll-view scroll-x view class="find-video-items">
+    <view class="find-video-out" >
+        <view class="find-video-item" wx:for="{{video_info}}" wx:key="{{index}}">
+          <video src="{{appurl}}{{item.link}}" controls bindfullscreenchange="fullScreen"></video>
+        </view>
+    </view>
+    <view class="find-video-out" wx:if="{{video_info.length<=0}}">
+        {{language.newTips[2]}}
+    </view>
+  </scroll-view>
+</view>

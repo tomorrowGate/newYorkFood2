@@ -1,0 +1,18 @@
+<!--my/components/my_head.wxml-->
+<view class="myhead">
+  <view class="myhead-imgbox" bindtap="goMyInfo" >
+    <image src="{{portrait}}"></image>
+  </view>
+  <view class="myhead-middle">
+    <view class="myhead-mid-top">{{real_name}}</view>
+    <view class="myhead-mid-bottom">{{sign}}</view>
+  </view>
+  <view class="myhead-talk">
+    <i class="iconfont iconliaotian" bindtap="goMessage"><view class="myhead-bodge" hidden="{{has_read<1}}"></view></i>
+    <view class="myhead-talk" bindtap="getScancode" hidden="{{!is_store}}">
+      <!-- 扫一扫 -->
+      <i class="iconfont iconrichscan_icon"> </i>
+    </view>
+  </view>
+  
+</view>

@@ -1,14 +1,19 @@
 <!--my/components/my_head.wxml-->
 <view class="myhead">
-  <view class="myhead-imgbox" bindtap="goMyInfo">
-    <image src=""></image>
+  
+  <view class="myhead-imgbox" bindtap="goMyInfo" >
+    <image src="{{portrait}}"></image>
   </view>
   <view class="myhead-middle">
-    <view class="myhead-mid-top">恷迡旎</view>
-    <view class="myhead-mid-bottom">吃货的世界你不懂</view>
+    <view class="myhead-mid-top">{{real_name}}</view>
+    <view class="myhead-mid-bottom">{{sign||language.defaultSin}}</view>
   </view>
-  <view class="myhead-talk" bindtap="goMessage">
-    <i class="iconfont iconliaotian"><view class="myhead-bodge"></view></i>
-    
+  <view class="myhead-talk">
+    <i class="iconfont iconliaotian" bindtap="goMessage"><view class="myhead-bodge" wx:if="{{has_read>0}}"></view></i>
+    <view class="myhead-talk" bindtap="getScancode" wx:if="{{is_store}}">
+      <!-- 扫一扫 -->
+      <i class="iconfont iconrichscan_icon"> </i>
+    </view>
   </view>
+  
 </view>

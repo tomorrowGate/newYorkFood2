@@ -1,5 +1,6 @@
 /* my/components/my_head.wxss */
 @import "/app.wxss";
+
 .myhead{
   display: flex;
   justify-content: space-between;
@@ -10,6 +11,7 @@
   box-sizing: border-box;
 }
 .myhead .myhead-imgbox{
+  overflow: hidden;
   width: 128rpx;
   height: 128rpx;
   border-radius: 50%;
@@ -18,9 +20,9 @@
 .myhead .myhead-middle{
   display: flex;
   flex-direction: column;
-  width: 448rpx;
+  width: 400rpx;
   padding: 86rpx 0;
-  margin-left: 24rpx;
+  /* margin-left: 24rpx; */
   box-sizing: border-box;
   font-size: 32rpx;
 }
@@ -29,12 +31,18 @@
 }
 .myhead .myhead-middle .myhead-mid-bottom{
   font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .myhead .myhead-talk{
-  width: 120rpx;
-  height: 100%;
+  display: flex;
+  align-items: center;
+ /*  width: 120rpx; */
+ /*  height: 100%; */
   text-align: center;
-  line-height: 255rpx;
+  margin-left:20rpx;
+  /* line-height: 255rpx; */
 }
 .iconliaotian{
   position: relative;
@@ -46,6 +54,7 @@
   height: 20rpx;
   border-radius: 50%;
   background: #f00;
-  top:0px;
+  top:50%;
+  transform: translate(0, -100% );
   right: 0px;
 }

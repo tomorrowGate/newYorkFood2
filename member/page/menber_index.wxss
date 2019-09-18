@@ -12,14 +12,14 @@ page{
 }
 .image,.img{
   position: relative;
-  top:14rpx;
+  top:34rpx;
   width:402rpx;
-  height: 470rpx;
+  height: 440rpx;
   left: 50%;
   margin-left: -201rpx;
 }
 .image .imgbox{
-  transform: scale(1.25)
+  transform: scale(1.5)
 }
 .logo{
   width:190rpx;
@@ -27,7 +27,7 @@ page{
   position: absolute;
   left: 50%;
   margin-left: -95rpx;
-  top: 70rpx;
+  top: 36rpx;
 }
 .content1{
   color: #d8bf96;
@@ -36,8 +36,8 @@ page{
   flex-direction: column;
   text-align: center;
   position: absolute;
-  top: 280rpx;
-  letter-spacing: 2rpx;
+  top: 244rpx;
+  letter-spacing: 1rpx;
 
 }
 .title{
@@ -71,12 +71,12 @@ page{
   margin: 0 auto;
 }
 .icon{
-  margin-top:27rpx;
+  margin-top:42rpx;
   height: 12rpx;
 }
 .last-one{
   position: relative;
-  margin-top: 80rpx;
+  margin-top: 146rpx;
   color:#d8bf96;
   width:100%;
   text-align: center;
@@ -100,7 +100,7 @@ page{
 }
 .last-two{
   position: relative;
-  margin-top: 70rpx;
+  margin-top: 20rpx;
   color:#d8bf96;
   width:100%;
   text-align: center;

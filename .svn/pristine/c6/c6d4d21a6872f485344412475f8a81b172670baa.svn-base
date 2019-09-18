@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "searchHead": "/find/components/find_search"
+  }
+}

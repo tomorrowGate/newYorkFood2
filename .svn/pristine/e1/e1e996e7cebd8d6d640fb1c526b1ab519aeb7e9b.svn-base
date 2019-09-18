@@ -1,0 +1,142 @@
+// classify/components/classify_realbody.js
+let app = getApp()
+import event from '../../utils/event'
+Component({
+  properties: {
+    showNum:{
+      type: Number,
+      value: 0,
+      observer(){
+        console.log(this.properties.showNum,11)
+      }
+    },
+    foodList: {
+      type: Array,
+      value: [],
+      observer() {
+        this.triggerEvent("hideLoad")
+      }
+    },
+    renderdata:{
+      type:Array,
+      value: [],
+      observer() {
+        let renderdata = this.properties.renderdata
+        this.setData({
+          foodList: [...renderdata]
+        })
+        //console.log(1232123)
+      }
+    },
+    isCollect:{
+      type: Boolean,
+      value:false
+    },
+    /* isLanChange:{
+      type: Number,
+      value: this.data.language,
+      observer(){
+        console.log(111111111111)
+        this.setData({
+          'getAllArgu.cOre': wx.getStorageSync("langIndex")
+        })
+        this.getAllStores(this.data.getAllArgu)
+      }
+    } */
+  },
+
+  data: {
+    globelUrl:app.globalData.url,
+    startAll:0,
+    language: '',
+    getAllArgu:{
+      is_search: 0,
+      lat: wx.getStorageSync('lat'), 
+      lng: wx.getStorageSync('lng'),
+
+      tag_id: 0,
+      sort: 0,
+      city: 0,
+      onlyhascoupon: 0,
+      onlynew: 0,
+      onlyFullReduce: 0,
+      scategory: 0,
+      search_str: 0,
+
+      start: 0,
+      cOre: wx.getStorageSync("langIndex")
+    },
+  },
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    doNothing(){
+
+    },
+    goStoreDet(e){
+      if(e.target.dataset.id =="navigation") return
+
+      let user_id = wx.getStorageSync("user_id")
+      let store_id = e.currentTarget.dataset.storeid
+      let lat = wx.getStorageSync('lat')
+      let lng = wx.getStorageSync('lng')
+      let cOre = wx.getStorageSync('langIndex')
+      wx.navigateTo({
+        url: `/find/page/store_real?user_id=${user_id}&cOre=${cOre}&store_id=${store_id}&lat=${lat}&lng=${lng}`,
+      })
+    },
+    navigation(e){
+      let cuslat= e.currentTarget.dataset.cuslat
+      let cuslng = e.currentTarget.dataset.cuslng
+      wx.navigateTo({
+        url: `/classify/page/classify_link?cuslat=${cuslat}&cuslng=${cuslng}`,
+      })
+    },
+    getAllStores(data){
+      let argus = this.data.getAllArgu
+      console.log(argus,98)
+      this.triggerEvent("fromChild",argus,true)
+    }, 
+    cancelThis(e){
+      let argus = e.currentTarget.dataset.item_id
+      this.triggerEvent("cancelCollect", argus, true)
+    },
+    setLanguage() {
+      this.setData({
+        language: wx.T.getLanguage()
+      });
+    },
+  },
+  pageLifetimes: {
+    show: function () {
+      //console.log(this.data.getAllArgu.cOre)
+      this.setData({
+        'getAllArgu.lat': wx.getStorageSync('lat'),
+        'getAllArgu.lng': wx.getStorageSync('lng'),
+        'getAllArgu.cOre': wx.getStorageSync("langIndex")
+      })
+      this.getAllStores(this.data.getAllArgu)
+    },
+  },
+  lifetimes: {
+    attached: function () {
+      // 在组件实例进入页面节点树时执行
+      /* console.log(this.properties.foodList) */ 
+      this.setData({
+        'getAllArgu.lat': wx.getStorageSync('lat'),
+        'getAllArgu.lng': wx.getStorageSync('lng'),
+        'getAllArgu.cOre': wx.getStorageSync("langIndex")
+      })
+      this.getAllStores(this.data.getAllArgu)
+
+      this.setData({
+        langIndex: wx.getStorageSync('langIndex')
+      });
+      this.setLanguage();
+    },
+    detached: function () {
+      // 在组件实例被从页面节点树移除时执行
+    },
+  },
+})

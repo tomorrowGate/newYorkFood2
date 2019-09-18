@@ -1,0 +1,13 @@
+<!--find/components/find_navgator.wxml-->
+<view class="navgator">
+  <view class="nav-items">
+    <view class="nav-item {{showArgu==1?'active':''}}" bindtap="changeShow" data-argu="1">{{language.threeTitle[0]}}</view>
+    <view class="nav-item {{showArgu==2?'active':''}}" bindtap="changeShow" data-argu="2">{{language.threeTitle[1]}}</view>
+    <view class="nav-item {{showArgu==3?'active':''}}" bindtap="changeShow" data-argu="3">{{language.threeTitle[2]}}</view>
+  </view>
+  <view class="nav-view">
+    <newRecommend wx:if="{{showArgu==1}}" bind:fromChild="fromChild" renderdata="{{renderdata}}"></newRecommend>
+    <nearbyStore wx:if="{{showArgu==2}}" bind:fromChild="fromChild" renderdata="{{renderdata}}"></nearbyStore>
+    <hotRecommend wx:if="{{showArgu==3}}" bind:fromChild="fromChild" renderdata="{{renderdata}}"></hotRecommend>
+  </view>
+</view>

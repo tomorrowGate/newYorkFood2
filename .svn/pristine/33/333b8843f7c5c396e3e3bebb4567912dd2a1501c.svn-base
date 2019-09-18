@@ -1,0 +1,49 @@
+/* find/page/store_real.wxss */
+page{
+  background: #f2f2f2;
+  padding-top:10rpx;
+}
+swiper{
+  position: relative;
+}
+.swiper-pic-bodge{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right:50rpx;
+  bottom:30rpx;
+  width: 98rpx;
+  height: 98rpx;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-size: 26rpx;
+  z-index: 5;
+}
+
+.coupon-title{
+  display: flex;
+  justify-content: space-around;
+  height: 100rpx;
+  line-height: 100rpx;
+  position: sticky;
+  top: 0rpx;
+
+  border-bottom:1rpx solid #efefef;
+  background: #fff;
+  z-index: 2;
+}
+.coupon-title-item{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+ /*  width: 174rpx; */
+  font-weight: bold;
+}
+.topnavFixed{
+border-top-left-radius:20rpx;
+border-top-right-radius:20rpx;
+position:fixed;width:100%;height:100rpx; top:0rpx;background:white;z-index: 9;
+}

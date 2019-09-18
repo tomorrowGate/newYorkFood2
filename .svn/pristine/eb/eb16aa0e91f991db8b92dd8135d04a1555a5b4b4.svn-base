@@ -1,0 +1,140 @@
+// my/components/my_head.js
+let app = getApp()
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+    portrait: {
+      type: String,
+      value: wx.getStorageSync('portrait'),
+    },
+    real_name: {
+      type: String,
+      value: wx.getStorageSync('real_name'),
+    },
+    sign: {
+      type: String,
+      value: wx.getStorageSync('sign'),
+    },
+    has_read: {
+      type: Number,
+      value: wx.getStorageSync('has_read'),
+    },
+  },
+
+  /**
+   * 组件的初始数据
+   */
+  data: {
+    is_store:false,//是否是商户
+  },
+
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    goMessage(){
+      wx.navigateTo({
+        url: '/my/page/message/Message',
+      })
+    },
+    goMyInfo(){
+      wx.navigateTo({
+        url: '/my/page/information/personal',
+      })
+    },
+    /*骚一骚*/
+    getScancode: function () {
+      if (wx.getStorageSync('identity') == '0' || wx.getStorageSync('identity') == '' || wx.getStorageSync('identity') == 0 || wx.getStorageSync('identity') == 'null' || wx.getStorageSync('identity') == 'undefined'){
+        this.setData({
+          is_store:false,
+        })
+        wx.showToast({
+          title: "只有商户账号才能使用此功能",
+          icon: 'none',
+          duration: 2000
+        })
+        return;
+      }else{
+        this.setData({
+          is_store: true,
+        })
+      }
+      var that = this;
+      // 允许从相机和相册扫码
+      wx.scanCode({
+        success: (res) => {
+          console.log(res);
+          var result = res.result;
+          if(!result||result==""){
+            wx.showToast({
+              title: "优惠券有误",
+              icon: 'none',
+              duration: 2000
+            })
+          }else{
+            /*商家销毁优惠券*/
+            wx.request({
+              url: app.globalData.url + 'index.php?app=nyms_coupon&act=writeOffCouponForStore',
+              method: 'POST',
+              header: {
+                'content-type': 'application/x-www-form-urlencoded',
+              },
+              data: {
+                user_id:wx.getStorageSync('user_id'),
+                coupon_user_id: result
+              },
+              success: function (res) {
+                if (res.data.done) {
+                  wx.showToast({
+                    title: res.data.retval,
+                    icon: 'none',
+                    duration: 2000
+                  })
+                } else {
+                  wx.showToast({
+                    title: res.data.msg,
+                    icon: 'none',
+                    duration: 2000
+                  })
+                }
+              },
+              fail: function (err) {
+                wx.showToast({
+                  title: "系统异常",
+                  icon: 'none',
+                  duration: 2000
+                })
+              },
+              complete: function (res) {
+                console.log(res);
+              }
+            })
+          }
+        }
+      })
+    }
+  },
+  pageLifetimes: {
+    show: function () {
+      app.get_info()
+      this.setData({
+        "portrait": wx.getStorageSync('portrait'),
+        'real_name': wx.getStorageSync('real_name'),
+        'sign': wx.getStorageSync('sign'),
+        'has_read': wx.getStorageSync('has_read')
+      })
+    },
+  },
+  lifetimes: {
+    attached: function () {
+      // 在组件实例进入页面节点树时执行
+      /* console.log(this.properties.foodList) */
+      
+    },
+    detached: function () {
+      // 在组件实例被从页面节点树移除时执行
+    },
+  },
+})

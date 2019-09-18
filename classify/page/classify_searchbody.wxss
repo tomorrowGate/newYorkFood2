@@ -1,0 +1,11 @@
+/* classify/page/classify_searchbody.wxss */
+page{
+  padding-top: 30rpx;
+}
+.nodata-index{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%,-90%)
+}

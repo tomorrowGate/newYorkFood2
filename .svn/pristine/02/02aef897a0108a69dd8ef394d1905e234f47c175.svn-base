@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "newRecommend": "/find/components/newstore_recommend",
+    "hotRecommend": "/find/components/hotstore_recommend",
+    "nearbyStore": "/find/components/nearby_store"
+    }
+}

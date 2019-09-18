@@ -1,0 +1,6 @@
+/* my/page/my_index.wxss */
+page{
+  width: 750rpx;
+  overflow-x: hidden;
+  overflow-y: visible;
+}

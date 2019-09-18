@@ -4,11 +4,11 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    globalData: { latitude: "", longitude:""}
+    globalData: { latitude: "", longitude:""},
+    language: '',
   },
   onAuthLocation() {
     wx.authorize({
@@ -39,8 +39,9 @@ Page({
     wx.getSetting({
       success(res) {
         if (res.authSetting['scope.userInfo']) {
+          let title = wx.getStorageSync("langIndex") ? "Logining" : "正在自动登录"
           wx.showLoading({
-            title: '正在自动登录',
+            title,
           })
           wx.getUserInfo({
             success(res) {
@@ -58,9 +59,6 @@ Page({
                     app.globalData.userInfo.headimgurl = headimgurl;//存到app中
 
                     that.postUserInfo(code, nickname, headimgurl);
-                    var timer = setTimeout(function () {
-                      wx.hideLoading()
-                    }, 2000)
                   } else {
                     console.log('登录失败！' + res.errMsg)
                   }
@@ -89,7 +87,10 @@ Page({
         console.log(res, "---------------------login---success")
         if (res.data.done) {
           wx.setStorageSync("user_id", res.data.retval.user_id);//存user_id
-          app.get_info();
+          wx.setStorageSync('freshBtn',false)
+          wx.setStorageSync('freshBtn2', false)
+          app.get_info()
+          console.log(wx.getStorageInfoSync("openid"))
           wx.reLaunch({
             /* url: "/pages/link/link" */
             url: "/pages/index/map_index"
@@ -97,26 +98,42 @@ Page({
           return;
         }
         else {
+          let title = wx.getStorageSync("langIndex") ? "Something is wrong with the return value" : "返回值出现问题"
           wx.showToast({
-            title: '返回值出现问题',
+            title,
             icon:"none"
           })
           return;
         }
       },
       fail: function (res) {
-        console.log(res,"---------------------login---fail")
+        let title = wx.getStorageSync("langIndex") ? "Server problem" : "服务器出现问题"
         wx.showToast({
-          title: '服务器出现问题',
+          title,
           icon: "none"
         })
       },
       complete: function (res) {
-        
+        wx.hideLoading()
       },
     })
   },
+  setLanguage() {
+    this.setData({
+      language: wx.T.getLanguage()
+    });
+  },
   onLoad: function () {
+    let pageStack = getCurrentPages()
+    /* if (pageStack[pageStack.length - 2]){
+      console.log(pageStack[pageStack.length - 2].route, 'pageStack')
+    }
+    if (app.globalData.prevRoute=="/find/page/store_real"){
+      wx.reLaunch({
+        url: `/find/page/find_index?prepath=${app.globalData.prevRoute}`,
+      })
+    } */
+    console.log(app.globalData.prevRoute,'页面路径')
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -131,7 +148,6 @@ Page({
           hasUserInfo: true
         })
       }
-
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
@@ -144,5 +160,7 @@ Page({
         }
       })
     }
+
+    this.setLanguage();
   }
 })

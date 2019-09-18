@@ -1,0 +1,97 @@
+/* find/components/newstore_recommend.wxss */
+@import "/app.wxss";
+.find .newstores {
+  padding: 0 2.31481481vw;
+  background: #fff;
+  margin-bottom: 2.77777778vw;
+}
+.find .newstores .newstores-title {
+  height: 13.7037037vw;
+  line-height: 13.7037037vw;
+  font-size: 4.62962963vw;
+  font-weight: bold;
+  border-bottom: 1px solid #f2f2f2;
+}
+.find .newstores .newstores-item {
+  height: 48.14814815vw;
+  padding-bottom: 5.55555556vw;
+}
+.find .newstores .newstores-item .newstores-item-head {
+  height: 10.55555556vw;
+  line-height: 10.55555556vw;
+  font-size: 4.62962963vw;
+  font-weight: bold;
+}
+.newstores-item-head .collection{
+   font-size: 24rpx;
+   background: #de3e22;
+   color: #fff;
+   padding: 0 16rpx;
+   border-radius: 14rpx;
+}
+.find .newstores .newstores-item .newstore-item-tags {
+  height: 4.81481481vw;
+  line-height: 4.81481481vw;
+  font-size: 3.24074074vw;
+  display: flex;
+  justify-content: space-between;
+}
+.find .newstores .newstores-item .newstore-item-tags .newstore-tas-left {
+  display: flex;
+}
+.find .newstores .newstores-item .newstore-item-tags .newstore-tas-left .newstore-item-tag {
+  padding: 0 1.66666667vw;
+  background: #ffe1ec;
+  color: #e87363;
+  margin-right: 1.85185185vw;
+  border-radius: 6rpx;
+}
+.find .newstores .newstores-item .newstore-item-tags .newstore-tags-right {
+  display: flex;
+}
+.find .newstores .newstores-item .newstore-item-tags .newstore-tags-right .newstore-item-tag {
+  padding: 0 1.66666667vw;
+  margin-right: 1.85185185vw;
+  line-height: 4.62962963vw;
+}
+.find .newstores .newstores-item .newstore-item-tags .newstore-tags-right .red {
+  border: 1px solid #de3e22;
+  color: #de3e22;
+  border-radius: 6rpx;
+}
+.find .newstores .newstores-item .newstore-item-tags .newstore-tags-right .yellow {
+  border: 1px solid #e39b37;
+  color: #e39b37;
+  border-radius: 6rpx;
+}
+.find .newstores .newstores-item .newstore-item-add {
+  display: flex;
+  justify-content: space-between;
+  height: 9.25925926vw;
+  line-height: 9.25925926vw;
+  font-size: 3.7037037vw;
+  color: #666;
+}
+.find .newstores .newstores-item .newstore-item-add .newstore-add-text{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.find .newstores .newstores-item .newstore-item-add .newstore-add-m .iconfont {
+  color: #e39b37;
+}
+.find .newstores .newstores-item .newstore-item-imgs {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.find .newstores .newstores-item .newstore-item-imgs .newstore-item-imgbox {
+  width: 31.48148148vw;
+  height: 23.14814815vw;
+  border-radius: 0.64814815vw;
+}
+.find .newstores .newstores-item .newstore-item-imgs .newstore-item-imgbox img {
+  width: 100%;
+  height: 100%;
+}

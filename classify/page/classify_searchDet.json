@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "classifyBody": "/classify/components/classify_realbody"
+  }
+}

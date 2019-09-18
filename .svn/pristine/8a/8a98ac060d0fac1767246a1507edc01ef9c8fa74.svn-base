@@ -1,0 +1,77 @@
+// find/components/nearby_store.js
+let app= getApp()
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+    foodList: {
+      type: Array,
+      value: []
+    },
+    renderdata: {
+      type: Array,
+      value: [],
+      observer() {
+        //console.log(this.properties.renderdata)
+      }
+    }
+  },
+
+  /**
+   * 组件的初始数据
+   */
+  data: {
+    globelUrl: app.globalData.url,
+    
+    getAllArgu: {
+      sort: 0,
+      search_str: '',
+      start: 0,
+      end: '',
+      lat: wx.getStorageSync("lat"),
+      lng: wx.getStorageSync("lng"),
+      user_id: wx.getStorageSync("user_id"),
+      cOre: wx.getStorageSync("langIndex")
+    },
+  },
+
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    renderRealData(e) {
+      console.log(e.detail)
+      this.setData({
+        renderdata: e.detail.realData,
+      })
+    },
+    getHotRecom() {
+      let argus = this.data.getAllArgu
+      this.triggerEvent("fromChild", argus, true)
+      return
+    },
+
+  },
+  pageLifetimes: {
+    show: function () {
+      this.getHotRecom()
+
+    },
+  },
+  lifetimes: {
+    attached: function () {
+      // 在组件实例进入页面节点树时执行
+      this.setData({
+        "getAllArgu.sort": 1,
+        "getAllArgu.user_id": wx.getStorageSync('user_id'),
+        'getAllArgu.lat': wx.getStorageSync('lat'),
+        'getAllArgu.lng': wx.getStorageSync('lng'),
+        'getAllArgu.cOre': wx.getStorageSync('langIndex')
+      })
+    },
+    detached: function () {
+      // 在组件实例被从页面节点树移除时执行
+    },
+  },
+})

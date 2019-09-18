@@ -1,0 +1,40 @@
+/* find/components/swiper.wxss */
+@import "/app.wxss";
+/* 第一个轮播图 */
+.banner-view{
+  position: relative;
+  width: 750rpx;
+  height:370rpx;
+  background: #fff;
+}
+/* 第一个轮播图 */
+.swiper{
+  position: relative;
+  overflow: hidden;
+  width: 715rpx;
+  height:350rpx;
+  margin: auto;
+  border-radius: 10rpx;
+  z-index: 5
+}
+/* .swiper  .wx-swiper-dots.wx-swiper-dots-horizontal{
+  width: 14rpx;
+  height: 14rpx;
+} */
+.swiper-item image{
+  width: 715rpx;
+  height:350rpx;
+  margin: auto;
+  border-radius: 10rpx;
+} 
+.shadow-box{ 
+  overflow: hidden;
+  position: absolute;
+  top:0;
+  left:22rpx;
+  width: 708rpx;
+  height:307rpx;
+  border-radius: 10rpx;
+  box-shadow: 1rpx 0 2rpx #aaa;
+  z-index: 1;
+  }

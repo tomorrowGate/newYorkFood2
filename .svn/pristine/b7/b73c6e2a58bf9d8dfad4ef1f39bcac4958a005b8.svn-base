@@ -1,0 +1,60 @@
+<!--my/page/my_setinfo.wxml-->
+<view class="my-setinfo">
+  <view class="my-setphone my-setitems" hidden="{{submitType!=1}}">
+    <text class="my-setphone-label">{{language.inputLabels[0]}}:</text>
+    <input class="my-input" bindinput="setPhone"  value="{{storeInfo.tel}}"></input>
+  </view>
+
+  <view class="my-setitems" hidden="{{submitType!=2}}">
+    <radio-group class="group" bindchange="radioChange">
+      <view class="label-2">
+        <radio id='man' hidden value="1"></radio>
+        <view class="label-2__icon">
+          <view class="label-2__icon-checked {{radioChanged==1?'label-yeah':'label-opc'}}" ></view>
+        </view>
+        <label class="label-2__text" for="man">
+          <text>{{language.inputLabels[1]}}</text>
+        </label>
+      </view>
+
+      <view class="label-2">
+        <radio id='girl' hidden value="0"></radio>
+        <view class="label-2__icon">
+          <view class="label-2__icon-checked {{radioChanged==0?'label-yeah':'label-opc'}}" ></view>
+        </view>
+        <label class="label-2__text" for="girl">
+          <text>{{language.inputLabels[2]}}</text>
+        </label>
+      </view>
+
+      <view class="label-2">
+        <radio id='unknow' hidden value="2"></radio>
+        <view class="label-2__icon">
+          <view class="label-2__icon-checked {{radioChanged==2?'label-yeah':'label-opc'}}" ></view>
+        </view>
+        <label class="label-2__text" for="unknow">
+          <text>{{language.inputLabels[3]}}</text>
+        </label>
+      </view>
+    </radio-group>
+  </view>
+
+  <view class="my-birth" hidden="{{submitType!=3}}">
+    <view class="section__title">
+    {{language.inputLabels[4]}}:
+      <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+        <view class="picker">
+          {{date}}
+        </view>
+      </picker>
+    </view>
+    
+  </view>
+
+  <view class="my-textout" hidden="{{submitType!=4}}">
+    <view class="section__title">{{language.inputLabels[5]}}:</view>
+    <textarea class="my-textarea" bindinput="bindTextArea" value="{{sign}}"/>
+  </view>
+
+  <view class="my-submit" bindtap="submit">{{language.submit}}</view>
+</view>

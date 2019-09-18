@@ -1,18 +1,18 @@
 <!--my/components/my_card.wxml-->
 <view class="mycard">
-  <view class="mycard-h1">我的卡券</view>
-  <view class="mycard-items" bindtap="goCardDet" data-argu="0">
-    <view class="my-card-item">
+  <view class="mycard-h1">{{language.myCard}}</view>
+  <view class="mycard-items">
+    <view class="my-card-item" bindtap="goCardDet" data-argu="0">
       <view class="my-card-icon"><i class="iconfont iconyuanhuan"/> </view>
-      <view class="my-card-txt">未使用</view>
+      <view class="my-card-txt">{{language.status[0]}}</view>
     </view>
     <view class="my-card-item" bindtap="goCardDet" data-argu="1">
       <view class="my-card-icon"><i class="iconfont iconyishiyong"/></view>
-      <view class="my-card-txt">已使用</view>
+      <view class="my-card-txt">{{language.status[1]}}</view>
     </view>
     <view class="my-card-item" bindtap="goCardDet" data-argu="2">
       <view class="my-card-icon"><i class="iconfont iconjinzhi"/></view>
-      <view class="my-card-txt">已过期</view>
+      <view class="my-card-txt">{{language.status[2]}}</view>
     </view>
   </view>
   <view class="my-card-pic">
@@ -20,9 +20,9 @@
       <image src=""></image>
     </view> -->
     <view class="my-pic-left">
-      <view class="my-pic-title">美食黑卡</view>
-      <view class="my-pic-body">到店展示，尊享多重特惠</view>
+      <view class="my-pic-title">{{language.foodcard}}</view>
+      <view class="my-pic-body">{{language.foodCardTitle}}</view>
     </view>
-    <view class="my-pic-show" bindtap="goBlack">点击展示 <i class="iconfont iconyoujiantou"></i></view>
+    <view class="my-pic-show" bindtap="goBlack">{{language.clickshow}} <i class="iconfont iconyoujiantou"></i></view>
   </view>
 </view>

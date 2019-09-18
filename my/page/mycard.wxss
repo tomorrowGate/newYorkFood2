@@ -1,4 +1,5 @@
 /* my/page/mycard.wxss */
+
 page{
   background: #f2f2f2;
 }
@@ -42,8 +43,16 @@ page{
 
 .card-body{
   padding: 0 26rpx 32rpx;
- font-size: 28rpx;
- margin-top: 30rpx
+  font-size: 26rpx;
+  margin-top: 30rpx;
+}
+.card-body .nodata-index{
+  height: calc(100vh - 330rpx);
+  box-sizing: border-box;
+  text-align: center;
+}
+.card-body .nodata-imgbox{
+  margin: 0 auto 40rpx;
 }
 .card-body-item{
  width: 700rpx;
@@ -80,17 +89,16 @@ page{
   font-weight: bold;
 }
 .card-mid-tag{
-  width: 100rpx;
   height: 32rpx;
   line-height: 32rpx;
-  text-align: center;
-  border: 1rpx solid #ccc;
   font-size: 24rpx;
-  padding: 2rpx 6rpx;
-
+}
+.card-mid-intag{
+  border: 1rpx solid #ccc;
+   padding: 2rpx 6rpx;
 }
 .card-item-right{
-  width: 162rpx;
+  width: 168rpx;
   height:138rpx; 
   display: flex;
   justify-content: end;
@@ -98,14 +106,18 @@ page{
   flex-direction: column;
 }
 .card-item-money{
-  font-size: 60rpx;
+  font-size: 26rpx;
   color: #ff625e;
 }
 .card-item-money text{
-  font-size: 28rpx;
+  font-size: 60rpx;
 }
 .card-item-filter{
   color: #bbb;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* font-size: 26rpx; */
 }
 .card-item-down{
   position: relative;

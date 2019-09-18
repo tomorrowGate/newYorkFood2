@@ -1,0 +1,117 @@
+/* my/page/my_setinfo.wxss */
+.my-setinfo{
+  padding: 20rpx;
+}
+.my-input{
+  width: 52%;
+  margin-left: 16rpx;
+  padding:6rpx;
+  border:1rpx solid #cdcdcd;
+}
+.my-setitems{
+  display: flex;
+  align-items: center;
+}
+.my-setphone-label{
+  font-size: 28rpx;
+}
+.section__title{
+  display: flex;
+}
+.label-opc{
+  opacity: 0
+}
+.label-yeah{
+  opacity: 1
+}
+picker{
+  width: 60%;
+  padding: 6rpx;
+  margin-left: 16rpx;
+  border:1rpx solid #cdcdcd;
+}
+.picker{
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.my-textarea{
+  width: 70%;
+  padding: 6rpx;
+  margin-left: 16rpx;
+  border:1rpx solid #cdcdcd;
+}
+.my-textout{
+  display: flex;
+}
+.my-submit{
+  width: 70%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 32rpx;
+  border-radius: 35rpx;
+  background-color: #ffac41;
+  color: #fff;
+  text-align: center;
+  margin:30rpx auto;
+}
+.group{
+  width: 100%;
+}
+.label-1, .label-2{
+  width: 100%;
+  display: flex;
+  margin-bottom: 15px;
+}
+.label-1__text, .label-2__text {
+  flex:1;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.label-1__icon {
+    position: relative;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    background: #fcfff4;
+}
+
+.label-1__icon-checked {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 12px;
+    height: 12px;
+    background: #ffac41;
+}
+
+
+.label-2__icon {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    background: #fcfff4;
+    border-radius: 50px;
+}
+
+.label-2__icon-checked {
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 12px;
+    height: 12px;
+    background: #1aad19;
+    border-radius: 50%;
+}
+
+.label-4_text{
+    text-align: center;
+    margin-top: 15px;
+}
